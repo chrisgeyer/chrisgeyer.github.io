@@ -298,6 +298,7 @@ textarea {
     header {padding:0.5em;}
     header ul {float:none;}
     header a {padding:0 0.25em;}
+    .details h1 {font-size:1.6em;}
     section {padding:1em;}
     .feature > div {width:95%}
     .feature img {width:100%;}
