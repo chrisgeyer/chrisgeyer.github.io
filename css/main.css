@@ -295,11 +295,10 @@ textarea {
   ========================================================================== */
 
   @media only screen and (max-width:40em) {
-    main {margin-top:80px;}
-  }
-  
-  @media only screen and (max-width:40em) {
+    header {padding:0.5em;}
+    header ul {float:none;}
     header a {padding:0 0.25em;}
+    section {padding:1em;}
     .feature > div {width:95%}
     .feature img {width:100%;}
   }
