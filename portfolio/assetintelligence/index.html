@@ -1,0 +1,245 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143444516-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143444516-1');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Asset Intelligence</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="floor">
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <header>
+    <a href="javascript:void(0);" id="AddComment" class="button">Send Feedback</a>
+    <h2 class="vmiddle">Asset Intelligence</h2>
+    <img src="img/VeloxIcon-Red.svg" style="width:40px;" />
+  </header>
+  <div class="feedbacksuccess hidden">
+    Thank you for your comments, we appreciate your feedback and will use it to improve the experience for future clients!
+  </div>
+  <main>
+    <section>
+      <div>
+        <div class="appdetails">
+          <h1>Make entering assets a breeze</h1>
+          <ul>
+            <li>Quickly track assets in less than 30 seconds</li>
+            <li>Easily know what you have and schedule more preventative maintanence</li>
+            <li>Being asset centric enables your organization to become more efficient</li>
+          </ul>
+          <a href="javascript:void(0);" id="CTA" class="button">
+            Learn how you can enter assets in seconds
+            <!-- p class="ctatext">Learn how you can enter assets 4x faster</p>
+            <p class="ctaconfirm">Let's Go!</p-->
+          </a>
+          <div class="form hidden">
+            <form>
+            <ul>
+              <li><label for="Name">Name</label><input id="Name" type="text" required /></li>
+              <li><label for="Email">Email</label><input id="Email" type="email" required /></li>
+              <li><label for="Org">Organization</label><input id="Org" type="text" required /></li>
+              <li><label for="Users">Number of Users</label> <input id="Users" type="number" min=1 /></li>
+              <li><label>Your Price</label><span id="Price">--</span></li>
+              <li><p><a href="javascript:void(0);" id="Submit" class="button">Request Proposal</a></p></li>
+            </ul>
+            </form>
+          </div>
+          <div class="success hidden">
+            Thank you for your request, we will follow up with your proposal soon!
+          </div>
+        </div>
+        <div class="appshot">
+          <img src="img/phone.png" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h1>Awesome Features like...</h1>
+        <div class="feature">
+          <h3>The Dude is by your side</h3>
+          <p>Literally! <br/> Our conversational interface makes it easy for technicians to be guided through the process without any training</p>
+          <img src="img/chat2.png" />
+        </div>
+        <div class="feature">
+          <h3>Innovative Capture Method</h3>
+          <p>Faster than manually transcribing long serial numbers with random characters on pen & paper. Machine readable text means less human error and no fixing mistakes later, saving your valuable time</p>
+          <img src="img/ocr2.jpg" />
+        </div>
+        <div class="feature">
+          <h3>Works where you are</h3>
+          <p>Easy mobile access and keep your data with you in areas of your buildings that have no coverage, because it works offline and syncs with Dude products like Asset Essentials</p>
+          <img src="img/offline2.png" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h1>See it in action!</h1>
+        <div class="icontainer">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/LXc_2UFOQKo?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="open-modal" class="modal hidden">
+    <div>
+      <a href="javascript:void(0);" title="Close" id="Close" class="modal-close">Close</a>
+      <form>
+      <ul class="form">
+        <li><label for="Comments">Comments</label><textarea id="Comments" rows="10"></textarea></li>
+        <li><p><a href="javascript:void(0);" id="Feedback" class="button">Send Feedback</a></p></li>
+      </ul>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p class="vmiddle">concocted by </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGGR57aEDrAJ2Kp9LJI4OdNXU7mfohxXeIhJ6OCNipC6CFeQ/viewform"><img src="img/labsquare.png" style="width:60px;" /></a>
+  </footer>
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-firestore.js"></script>
+  <script>
+    // const firebase = require("firebase");
+    // Required for side-effects
+    // require("firebase/firestore");
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyC5dpSJG4GqaL0aebjupwXNy9arySjEywM",
+      authDomain: "salesbot-94822.firebaseapp.com",
+      databaseURL: "https://salesbot-94822.firebaseio.com",
+      projectId: "salesbot-94822",
+      storageBucket: "",
+      messagingSenderId: "954363063329",
+      appId: "1:954363063329:web:7a54f89d556c3f1e"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var db = firebase.firestore();
+
+    var url = window.location.href;
+    var id = url.substring(url.lastIndexOf('=') + 1);
+    console.log(id);
+
+    // get id from url
+    var docRef = db.collection("signups").doc(id);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            // console.log("Document data:", doc.data());
+            if(doc.get('page_viewed') != null) {
+              console.log('Document data:', doc.data());
+            } else {
+              docRef.update({page_viewed: firebase.firestore.FieldValue.serverTimestamp(), status: 'page_viewed'})
+            }
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+
+    // $('#Users').val(0);
+    $('#Users').on('input', function()
+    {
+      var user = $('#Users').val();
+      var price = user * 125;
+      $('#Price').text(price);
+    });
+
+    // add doc on submit
+    $('#Submit').on('click', function() {
+      // check if exists first, do add if not existing?
+      docRef.update({
+        name: $('#Name').val(),
+        email: $('#Email').val(),
+        org: $('#Org').val(),
+        users: $('#Users').val(),
+        quote: $('#Price').text(),
+        registered: firebase.firestore.FieldValue.serverTimestamp(),
+        status: 'registered'
+      })
+      .then(function() {
+        console.log("Document written");
+        $('.form').addClass('hidden');
+        $('.success').removeClass('hidden');
+      })
+      .catch(function() {
+        console.error("Error adding document");
+        $('.form').addClass('hidden');
+        $('.fail').removeClass('hidden');
+      });
+    });
+
+    $('#AddComment').on('click', function() {
+      $('.modal').toggleClass('hidden');
+    });
+
+    $('#Close').on('click', function() {
+      $('.modal').toggleClass('hidden');
+    });
+
+    $('#Feedback').on('click', function() {
+      // check if exists first, do add if not existing?
+      docRef.update({
+        feedback: firebase.firestore.FieldValue.serverTimestamp(),
+        comments: $('#Comments').val()
+      })
+      .then(function() {
+        console.log("Document written");
+        $('.modal').addClass('hidden');
+        $('.feedbacksuccess').removeClass('hidden');
+      })
+      .catch(function() {
+        console.error("Error adding document");
+        $('.modal').addClass('hidden');
+        $('.feedbacksuccess').addClass('hidden');
+      });
+    });
+  </script>
+  <!-- script src="js/plugins.js"></script>
+  <script src="js/main.js"></script -->
+  <script>
+  $(document).ready(function() {
+    $('#CTA').on('click', function() {
+      $('#CTA').addClass('hidden');
+      $('.form').removeClass('hidden');
+    });
+  });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>

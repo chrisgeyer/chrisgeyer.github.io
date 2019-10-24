@@ -1,0 +1,399 @@
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   img {width:100%;}
+   .action {position:absolute; top:1.5%; right:2%; width:14%; background:#ddd;}
+   .badge {display:inline-block; color: #fff; text-align: center; background: #df5640; border-radius: 100px;
+     position: absolute; top: -0.5em; right: -0.5em; padding: 0.25em 0.5em;}
+
+
+  .approve {background:#43A047; color:#fff; padding:0.5em; float:right; border-radius:20px; text-decoration:none;}
+  .flag {color:#B21A1A; padding:0.5em; float:right; text-decoration:none;}
+
+   .build {background:#FF5C39; position:absolute; top:50%; left:25%; padding:1em; color:#FF5C39;}
+   .plan {background:#FF5C39; position:absolute; top:15%; left:10%; width:75%; height:500px; padding:1em; color:#FF5C39;}
+
+   .close {float: left; height: 50px; margin-top: 13px; margin-right: 10px;}
+  p {margin:0; color:#FF5C39;}
+
+
+  body {background:#ddd; /*#C6DAE7;*/ font-family:sans-serif;}
+  header {text-align:center; background:#003D4C /*#C6DAE7*/; padding:1em;}
+  header .button {float:right; border:2px solid #fff; background:transparent; border-radius:3px; margin-top:-0.5em;}
+  header .button:hover {border:2px solid #fff; background:#fff; color:#003D4C;}
+  header h2 {color:#fff /*#003D4C*/; margin-bottom:1em;}
+  .vmiddle {vertical-align:middle; display:inline;}
+
+  section {background:#fff; padding:2em 1em; position:relative;}
+  section:nth-child(2) {background:#FF5C39;}
+  section:nth-child(3) {background:#003D4C;}
+  section > div {margin:0 auto; width:80%; overflow:hidden;}
+  section h1 {text-align:center; color:#fff; margin-top:0;}
+
+  .appshot {display:inline-block; width:35%; text-align:center; vertical-align:top;}
+  .appshot img {max-width:250px; animation:drop 1s ease;}
+  @keyframes drop {
+    0% {margin-top:-2em;}
+    100% {margin-top:0;}
+  }
+  .appdetails {display:inline-block; width:60%; padding:1%; text-align:center; vertical-align:top; float:right; /*position:absolute; left:-5em; animation:slide 1s forwards; animation-delay:1s;*/}
+  .appdetails h1 {color:#003D4C;}
+  .appdetails ul {padding:0 0 1.5em 0; text-align:left;}
+  .appdetails li {list-style-position:inside; padding-bottom:0.5em;}
+  /*.appdetails li:first-child {animation:slide 3s ease;}
+  .appdetails li:nth-child(2) {animation:slide 3s ease; animation-delay:0.5s;}
+  .appdetails li:nth-child(3) {animation:slide 3s ease; animation-delay:1s;}*/
+  @keyframes slide {
+    100% {left:auto;}
+  }
+  .form li {list-style:none;}
+  .form label {color:#003D4C; font-weight:700; display:block;}
+  .form input {padding:0.25em; width:80%; margin-bottom:0.5em;}
+  .form a {display:block; width:75%; text-align:center; border:5px solid #fff;}
+  .button {background:#FF5C39; /*border:5px solid #fff;*/ color:#fff; border-radius:100px; padding:1em; text-decoration:none; transition:all 0.2s;}
+  .button:hover {background:#fff; color:#FF5C39; border:5px solid #FF5C39;}
+  .ctaconfirm {position: absolute; top:-2rem; left: 42%;}
+  .success, .feedbacksuccess {padding:1em; margin-bottom:1em; border: 1px solid #80c780; border-radius:3px; background:#00BF6F; color:#fff;}
+  .feedbacksuccess {text-align:center; margin-bottom:0;}
+
+  .feature {display:inline-block; width:29%; background:#fff; vertical-align:top; text-align:center; border-radius:4px;}
+  .feature p {margin-bottom:1.5em; color:#333;}
+  .icontainer {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
+  .icontainer iframe {
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+  }
+
+  .modal {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.55);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.3s;}
+  .modal > div {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em; border:1px solid #999;
+  background: #ededed;}
+  .modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;}
+  .modal-close:hover {color:#333;}
+  .modal textarea {width:100%; height:auto;}
+  .modal .button {background:#003D4C;}
+  .modal .button:hover {color:#003D4C; background:#fff; border-color:#003D4C;}
+
+  footer {padding:1em; text-align:center;}
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+  ========================================================================== */
+
+  @media only screen and (min-width:50em) {
+    .feature {margin-right:2%; padding:1%;}
+  }
+
+  @media only screen and (max-width:75em) {
+    .feature {width:45%; margin-bottom:1em;}
+    .feature img {max-width:200px; display:block; margin:0 auto 1em;}
+  }
+
+  @media only screen and (max-width:50em) {
+    section > div {width:95% !important;}
+    .modal > div {width:60%;}
+    .appshot img {width:100%;}
+  }
+
+  @media only screen and (max-width:40em) {
+    .appshot, .appdetails, .feature, .icontainer {width:100%;}
+    .appdetails ul {padding:0 0 0 1.5em;}
+    .appdetails .button {display:block; margin:1em;}
+    .form input {width:95%;}
+    .modal > div {width:80%;}
+  }
+
+  @media print,
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+      /* Style adjustments for high resolution devices */
+  }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

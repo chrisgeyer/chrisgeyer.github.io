@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="230px" height="230px" viewBox="0 0 230 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <g id="if_Location_728975" transform="translate(64.000000, 0.000000)" fill="#FF5C39" fill-rule="nonzero">
+                <path d="M79,0 C35.3686591,0 0,35.3966406 0,79.0625 C0,122.728359 79,230 79,230 C79,230 158,122.728359 158,79.0625 C158,35.3966406 122.631341,0 79,0 Z M14.3636364,79.0625 C14.3636364,43.3909375 43.3566364,14.375 79,14.375 C114.643364,14.375 143.636364,43.3909375 143.636364,79.0625 C143.636364,103.909688 107.712909,163.894766 79,205.271406 C50.2870909,163.894766 14.3636364,103.909688 14.3636364,79.0625 Z M79.2341897,19 C46.9472582,19 20.7804348,45.187525 20.7804348,77.5 C20.7804348,109.812475 46.9472582,136 79.2341897,136 C111.521121,136 137.687945,109.812475 137.687945,77.5 C137.687945,45.187525 111.521121,19 79.2341897,19 Z" id="Shape"></path>
+            </g>
+            <g id="if_Document_2202270" transform="translate(42.000000, 89.500000) scale(-1, 1) translate(-42.000000, -89.500000) translate(0.000000, 28.000000)" fill="#FF5C39" fill-rule="nonzero">
+                <rect id="Rectangle-path" x="25" y="38" width="47" height="9"></rect>
+                <rect id="Rectangle-path" x="18" y="76" width="66" height="9"></rect>
+                <rect id="Rectangle-path" x="0" y="114" width="47" height="9"></rect>
+                <rect id="Rectangle-path" x="11" y="0" width="66" height="9"></rect>
+            </g>
+            <g id="if_box_2561347" transform="translate(100.000000, 31.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+                <path d="M47.9160976,0.921915925 L83.1160119,18.5714028 C86.1064984,20.0615931 87.998228,23.1208052 88,26.4695482 L88,68.5194506 C87.998228,71.8681935 86.1064984,74.9274056 83.1160119,76.417596 L47.9160976,94.0670828 C45.4372847,95.3109724 42.5189296,95.3109724 40.0401168,94.0670828 L4.84020248,76.417596 C1.85257634,74.9079866 -0.0230675553,71.8301137 0.000214267128,68.4753269 L0.000214267128,26.4695482 C0.0019862541,23.1208052 1.89371587,20.0615931 4.88420238,18.5714028 L40.0841167,0.921915925 C42.5508942,-0.307305308 45.4493201,-0.307305308 47.9160976,0.921915925 Z" id="Shape"></path>
+                <polyline id="Shape" points="1 22 43.5 43 86 22"></polyline>
+                <path d="M44,95 L44,43" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
