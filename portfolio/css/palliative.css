@@ -1,0 +1,156 @@
+body {font-size: 110%;}
+a, .slds-button, .slds-active .slds-tabs--scoped__link {color:#005E9D;}
+.slds-global-header_container {
+  position: static;
+}
+.slds-global-header__logo {
+  width:9rem;
+}
+.slds-context-bar__icon-action {display: none;}
+.slds-context-bar {border-top:0; border-color:#E87722;}
+.slds-context-bar__item--divider-right {border:0;}
+/*.slds-grid {max-width: 1400px; margin:0 auto;}*/
+
+.slds-breadcrumb__item:before {left:0.25rem;}
+
+#Dash .dashboard, #Census .census, #Tasks .tasks, #Sched .schedule, #Orders .orders, #Engage .engage {background:#E87722; color:#fff; border-radius:5px 5px 0 0;}
+.slds-context-bar__item:not(.slds-no-hover):hover {background:#EFEFEE; border-color:#E87722;}
+.slds-navigation-list--vertical .slds-is-active, .slds-navigation-list--vertical-inverse .slds-is-active .slds-navigation-list--vertical__action {background:#E87722; color:#fff; border:0;}
+
+.slds-wizard .slds-is-active .slds-wizard__marker, .slds-wizard__progress-bar, .slds-wizard .slds-is-active a:hover .slds-wizard__marker {background:#E87722;}
+.slds-wizard .slds-is-active a:hover .slds-wizard__label {font-weight:700;}
+.slds-button--brand {background:#006CA2; border-color:#006CA2; color:#fff; font-size:1rem;}
+.slds-theme--shade {font-weight: 700; background: #EFEFEE;}
+.slds-page-header {background:#EFEFEE;}
+/*.slds-notify {background:#006699;}*/
+
+.slds-docked-composer__header {background:#006699;}
+.slds-media--timeline {padding-bottom:1rem;}
+
+.slds-tabs--default__item.slds-active .slds-tabs--default__link {border-color:#006699;}
+
+.slds-page-header__detail-block {padding: 0 1.5rem;}
+
+.initial, .home, .phonecall, .reminder, .urgent, .private {padding:0.25em; border-radius:10px; color:#fff; line-height:2;}
+.initial {background:#7558A5;}
+.home {background:#006CA2;}
+.phonecall {background:#078576;}
+.reminder {background:#E87722;}
+.urgent {background:#C60F13;}
+.private {background:#333;}
+
+.overdue td {background:#FFB6C1;}
+
+#Switch .slds-dropdown {max-width:15rem; left:175;}
+#Sched tr th {vertical-align: top;}
+#Sched .good, #Sched .red, #Sched .yellow, #Sched .norisk {width:75px;}
+#Sched .slds-button-destructive {line-height:1;}
+.slds-dropdown--left {left:20;}
+
+.slds-card__header {padding-left:1em; padding-right:1em;}
+.slds-card--narrow .slds-card__header {margin-bottom: 0.75rem;}
+.slds-has-dividers--bottom li {border-bottom:2px solid #E1E1E1;}
+.slds-has-dividers--bottom li:last-child {border-bottom:none;}
+.slds-card h2 {font-weight:700;}
+
+.slds-table--bordered {border-top:5px solid #878A8C;}
+.slds-button--neutral {border:1px solid #006CA2;}
+.bottom-right {
+  position: fixed;
+  bottom:0;
+  right:30px;
+  z-index: 100;
+}
+#Task {
+  height:350px;
+}
+#Appt { height:500px; }
+.slds-table--striped tbody tr:nth-of-type(even) > td, .slds-table:not(.slds-no-row-hover) tbody tr:hover > td {background:#efefef;}
+#Sched .slds-table--striped tbody tr:nth-of-type(even) > td {background: #fff;}
+#Sched tr.block td {background:#EFEFEE !important;}
+#Sched tbody tr th {padding-top:0;}
+#Sched tr.now th {border-top:3px solid #65C4B3;}
+.slds-table th {font-weight: 700;}
+
+.add {font-size: 0.9rem;}
+
+.slds-form-element__label {font-weight:700; color:#333; font-size:0.8rem;}
+.exam .slds-form-element__label, .exam .slds-form-element__label {font-weight:400;}
+.slds-form-element__control {margin-bottom:1rem;}
+.slds-input, .slds-select, .slds-textarea {border-color:#b7b7b7;}
+
+.slds-input::-webkit-input-placeholder {
+  color:#aaa;
+}
+.slds-col--rule-right {
+  border-color:#ddd
+}
+.middle {vertical-align: middle;}
+.good, .red, .yellow, .norisk {border-radius: 100px; width:100px;}
+.good {
+  border: 5px solid #627D32;
+}
+.red {
+  border: 5px solid #E32315;
+}
+.dnr {
+  color: red;
+  fill: red;
+}
+.yellow {
+  border: 5px solid #F2B411;
+}
+span.slds-wizard__label.slds-text-title--caps.slds-truncate {
+  white-space: normal;
+  overflow:visible;
+}
+.slds-input:invalid {
+  background: #FFBABA;
+  border:1px solid red;
+}
+.slds-card {border-bottom:5px solid #878A8C; border-radius:5px; background:#fff; box-shadow:0 2px 2px 0 rgba(0,0,0,0.20);}
+.slds-card--narrow .slds-card__header {padding-top:1rem;}
+.slds-card__header h2 {font-weight:normal; font-size:1.25rem;}
+
+.exam label.slds-form-element__label {
+  font-weight: bold;
+}
+
+
+.slds-docked-composer__actions .slds-button {color:#fff;}
+.slds-docked-composer .slds-form-element__row {margin-bottom:0;}
+.slds-docked-composer .slds-form-element__control {margin-bottom:0.5rem;}
+#Call .slds-docked-composer {height:520px;}
+#Virtual .slds-docked-composer {height:360px;}
+#Task .slds-docked-composer {height:430px;}
+#Order .slds-docked-composer {height:430px;}
+#Discharge .slds-docked-composer {height:430px;}
+#HCE .slds-docked-composer {height:660px; z-index: 100;}
+#HCE .slds-docked-composer .slds-form-element__control {margin-bottom:0.4rem;}
+#HCE .slds-input, #HCE .slds-select {width:95%;}
+#HCE .slds-select_container:before, #HCE .slds-select_container:after {right:2.5rem;}
+
+.profile table {font-size: 1em;}
+
+.edittask #New, .addtask #Edit, .addtask #Delete, .addtask #Status {display:none;}
+.edittask #Create, .addtask #Complete, .neworder #Complete, .editorder #Create, .neworder #Edit, .neworder #Delete {display:none;}
+
+.slds-media__body {flex: 1 1 auto;}
+
+@media (max-width: 1100px) {
+  #Sched .slds-p-around--large {padding:1.5rem 0;}
+}
+
+@media (max-width: 800px) {
+  .break {display: table;}
+  #Census .slds-p-around--large, #Tasks .slds-container--fluid.slds-p-horizontal--large, #Orders .slds-container--fluid.slds-p-horizontal--large, #Sched .slds-p-around--large {padding:1.5rem 0;}
+  #Census .slds-table--cell-buffer tr > th:first-child, .slds-table--cell-buffer tr > td:first-child {padding-left:0.5rem;}
+  #Census .slds-table--cell-buffer tr > th:last-child, .slds-table--cell-buffer tr > td:last-child {padding-right:0.5rem;}
+  .profile .slds-button-group.slds-float--right {float:none; padding-bottom: 1rem;}
+  .enroll.slds-size--1-of-2, .visit .slds-size--1-of-2, .visit .slds-size--2-of-3 {width:100%;}
+  .slds-page-header__detail-block {padding:0.5rem 1rem;}
+  .slds-page-header__detail-row {flex-wrap: wrap;}
+  .profile .slds-col, .slds-col .slds-form--stacked.slds-size--2-of-3 {width:100%;}
+  .profile .slds-navigation-list--vertical-inverse li {width:32%; display:inline-block;}
+  .slds-size--4-of-5 .pps .slds-radio--button .slds-radio--faux {padding:0 0.55rem;}
+}
