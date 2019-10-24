@@ -1,0 +1,237 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+						$.getScript('scripts.js');
+						$('#PatientInstructions').val('Go in the backdoor');
+						$('#ChiefComplaint').val('Lorem Ipsum');
+						$('#PrimaryDiagnosis').val('Heart Failure');
+						$('#Problem').val('Kidney Failure');
+						$('#IllnessHistory').val('Lorem Ipsum');
+						$('#AddSecondaryDiagnosis').removeClass('slds-hide');
+						$('#Diagnosis3').removeClass('slds-hide');
+						$('#SecondaryDiagnosis').val('Heart Failure');
+						$('#HCPName').val('Maria');
+						$('#HCPPhone').val('555-555-5555');
+						$('#HCPRelation').val('Daughter');
+						$('div#Another').removeClass('slds-hide');
+						$('li#Another').removeClass('slds-hide');
+						$('#PatientAnswers').removeClass('slds-hide');
+						$('#CaregiverAnswers').removeClass('slds-hide');
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-container--fluid slds-p-around--large ">
+			<div class="slds-float--right">
+				<a href="javascript:void(0)" id="NewAppt" class="slds-button slds-button--neutral slds-m-horizontal--medium">Schedule</a>
+				<a href="javascript:void(0)" id="AddTask" class="slds-button slds-button--neutral slds-m-horizontal--medium">Task</a>
+				<a href="javascript:void(0)" id="NewOrder" class="slds-button slds-button--neutral slds-m-horizontal--medium">Order</a>
+			</div>
+		  <div class="slds-text-heading--medium slds-m-bottom--medium">Follow Up Visit - Sylvia Wright</div>
+			<div class="slds-grid slds-wrap slds-p-top--medium">
+  			<div class="slds-col slds-size--1-of-5 slds-col--rule-right">
+					<div class="slds-navigation-list--vertical slds-navigation-list--vertical-inverse">
+					  <ul>
+					    <li class="slds-is-active"><a href="javascript:void(0);" id="tab-vertical-1__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Verify Patient Information</a></li>
+					    <li><a href="javascript:void(0);" id="tab-vertical-2__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Condition Summary</a></li>
+					    <li><a href="javascript:void(0);" id="tab-vertical-3__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Medications &amp; Allergies</a></li>
+					    <li><a href="javascript:void(0);" id="tab-vertical-4__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Vitals</a></li>
+					    <li><a href="javascript:void(0);" id="tab-vertical-5__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Physical Exam</a></li>
+							<li><a href="javascript:void(0);" id="tab-vertical-6__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Assessments</a></li>
+							<li><a href="javascript:void(0);" id="tab-vertical-7__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Home Services</a></li>
+							<li><a href="javascript:void(0);" id="tab-vertical-8__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Advance Directives</a></li>
+							<li><a href="javascript:void(0);" id="tab-vertical-9__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Visit Summary</a></li>
+					  </ul>
+					</div>
+				</div>
+				<div class="slds-col slds-size--4-of-5 slds-p-around--medium ">
+					<div id="tab-vertical-1" class="slds-tabs--vertical__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+						<div class="slds-form--stacked slds-size--2-of-3" data-load="patient-info.html"></div>
+					</div>
+		  		<div id="tab-vertical-2" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+						<div class="slds-form--stacked slds-size--2-of-3" data-load="condition-summary.html"></div>
+					</div>
+		  		<div id="tab-vertical-3" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">
+						<div class="slds-form--stacked slds-size--2-of-3" data-load="meds-allergies.html"></div>
+						<div class="slds-size--2-of-3">
+							<div class="slds-align--absolute-center slds-clearfix">
+								<a href="javascript:void(0);" id="AddAnother" class="slds-button slds-button--neutral slds-m-around--medium">Add Another</a>
+							</div>
+						</div>
+					</div>
+					<div id="tab-vertical-4" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-4__item">
+						<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+							<thead>
+								<tr class="slds-text-title--caps">
+									<th scope="col">
+										<div class="slds-truncate" title="Visit Date">Visit</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">BP</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">HR</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">Temp</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">RR</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">O<sup>2</sup></div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">Height</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="">Weight</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td data-label="Visit Date">
+										<div class="slds-truncate">12/20/2016 <span class="break">Julianne Whelan</break></div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">120/80</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96.5</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">44</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">80</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">120</div>
+									</td>
+								</tr>
+								<tr>
+									<td data-label="Visit Date">
+										<div class="slds-truncate">1/2/2017 <span class="break">Julianne Whelan</break></div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">120/80</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96.5</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">44</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">80</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">120</div>
+									</td>
+								</tr>
+								<tr>
+									<td data-label="Visit Date">
+										<div class="slds-truncate">2/10/2017 <span class="break">Julianne Whelan</break></div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">120/80</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96.5</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">44</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">96</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">80</div>
+									</td>
+									<td data-label="">
+										<div class="slds-truncate">120</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- ul class="slds-m-bottom--medium">
+							<li>1. Vitals - 12/20/2016 (Julianne) | 120/80 mmg, 95%, 70bpm, 5ft 8in, 145lbs, 98.6&deg;</li>
+							<li>2. Vitals - 1/2/2017 (Julianne) &nbsp;&nbsp;&nbsp;&nbsp; | 120/80 mmg, 95%, 70bpm, 5ft 8in, 145lbs, 98.6&deg;</li>
+							<li>3. Vitals - 2/10/2017 (Julianne) &nbsp;&nbsp;| 120/80 mmg, 95%, 70bpm, 5ft 8in, 145lbs, 98.6&deg;</li>
+						</ul -->
+						<div class="slds-form--stacked slds-size--2-of-3" data-load="vitals.html"></div>
+					</div>
+					<div id="tab-vertical-5" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-5__item">
+						<ul class="slds-m-bottom--medium">
+							<!-- li>1. 12/20/2016 - Julianne Whelan | Distressed, Lethargic, Edema, Wheezes, Unsteady Gait</li -->
+						</ul>
+						<div class="slds-form--stacked slds-size--2-of-3 exam" data-load="physical-exam.html"></div>
+					</div>
+					<div id="tab-vertical-6" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-6__item">
+						<div class="slds-form--stacked slds-size--2-of-3">
+							<div data-load="assessments.html"></div>
+						</div>
+					</div>
+					<div id="tab-vertical-7" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-7__item">
+						<div class="slds-form--stacked slds-size--2-of-3">
+						<div data-load="home-services.html"></div>
+						<div class="slds-align--absolute-center">
+							<!-- a href="initial-8.html" class="slds-button slds-button--brand slds-m-around--medium">Complete</a -->
+							<a href="javascript:void(0);" id="AddAnother" class="slds-button slds-button--neutral slds-m-around--medium">Add Another</a>
+						</div>
+					</div>
+					</div>
+					<div id="tab-vertical-8" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-8__item">
+						<div class="slds-form--stacked slds-size--2-of-3">
+							<div data-load="directives.html"></div>
+			</div>
+					</div>
+					<div id="tab-vertical-9" class="slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-9__item">
+						<div class="slds-form--stacked slds-size--2-of-3">
+							<div data-load="visit-summary.html"></div>
+							<div class="slds-align--absolute-center">
+								<a href="profile.html" class="slds-button slds-button--brand slds-m-around--medium">Sign and Complete Visit</a>
+								<a href="profile.html" class="slds-button slds-button--neutral slds-m-around--medium">Complete Later</a>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+	<div class="slds-grid slds-wrap">
+		<div class="slds-col">
+			<div id="Task" class="slds-hide" data-load="new-task.html"></div>
+			<div id="Order" class="slds-hide" data-load="new-order.html"></div>
+			<div id="Call" class="slds-hide" data-load="new-call.html"></div>
+			<div id="Appt" class="slds-hide" data-load="new-appt.html"></div>
+			<div id="ADL" class="slds-hide" data-load="view-adl.html"></div>
+</div>
+</div>
+	</body>
+</html>

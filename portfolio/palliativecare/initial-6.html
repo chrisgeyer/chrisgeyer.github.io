@@ -1,0 +1,97 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			var isLoaded = 0;
+			$("[data-load]").each(function(){
+				$(this).load($(this).data("load"), function(){
+					if(isLoaded){
+              return false;
+            }
+					else {
+						$.getScript('scripts.js');
+						isLoaded = 1;
+					}
+				});
+			});
+		})
+		</script>
+ 	</head>
+	<body class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-container--fluid slds-p-around--large visit">
+			<div class="slds-text-heading--medium slds-m-bottom--medium">Initial Home Visit - Sylvia Wright</div>
+			<div class="slds-wizard" role="navigation">
+			  <ol class="slds-wizard__list">
+			    <li class="slds-wizard__item slds-is-active">
+			      <a href="initial-1.html" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Navigation">Patient<br /> Information</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item slds-is-active">
+			      <a href="initial-2.html" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Actions">Condition<br /> Summary</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item slds-is-active">
+			      <a href="initial-3.html" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Compact Layout">Medications &amp; <br />Allergies</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item slds-is-active">
+			      <a href="initial-4.html" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Review">Vitals</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item slds-is-active">
+			      <a href="initial-5.html" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Review">Physical<br /> Exam</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item slds-is-active">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Review">Assessments</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Invite">Home<br /> Services</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Invite">Advance<br /> Directives</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Invite">Visit<br /> Summary</span>
+			      </a>
+			    </li>
+			  </ol>
+			  <span class="slds-wizard__progress">
+			    <span class="slds-wizard__progress-bar" style="width:62%;"></span>
+			  </span>
+			</div>
+			<div class="slds-form--stacked slds-size--2-of-3 slds-m-top--large">
+				<div data-load="assessments.html"></div>
+				<div class="slds-align--absolute-center">
+					<a href="initial-7.html" class="slds-button slds-button--brand slds-m-around--medium">Complete</a>
+				</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<div role="dialog" aria-labelledby="dialog-heading-id" class="slds-docked-composer slds-grid slds-grid--vertical slds-nowrap slds-is-open bottom-right">
+<header class="slds-docked-composer__header slds-grid slds-grid--align-spread slds-shrink-none">
+<div class="slds-media slds-media--center">
+	<div class="slds-media__figure">
+		<span class="slds-icon_container slds-icon-standard-task">
+			<img src="assets/icons/custom/custom100_60.png" class="slds-icon slds-icon--small" />
+			<span class="slds-assistive-text">Video Icon</span>
+		</span>
+	</div>
+	<div class="slds-media__body">
+		<h2 id="dialog-heading-id">Video Call</h2>
+	</div>
+</div>
+<div class="slds-docked-composer__actions">
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Minimize window">
+    <img src="assets/icons/utility/minimize_window_60.png" class="slds-button__icon"/>
+    <span class="slds-assistive-text">Minimize window</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Expand Composer">
+    <img src="assets/icons/utility/expand_alt_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Expand Composer</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" id="TaskClose" title="Close">
+    <img src="assets/icons/utility/close_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+</header>
+<div class="slds-docked-composer__body slds-docked-composer__body--form slds-col slds-grid slds-grid--vertical slds-nowrap">
+<fieldset class="slds-form--compound">
+	<legend class="slds-assistive-text">Log new task</legend>
+	<div class="slds-form-element__group">
+		<!-- div class="slds-form-element__row">
+		<div class="slds-form-element">
+		  <label class="slds-form-element__label" for="select-01">Type</label>
+		  <div class="slds-form-element__control">
+		    <div class="slds-select_container">
+		      <select id="select-01" class="slds-select">
+		        <option>Choose</option>
+						<option>Inbound</option>
+		        <option>Outbound</option>
+		      </select>
+		    </div>
+		  </div>
+		</div>
+	</div -->
+		<div class="slds-form-element__row">
+			<div class="slds-form-element slds-size--1-of-2">
+				<label class="slds-form-element__label" for="text-input-02">Patient</label>
+				<div class="slds-form-element__control">
+					<input class="slds-input" type="text" id="patient-lookup" list="mylist" />
+					<datalist id="mylist">
+						<option>Mary Williams</option>
+						<option>Josephine Kelly</option>
+						<option>David Brown</option>
+						<option>Mabel Sulivan</option>
+						<option>Sylvia Wright</option>
+						<option>Hillary Karsten</option>
+						<option>Gabe Smith</option>
+			      <option>Harvey Magellan</option>
+			      <option>Cathy Ryan</option>
+			      <option>Rose Walsh</option>
+					</datalist>
+				</div>
+			</div>
+		</div>
+		<div class="slds-form-element__row">
+			<div class="slds-form-element">
+				<label class="slds-form-element__label" for="text-input-01">Reason</label>
+				<div class="slds-form-element__control">
+					<input class="slds-input" type="text" id="text-input-01" />
+				</div>
+			</div>
+		</div>
+		<div class="slds-form-element__row">
+			<div class="slds-form-element">
+				<label class="slds-form-element__label" for="textarea-input-01">Outcome</label>
+				<div class="slds-form-element__control">
+					<textarea id="textarea-input-01" class="slds-textarea" placeholder=""></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</fieldset>
+</div>
+<footer class="slds-docked-composer__footer slds-shrink-none">
+<div class="slds-float--right slds-grid slds-grid--align-end slds-size--1-of-2 slds-text-align--right">
+	<a href="profile.html"><button class="slds-button slds-button--brand">Save</button></a>
+</div>
+</footer>
+</div>

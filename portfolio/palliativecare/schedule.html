@@ -1,0 +1,787 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+				$(this).load($(this).data("load"), function(){
+					$.getScript('scripts.js');
+				});
+			});
+		})
+		</script>
+ 	</head>
+	<body id="Sched" class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+	  <div class="slds-grid">
+	    <div class="slds-col slds-has-flexi-truncate">
+	      <nav class="slds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+	        <ol class="slds-breadcrumb slds-list--horizontal">
+	          <li class="slds-breadcrumb__item slds-text-title--caps">Schedule</li>
+	          <li class="slds-breadcrumb__item slds-text-title--caps"><span class="slds-p-left--medium">Julianne Whelan</span>
+							<button id="Arrow" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="Switch View">
+								<img src="assets/icons/utility/down_120.png" />
+								<span class="slds-assistive-text">Switch View</span>
+							</button>
+						</li>
+					</ol>
+					<div id="Switch" class="slds-hide">
+						<div class="slds-dropdown slds-dropdown--left" role="listbox">
+							<ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-242">
+										<span class="slds-truncate">Name1</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-243">
+										<span class="slds-truncate">Name2</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-244">
+										<span class="slds-truncate">Name3</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-245">
+										<span class="slds-truncate">Name4</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-246">
+										<span class="slds-truncate">Name5</span>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+	      </nav>
+	      <h1 class="slds-page-header__title slds-truncate" title="Contacts (will truncate)">January 25, 2017
+					<button id="Calendar" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="Switch View">
+						<img src="assets/icons/utility/event_120.png" />
+						<span class="slds-assistive-text">Switch View</span>
+					</button>
+					<img src="assets/icons/utility/chevronright_120.png" class="slds-button--icon-x-small">
+				</h1>
+				<div id="DatePicker" class="slds-hide">
+					<div class="slds-datepicker slds-dropdown slds-dropdown--left" aria-hidden="false">
+					  <div class="slds-datepicker__filter slds-grid">
+					    <div class="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-grow">
+					      <div class="slds-align-middle">
+					        <button class="slds-button slds-button--icon-container" title="Previous Month">
+					          <img src="assets/icons/utility/chevronleft_120.png" class="slds-button__icon" />
+					          <span class="slds-assistive-text">Previous Month</span>
+					        </button>
+					      </div>
+					      <h2 id="month" class="slds-align-middle" aria-live="assertive" aria-atomic="true">June</h2>
+					      <div class="slds-align-middle">
+					        <button class="slds-button slds-button--icon-container" title="Next Month">
+					          <img src="assets/icons/utility/chevronright_120.png" class="slds-button__icon" />
+					          <span class="slds-assistive-text">Next Month</span>
+					        </button>
+					      </div>
+					    </div>
+					    <div class="slds-shrink-none">
+					      <label class="slds-assistive-text" for="select-01">Pick a Year</label>
+					      <div class="slds-select_container">
+					        <select id="select-01" class="slds-select">
+					          <option>2014</option>
+					          <option>2015</option>
+					          <option>2016</option>
+					        </select>
+					      </div>
+					    </div>
+					  </div>
+					  <table class="slds-datepicker__month" role="grid" aria-labelledby="month">
+					    <thead>
+					      <tr id="weekdays">
+					        <th id="Sunday" scope="col">
+					          <abbr title="Sunday">Sun</abbr>
+					        </th>
+					        <th id="Monday" scope="col">
+					          <abbr title="Monday">Mon</abbr>
+					        </th>
+					        <th id="Tuesday" scope="col">
+					          <abbr title="Tuesday">Tue</abbr>
+					        </th>
+					        <th id="Wednesday" scope="col">
+					          <abbr title="Wednesday">Wed</abbr>
+					        </th>
+					        <th id="Thursday" scope="col">
+					          <abbr title="Thursday">Thu</abbr>
+					        </th>
+					        <th id="Friday" scope="col">
+					          <abbr title="Friday">Fri</abbr>
+					        </th>
+					        <th id="Saturday" scope="col">
+					          <abbr title="Saturday">Sat</abbr>
+					        </th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr id="week1">
+					        <td class="slds-disabled-text" headers="Sunday week1" role="gridcell" aria-disabled="true" aria-selected="false">
+					          <span class="slds-day">31</span>
+					        </td>
+					        <td headers="Monday week1" role="gridcell" aria-selected="false">
+					          <span class="slds-day">1</span>
+					        </td>
+					        <td headers="Tuesday week1" role="gridcell" aria-selected="false">
+					          <span class="slds-day">2</span>
+					        </td>
+					        <td headers="Wednesday week1" role="gridcell" aria-selected="false">
+					          <span class="slds-day">3</span>
+					        </td>
+					        <td headers="Thursday week1" role="gridcell" aria-selected="false">
+					          <span class="slds-day">4</span>
+					        </td>
+					        <td headers="Friday week1" role="gridcell" aria-selected="false">
+					          <span class="slds-day">5</span>
+					        </td>
+					        <td headers="Saturday week1" role="gridcell" aria-selected="false">
+					          <span class="slds-day">6</span>
+					        </td>
+					      </tr>
+					      <tr id="week2">
+					        <td headers="Sunday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">7</span>
+					        </td>
+					        <td headers="Monday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">8</span>
+					        </td>
+					        <td headers="Tuesday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">9</span>
+					        </td>
+					        <td headers="Wednesday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">10</span>
+					        </td>
+					        <td headers="Thursday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">11</span>
+					        </td>
+					        <td headers="Friday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">12</span>
+					        </td>
+					        <td headers="Saturday week2" role="gridcell" aria-selected="false">
+					          <span class="slds-day">13</span>
+					        </td>
+					      </tr>
+					      <tr id="week3">
+					        <td headers="Sunday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">14</span>
+					        </td>
+					        <td headers="Monday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">15</span>
+					        </td>
+					        <td headers="Tuesday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">16</span>
+					        </td>
+					        <td headers="Wednesday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">17</span>
+					        </td>
+					        <td class="slds-is-today" headers="Thursday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">18</span>
+					        </td>
+					        <td headers="Friday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">19</span>
+					        </td>
+					        <td headers="Saturday week3" role="gridcell" aria-selected="false">
+					          <span class="slds-day">20</span>
+					        </td>
+					      </tr>
+					      <tr id="week4">
+					        <td headers="Sunday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">21</span>
+					        </td>
+					        <td headers="Monday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">22</span>
+					        </td>
+					        <td headers="Tuesday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">23</span>
+					        </td>
+					        <td headers="Wednesday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">24</span>
+					        </td>
+					        <td headers="Thursday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">25</span>
+					        </td>
+					        <td headers="Friday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">26</span>
+					        </td>
+					        <td headers="Saturday week4" role="gridcell" aria-selected="false">
+					          <span class="slds-day">27</span>
+					        </td>
+					      </tr>
+					      <tr id="week5">
+					        <td headers="Sunday week5" role="gridcell" aria-selected="false">
+					          <span class="slds-day">28</span>
+					        </td>
+					        <td headers="Monday week5" role="gridcell" aria-selected="false">
+					          <span class="slds-day">29</span>
+					        </td>
+					        <td headers="Tuesday week5" role="gridcell" aria-selected="false">
+					          <span class="slds-day">30</span>
+					        </td>
+					        <td class="slds-disabled-text" headers="Wednesday week5" role="gridcell" aria-disabled="true" aria-selected="false">
+					          <span class="slds-day">1</span>
+					        </td>
+					        <td class="slds-disabled-text" headers="Thursday week5" role="gridcell" aria-disabled="true" aria-selected="false">
+					          <span class="slds-day">2</span>
+					        </td>
+					        <td class="slds-disabled-text" headers="Friday week5" role="gridcell" aria-disabled="true" aria-selected="false">
+					          <span class="slds-day">3</span>
+					        </td>
+					        <td class="slds-disabled-text" headers="Saturday week5" role="gridcell" aria-disabled="true" aria-selected="false">
+					          <span class="slds-day">4</span>
+					        </td>
+					      </tr>
+					      <tr>
+					        <td colspan="7" role="gridcell"><a href="javascript:void(0);" class="slds-show--inline-block slds-p-bottom--x-small">Today</a></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+	    </div>
+	    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+	      <div class="slds-button-group">
+	        <a href="javascript:void(0);" id="NewAppt" class="slds-button slds-button--neutral">Add Appointment</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="slds-p-around--large">
+	<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+	  <thead>
+	    <tr class="slds-text-title--caps">
+				<th scope="col">
+					<div class="slds-truncate" title="Time">Time</div>
+				</th>
+				<th scope="col">
+	        <div class="slds-truncate" title="Time">Appointment</div>
+	      </th>
+				<th scope="col">
+	        <div class="slds-truncate" title="Patient">Patient</div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Summary">Details</div>
+	      </th>
+				<th scope="col">
+	        <div class="slds-truncate" title="Address">Address</div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Actions"></div>
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr class="block">
+				<th scope="row" data-label="Time">
+	        <div class="slds-truncate">9am</div>
+	      </th>
+				<td rowspan="3" data-label="Appointment">
+	        <div class="slds-truncate">9-9:45am <span class="home break">Home Visit</span><br />Appointment Description<br /><button class="EditAppt slds-button slds-button-destructive">Reschedule</button></div>
+	      </td>
+	      <td rowspan="3" data-label="Patient">
+	        <div class="slds-truncate slds-float--left"><a href="profile.html"><img src="../img/patient2.jpg" class="good"></a></div>
+	        <div class="slds-truncate" style="margin-top: 15px; padding-left: 5px;"><a href="profile.html">Vannessa Trivett</a><br /> <a href="javascript:void(0);">444-444-4444</a></div>
+	      </td>
+	      <td rowspan="3" data-label="Summary">
+	        <div class="slds-truncate">85yr F with dementia <br/> Aetna</div>
+	      </td>
+				<td rowspan="3" data-label="Address">
+	        <div class="slds-truncate"><a href="javascript:void(0);">363 East Valley View Court Oceanside, NY 11572</a><br />Go in the backdoor</div>
+	      </td>
+	      <td rowspan="3" data-label="Actions">
+	        <div class="slds-truncate"><a href="follow-up.html" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">Start Visit</a></div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr class="block">
+				<th scope="row" data-label="Time">
+	        <div class="slds-truncate">10am</div>
+	      </th>
+				<td rowspan="3" data-label="Appointment">
+	        <div class="slds-truncate">10-10:45am <span class="home break">Home Visit</span><br />Appointment Description<br/><button class="EditAppt slds-button slds-button-destructive">Reschedule</button></div>
+	      </td>
+	      <td rowspan="3" data-label="Patient">
+	        <div class="slds-truncate slds-float--left"><a href="profile.html"><img src="../img/patient1.jpg" class="yellow"></a></div>
+	        <div class="slds-truncate" style="margin-top: 15px; padding-left: 5px;"><a href="profile.html">Mary Williams</a><br /> <a href="javascript:void(0);">444-444-4444</a></div>
+	      </td>
+	      <td rowspan="3" data-label="Summary">
+	        <div class="slds-truncate">85yr F with dementia <br/> UHC</div>
+	      </td>
+				<td rowspan="3" data-label="Address">
+	        <div class="slds-truncate"><a href="javascript:void(0);">8912 San Pablo Drive Wantagh, NY 11793</a><br />Go in the backdoor</div>
+	      </td>
+	      <td rowspan="3" data-label="Actions">
+	        <div class="slds-truncate"><a href="follow-up.html" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">Start Visit</a></div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr class="now">
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr class="block">
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate">11am</div>
+	      </th>
+				<td rowspan="4" data-label="Appointment">
+	        <div class="slds-truncate">11am-Noon <span class="initial break">Initial Visit</span><br />Appointment Description<br/><button class="EditAppt slds-button slds-button-destructive">Reschedule</button></div>
+	      </td>
+				<td rowspan="4" data-label="Patient">
+	        <div class="slds-truncate">Sylvia Wright <br /> <a href="javascript:void(0);">333-333-3333</a></div>
+	      </td>
+	      <td rowspan="4" data-label="Summary">
+	        <div class="slds-truncate">85yr F with dementia <br/> Kaiser</div>
+	      </td>
+				<td rowspan="4" data-label="Address">
+	        <div class="slds-truncate"><a href="javascript:void(0);">791 County Ave. Centereach, NY 11720</a><br />Go in the backdoor</div>
+	      </td>
+	      <td rowspan="4" data-label="Actions">
+	        <div class="slds-truncate"><a href="initial-1.html" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">Start Visit</a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate">Noon</div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr class="block">
+				<th scope="row" data-label="Time">
+	        <div class="slds-truncate">1pm</div>
+	      </th>
+				<td rowspan="3" data-label="Appointment">
+	        <div class="slds-truncate">1-1:45pm <span class="home break">Home Visit</span><br />Appointment Description<br /><button class="EditAppt slds-button slds-button-destructive">Reschedule</button></div>
+	      </td>
+	      <td rowspan="3" data-label="Patient">
+	        <div class="slds-truncate slds-float--left"><a href="profile.html"><img src="../img/patient4.jpg" class="norisk"></a></div>
+	        <div class="slds-truncate" style="margin-top: 15px; padding-left: 5px;"><a href="profile.html">Rose Wilksen</a><br /> <a href="javascript:void(0);">444-444-4444</a></div>
+	      </td>
+	      <td rowspan="3" data-label="Summary">
+	        <div class="slds-truncate">85yr F with dementia <br/> Cigna</div>
+	      </td>
+				<td rowspan="3" data-label="Address">
+	        <div class="slds-truncate"><a href="javascript:void(0);">6 Westminster St. Saratoga Springs, NY 12866</a><br />Go in the backdoor</div>
+	      </td>
+	      <td rowspan="3" data-label="Actions">
+	        <div class="slds-truncate"><a href="follow-up.html" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">Start Visit</a></div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr class="block">
+				<th scope="row" data-label="Appointment">
+	        <div class="slds-truncate">2pm</div>
+	      </th>
+				<td rowspan="2" data-label="Appointment">
+	        <div class="slds-truncate">2-2:30pm <span class="phonecall break">Phone Call</span><br />Appointment Description<br /><button class="EditAppt slds-button slds-button-destructive">Reschedule</button></div>
+	      </td>
+	      <td rowspan="2" data-label="Patient">
+	        <div class="slds-truncate slds-float--left"><a href="profile.html"><img src="../img/patient3.jpg" class="red"></a></div>
+	        <div class="slds-truncate" style="margin-top: 15px; padding-left: 5px;"><a href="profile.html">Carl Lehoux</a><br /> <a href="javascript:void(0);">444-444-4444</a></div>
+	      </td>
+	      <td rowspan="2" data-label="Summary">
+	        <div class="slds-truncate">85yr F with dementia <br/> Humana</div>
+	      </td>
+				<td rowspan="2" data-label="Address">
+	        <div class="slds-truncate"><a href="javascript:void(0);">2 Park Drive Bethpage, NY 11714</a><br />Go in the backdoor</div>
+	      </td>
+	      <td rowspan="2" data-label="Actions">
+	        <div class="slds-truncate"><button id="NewCall" class="slds-button slds-button--neutral">Log Call</button><br /></div>
+	      </td>
+	    </tr>
+			<tr>
+				<th scope="row" data-label="Time">
+					<div class="slds-truncate"></div>
+				</th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr class="block">
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate">3pm</div>
+	      </th>
+				<td rowspan="2" data-label="Appointment">
+	        <div class="slds-truncate">3-3:30pm <span class="private break">Private</span><br />Appointment Description<br /><a href="javascript:void(0);" class="EditAppt slds-button slds-button-destructive">Reschedule</a></div>
+	      </td>
+				<td rowspan="2" data-label="Patient">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td rowspan="2" data-label="Address">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td rowspan="2" data-label="Summary">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td rowspan="2" data-label="Actions">
+	        <div class="slds-truncate">--</a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+			</tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate">4pm</div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Time">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Appointment">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td data-label="Patient">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Address">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Actions">
+	        <div class="slds-truncate"></a>
+					</div>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<div class="slds-align--absolute-center">
+	</div>
+	</div>
+	<div id="Appt" class="slds-hide" data-load="new-appt.html"></div>
+	<div id="Call" class="slds-hide" data-load="new-call.html"></div>
+	</body>
+</html>

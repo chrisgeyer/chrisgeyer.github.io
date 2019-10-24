@@ -1,0 +1,1428 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+						$.getScript('scripts.js');
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body id="Census" class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+			<!-- button class="slds-button slds-button--neutral slds-float--right slds-m-right--large">Edit</button -->
+		  <div class="slds-grid profile">
+		    <div class="slds-col">
+					<div class="slds-button-group slds-float--right" role="group">
+						<a href="follow-up.html" class="slds-button slds-button--neutral">Home Visit</a>
+						<button id="NewCall" class="slds-button slds-button--neutral">Phone Call</button>
+						<button id="NewVirtual" class="slds-button slds-button--neutral">Video Call</button>
+						<button id="NewHCE" class="slds-button slds-button--neutral">Hospital/ER Event</button>
+						<button id="AddTask" class="slds-button slds-button--neutral">Task</button>
+						<button id="NewOrder" class="slds-button slds-button--neutral">Order</button>
+						<button id="NewAppt" class="slds-button slds-button--neutral">Schedule</button>
+					</div>
+		      <div class="slds-media slds-no-space slds-grow">
+		        <div class="slds-media__figure">
+		          <img src="../img/sylvia.png" class="red" />
+		        </div>
+		        <div class="slds-media__body">
+							<p class="slds-text-title--caps slds-line-height--reset">&nbsp;</p>
+		          <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Sylvia Wright
+								<span class="dnr slds-m-left--medium">DNR</span>
+							</span>
+							</h1>
+							<!-- p class="slds-text-title--caps slds-line-height--reset">76 yr old Female with Heart Failure, COPD</p -->
+							<p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">7/18/1940</a></p>
+							<p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">76yr F</a></p>
+				      <p class="slds-text-title slds-truncate">Heart Failure, COPD</p>
+						</div>
+						<div class="slds-media__body">
+							<div class="slds-text-title--caps slds-m-top--small">123 Main Street NY, NY 123456</div>
+							<div class="slds-text-title--caps slds-line-height--reset"><img src="assets/icons/utility/info_alt_60.png" class="slds-button--icon-x-small" /> <em>make sure to go in the backdoor</em></div>
+						</div>
+		      </div>
+		    </div>
+		  </div>
+		  <ul class="slds-grid slds-page-header__detail-row">
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Patient Phone</p>
+		      <p class="slds-text-body--regular slds-truncate"><a href="javascript:void(0)">555-555-5555 <img src="assets/icons/utility/call_120.png" class="slds-button--icon-x-small" style="vertical-align:top;" /></a></p>
+		    </li>
+		    <li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Caregiver</p>
+		      <p class="slds-text-body--regular slds-truncate"><a href="javascript:void(0)">Maria, Daughter - 555-555-5555</a></p>
+		    </li>
+		    <!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field2">DOB</p>
+		      <p class="slds-text-body--regular">7/18/1940</p>
+		    </li -->
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 3">6mo Admits</p>
+					<p class="slds-text-body--regular">1</p>
+				</li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 3">6mo ER</p>
+					<p class="slds-text-body--regular">--</p>
+				</li>
+		    <li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Last Visit</p>
+					<p class="slds-text-body--regular">Today</p>
+				</li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Ethnicity</p>
+		      <p class="slds-text-body--regular slds-truncate">White</p>
+		    </li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Program</p>
+		      <p class="slds-text-body--regular slds-truncate">UHC</p>
+		    </li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">PCP</p>
+		      <p class="slds-text-body--regular slds-truncate"><a href="javascript:void(0)">Dr. John Smith - 215-123-4567</a></p>
+		    </li>
+		    <!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">DNR</p>
+		      <p class="slds-text-body--regular">Yes</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Allergies</p>
+		      <p class="slds-text-body--regular">Penicillin, Ciproflaxin</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Member ID</p>
+		      <p class="slds-text-body--regular">1234567</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Death Date</p>
+		      <p></p>
+		    </li -->
+		  </ul>
+			<a href="javascript:void(0);" id="StartDischarge"><button class="slds-button slds-button--neutral slds-float--right slds-m-right--large"  style="margin-top:-2rem;">Discharge</button></a>
+		</div>
+		<!-- div class="slds-notify_container" style="position:static;">
+			<div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert">
+				<span class="slds-assistive-text">Info</span>
+				<h2>Please complete the documentation for latest visit.</h2>
+			</div>
+		</div -->
+		<div class="slds-grid slds-wrap slds-p-top--medium profile">
+  		<div class="slds-col slds-size--1-of-5 slds-col--rule-right">
+		<div class="slds-navigation-list--vertical slds-navigation-list--vertical-inverse">
+		  <ul>
+		    <li class="slds-is-active"><a href="javascript:void(0);" id="tab-vertical-1__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Timeline</a></li>
+		    <li><a href="javascript:void(0);" id="tab-vertical-2__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Clinical</a></li>
+		    <li><a href="javascript:void(0);" id="tab-vertical-3__item" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="search-results">Personal</a></li>
+		  </ul>
+		</div>
+	</div>
+		<div class="slds-col slds-size--4-of-5 slds-p-around--medium">
+			<div id="tab-vertical-1" class="slds-tabs--vertical__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+				<div class="slds-clearfix slds-section-title--divider">
+				<div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open slds-align--absolute-center">
+				  <div class="slds-form-element">
+				    <label class="slds-form-element__label" for="text-input-01"></label>
+				    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input">
+				      <input type="search" id="text-input-01" class="slds-lookup__search-input slds-input" placeholder="All Activity" aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="true" readonly="" />
+				      <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="true" tabindex="-1" title="settings">
+				        <img src="assets/icons/utility/down_60.png" class="slds-button__icon slds-button__icon" />
+				        <span class="slds-assistive-text">Expand category options</span>
+				      </button>
+				    </div>
+				  </div>
+					<div id="Filter" class="slds-hide">
+				  <div class="slds-dropdown slds-dropdown--center slds-dropdown--length-5 slds-align--absolute-center" role="listbox">
+				    <ul id="option-list-01" class="slds-dropdown__list" role="presentation">
+				      <li class="slds-is-selected" role="presentation">
+				        <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">
+				            <span class="slds-assistive-text">Current Selection:</span>Hospital Admits</span>
+				        </span>
+				      </li>
+				      <li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">ER Visits</span>
+				        </span>
+				      </li>
+				      <li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">NP/RN Visit</span>
+				        </span>
+				      </li>
+				      <li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">SW Visit</span>
+				        </span>
+				      </li>
+				      <li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">MD Visit</span>
+				        </span>
+				      </li>
+							<li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">IB Call</span>
+				        </span>
+				      </li>
+							<li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">OB Call</span>
+				        </span>
+				      </li>
+							<li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">Hospice</span>
+				        </span>
+				      </li>
+							<li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">Tasks</span>
+				        </span>
+				      </li>
+							<li class="slds-is-selected" role="presentation">
+								<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-260">
+				          <img src="assets/icons/utility/check_60.png" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small slds-shrink-none" aria-hidden="true" />
+				          <span class="slds-truncate">Orders</span>
+				        </span>
+				      </li>
+				    </ul>
+				  </div>
+					</div>
+				</div>
+				</div>
+				<br />
+				<ul>
+					<li>
+				    <span class="slds-assistive-text">Task</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--task">
+				          <div class="slds-media__figure slds-timeline__icon">
+										<label class="slds-checkbox" for="mark-complete">
+											<input name="checkbox" type="checkbox" id="mark-complete" class="taskcomplete" />
+											<span class="slds-checkbox--faux"></span>
+											<span class="slds-form-element__label slds-assistive-text">mark-complete</span>
+										</label>
+				          </div>
+				          <div class="slds-media__body">
+				            <div class="slds-media">
+				              <div class="slds-media__figure">
+
+				              </div>
+				              <div class="slds-media__body">
+				                <h3 class="slds-truncate"> <span class="slds-text-color--error">Overdue</span> <a href="javascript:void(0);" class="EditTask">Complete Visit Documentation</a></h3>
+				                <ul class="slds-list--horizontal slds-wrap">
+				                  <li class="slds-m-right--large">
+				                    <span class="slds-text-title">Created by:</span>
+				                    <span class="slds-text-body--small">System</span>
+				                  </li>
+				                  <li class="slds-m-right--large">
+				                    <span class="slds-text-title">Assigned to:</span>
+				                    <span class="slds-text-body--small">Julianne Whelan</span>
+				                  </li>
+				                </ul>
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">Due 2 days ago</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+					<li>
+				    <span class="slds-assistive-text">Task</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--task">
+				          <div class="slds-media__figure slds-timeline__icon">
+										<label class="slds-checkbox" for="mark-complete">
+											<input name="checkbox" type="checkbox" id="mark-complete" class="taskcomplete" />
+											<span class="slds-checkbox--faux"></span>
+											<span class="slds-form-element__label slds-assistive-text">mark-complete</span>
+										</label>
+				          </div>
+				          <div class="slds-media__body">
+				            <div class="slds-media">
+				              <div class="slds-media__figure">
+
+				              </div>
+				              <div class="slds-media__body">
+				                <h3 class="slds-truncate"><a href="javascript:void(0);" class="EditTask">Med Check</a> <span class="reminder">Reminder</span></h3>
+				                <ul class="slds-list--horizontal slds-wrap">
+				                  <li class="slds-m-right--large">
+				                    <span class="slds-text-title">Created by:</span>
+				                    <span class="slds-text-body--small">Julianne Whelan</span>
+				                  </li>
+				                  <li class="slds-m-right--large">
+				                    <span class="slds-text-title">Assigned to:</span>
+				                    <span class="slds-text-body--small">Julianne Whelan</span>
+				                  </li>
+				                </ul>
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">Due tomorrow</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+					<li>
+				    <span class="slds-assistive-text">Task</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--task">
+				          <div class="slds-media__figure slds-timeline__icon">
+										<label class="slds-checkbox" for="mark-complete">
+											<input name="checkbox" type="checkbox" id="mark-complete" class="taskcomplete" />
+											<span class="slds-checkbox--faux"></span>
+											<span class="slds-form-element__label slds-assistive-text">mark-complete</span>
+										</label>
+				          </div>
+				          <div class="slds-media__body">
+				            <div class="slds-media">
+				              <div class="slds-media__figure">
+
+				              </div>
+				              <div class="slds-media__body">
+				                <h3 class="slds-truncate"><a href="javascript:void(0);" class="EditTask">Order Oxygen</a></h3>
+				                <ul class="slds-list--horizontal slds-wrap">
+				                  <li class="slds-m-right--large">
+				                    <span class="slds-text-title">Created by:</span>
+				                    <span class="slds-text-body--small">Julianne Whelan</span>
+				                  </li>
+				                  <li class="slds-m-right--large">
+				                    <span class="slds-text-title">Assigned to:</span>
+				                    <span class="slds-text-body--small">Betty Mason</span>
+				                  </li>
+				                </ul>
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">Due in 4 days</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+					<li>
+				    <span class="slds-assistive-text">Event</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--event">
+				          <div class="slds-media__figure slds-timeline__icon">
+				            <div class="slds-icon_container">
+				              <img src="assets/icons/standard/event_60.png" class="slds-icon slds-icon--small slds-icon-standard-event" />
+				            </div>
+				          </div>
+				          <div class="slds-media__body">
+				            <h3 class="slds-truncate" title="Company One — EBC Meeting"><a href="schedule.html">Home Visit - Upcoming</a></h3>
+				            <p class="slds-truncate">Schedule for</p>
+				            <ul class="slds-list--horizontal slds-wrap">
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Time:</span>
+				                <span class="slds-text-body--small">Dec 23, 2016 11:00am-12:00pm</span>
+				              </li>
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Location:</span>
+				                <span class="slds-text-body--small">123 Main Street, New York, NY</span>
+				              </li>
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Name:</span>
+				                <span class="slds-text-body--small">Julianne, Dr Gwen Jones</span>
+				              </li>
+				            </ul>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">in 10 days</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+					<li>
+						<hr />
+						<div class="slds-align--absolute-center slds-text-heading--medium">
+							History
+						</div>
+					</li>
+				  <li>
+				    <span class="slds-assistive-text">Inbound Call</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--call">
+				          <div class="slds-media__figure slds-timeline__icon">
+				            <div class="slds-icon_container">
+				              <img src="assets/icons/standard/log_a_call_60.png" class="slds-icon slds-icon--small slds-icon-standard-log-a-call" style="background:#EAAB00;">
+				            </div>
+				          </div>
+				          <div class="slds-media__body">
+				            <h3 class="slds-truncate" title="Mobile conversation on Monday"><a href="javascript:void(0);">IB call</a></h3>
+				            <p class="slds-truncate">Patient's daughter called me to ask if she can get more oxygen as she is running low.</p>
+				            <ul class="slds-list--horizontal slds-wrap">
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Name:</span>
+				                <span class="slds-text-body--small">Maria Wright</span>
+				              </li>
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Outcome:</span>
+				                <span class="slds-text-body--small">Created task to be completed by Betty</span>
+				              </li>
+				            </ul>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">5 days ago</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+					<li>
+				    <span class="slds-assistive-text">Event</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--event">
+				          <div class="slds-media__figure slds-timeline__icon">
+										<div class="slds-icon_container">
+				              <img src="assets/icons/standard/event_60.png" class="slds-icon slds-icon--small slds-icon-standard-event" />
+				            </div>
+				          </div>
+				          <div class="slds-media__body">
+				            <h3 class="slds-truncate" title="Company One — EBC Meeting"><a href="pdf-note.html">Initial Home Visit</a></h3>
+				            <p class="slds-truncate">This 76-year-old woman has dyspnea due to COPD. She understands her diagnosis and prognosis. She and her daughter made it quite clear that they do not want to suffer and would like to be cared for at home. They would like no heroic or extraordinary measures used to keep her alive.</p>
+				            <ul class="slds-list--horizontal slds-wrap">
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Time:</span>
+				                <span class="slds-text-body--small">Dec 23, 2016 11:00am-12:00pm</span>
+				              </li>
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Location:</span>
+				                <span class="slds-text-body--small">123 Main Street, New York, NY</span>
+				              </li>
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">Name:</span>
+				                <span class="slds-text-body--small">Julianne, Dr Gwen Jones</span>
+				              </li>
+				            </ul>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">10 days ago</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+					<li>
+				    <span class="slds-assistive-text">Email</span>
+				    <div class="slds-media">
+				      <div class="slds-media__body">
+				        <div class="slds-media slds-media--timeline slds-timeline__media--email">
+				          <div class="slds-media__figure slds-timeline__icon">
+				            <div class="slds-icon_container">
+				              <img src="assets/icons/custom/custom58_60.png" class="slds-icon slds-icon--small slds-icon-standard-email" style="background:#C60F13;">
+				            </div>
+				          </div>
+				          <div class="slds-media__body">
+				            <h3 class="slds-truncate" title="Mobile conversation on Monday"><a href="javascript:void(0);">Hospital Admission</a></h3>
+				            <p class="slds-truncate">Hi guys, Thanks for meeting with the team today and going through the proposals we saw. This goes on until it’s truncated.</p>
+				            <ul class="slds-list--horizontal slds-wrap">
+				              <li class="slds-truncate_container--50 slds-m-right--large slds-grid">
+				                <span class="slds-text-title">To:</span>
+				                <span class="slds-text-body--small slds-m-left--xx-small slds-truncate" title="Lei Chan with Long Name that might go on for quite some distance futher than you might expect"><a href="javascript:void(0);">Lei Chan with Long Name that might go on for quite some distance futher than you might expect</a></span>
+				                <span class="slds-no-flex slds-text-body--small"> + 44 more</span>
+				              </li>
+				              <li class="slds-m-right--large">
+				                <span class="slds-text-title">From:</span>
+				                <span class="slds-text-body--small"><a href="javascript:void(0);">Jason Dewar</a></span>
+				              </li>
+				            </ul>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="slds-media__figure slds-media__figure--reverse">
+				        <div class="slds-timeline__actions">
+				          <p class="slds-timeline__date">Feb 24</p>
+				        </div>
+				      </div>
+				    </div>
+				  </li>
+				</ul>
+			</div>
+  		<div id="tab-vertical-2" class="profile slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+				<div class="slds-text-heading--small">Care Team <a href="javascript:void(0);" id="NewTeam" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Name</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Role">Role</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Date">Date</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Julianne Whelan</div>
+								<p></p>
+							</td>
+							<td data-label="Role">
+								<div class="slds-truncate">Nurse</div>
+							</td>
+							<td data-label="Date">
+								<div class="slds-truncate">11/23/2016</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Remove</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Gwen Jones</div>
+								<p></p>
+							</td>
+							<td data-label="Role">
+								<div class="slds-truncate">Doctor</div>
+							</td>
+							<td data-label="Date">
+								<div class="slds-truncate">11/26/2016</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Remove</a></div>
+							</td>
+						</tr>
+						<tr id="NewSW" class="slds-hide">
+							<td data-label="Name">
+								<div class="slds-truncate">Betsy Mason</div>
+								<p></p>
+							</td>
+							<td data-label="Role">
+								<div class="slds-truncate">Social Worker</div>
+							</td>
+							<td data-label="Date">
+								<div class="slds-truncate">3/1/2017</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Remove</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Risk Level</div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Visit Date">Date</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Level">Level</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Performed by">Entered by</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Visit Date">
+								<div class="slds-truncate"><span class="riskdate">12/20/2016</span><span class="newriskdate slds-hide">3/1/2017</span></div>
+							</td>
+							<td data-label="Level">
+								<div class="slds-truncate riskdata">High</div>
+								<div class="slds-truncate riskdatanew slds-hide">Medium</div>
+								<div class="riskentry slds-hide">
+									<div class="slds-form-element">
+									  <label class="slds-form-element__label" for="select-01"></label>
+									  <div class="slds-form-element__control">
+									    <div class="slds-select_container">
+									      <select id="select-01" class="slds-select">
+									        <option>High</option>
+									        <option>Medium</option>
+									        <option>Low</option>
+									      </select>
+									    </div>
+									  </div>
+									</div>
+								</div>
+							</td>
+							<td data-label="Performed by">
+								<div class="slds-truncate"><span>Julianne Whelan</span></div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);" class="riskedit">Edit</a><a href="javascript:void(0);" class="risksave slds-hide">Save</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Conditions <span class="slds-text-title">Last Updated: 1/16/2017</span><a href="javascript:void(0);" class="slds-float--right"></a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Name</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Description">Description</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Major Concern</div>
+							</td>
+							<td data-label="Description">
+								<div class="slds-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Diagnoses</div>
+							</td>
+							<td data-label="Description">
+								<div class="slds-truncate">COPD (primary)<br />Heart Failure</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">History of Present Illness</div>
+							</td>
+							<td data-label="Description">
+								<div class="slds-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Allergies (2) <a href="javascript:void(0);" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Medication">Medication</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Reaction">Reaction</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Medications">
+								<div class="slds-truncate">Penicillin</div>
+								<p></p>
+							</td>
+							<td data-label="Reaction">
+								<div class="slds-truncate">Rash</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Medications">
+								<div class="slds-truncate">Ciprofloxacin</div>
+								<p></p>
+							</td>
+							<td data-label="Reaction">
+								<div class="slds-truncate">Shortness of Breath</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Medications (22) <a href="javascript:void(0);" id="NewMed" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Medication</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Dosage">Dose</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Frequency">Frequency</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Trazodone</div>
+								<p></p>
+							</td>
+							<td data-label="Dosage">
+								<div class="slds-truncate">50 mg PO BID</div>
+							</td>
+							<td data-label="Frequency">
+								<div class="slds-truncate">Daily</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Bisacodyl</div>
+								<p></p>
+							</td>
+							<td data-label="Dosage">
+								<div class="slds-truncate">10 mg PO BID</div>
+							</td>
+							<td data-label="Frequency">
+								<div class="slds-truncate">As needed</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Levomepromazine</div>
+								<p></p>
+							</td>
+							<td data-label="Dosage">
+								<div class="slds-truncate">25 mg PO BID</div>
+							</td>
+							<td data-label="Frequency">
+								<div class="slds-truncate">Daily</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Metoclopramide</div>
+								<p></p>
+							</td>
+							<td data-label="Dosage">
+								<div class="slds-truncate">10 mg PO BID</div>
+							</td>
+							<td data-label="Frequency">
+								<div class="slds-truncate">Daily</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Prednisolone</div>
+								<p></p>
+							</td>
+							<td data-label="Dosage">
+								<div class="slds-truncate">5 mg PO BID</div>
+							</td>
+							<td data-label="Frequency">
+								<div class="slds-truncate">Twice Daily</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Vitals <a href="javascript:void(0);" class="slds-float--right"></a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Visit Date">Visit</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">BP</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">HR</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">Temp</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">RR</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">O<sup>2</sup></div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">Height</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="">Weight</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Visit Date">
+								<div class="slds-truncate">12/20/2016<br />Julianne Whelan</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">120/80</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">96</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">96.5</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">44</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">96</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">80</div>
+							</td>
+							<td data-label="">
+								<div class="slds-truncate">120</div>
+							</td>
+						</tr>
+						<!-- tr class="slds-hide details">
+							Blood pressure 120/80 O2 Saturation 90% Pulse 80 bpm respiratory Rate 25 bpm
+						</tr -->
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Assessments/Exams <a href="javascript:void(0);" class="slds-float--right"></a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Visit">Visit</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Exam">Exam</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="ADL">ADL</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="PPS">PPS</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="ESAS">ESAS</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Patient">Patient</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Caregiver">Caregiver</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Living Conditions">Living <span class="break">Conditions</span></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">1/16/2017 <br />Julianne Whelan</div>
+								<p></p>
+							</td>
+							<td data-label="Exam">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="ADL">
+								<div class="slds-truncate"><a id="" href="javascript:void(0);"></a></div>
+							</td>
+							<td data-label="PPS">
+								<div class="slds-truncate"><a id="" href="javascript:void(0);"></a></div>
+							</td>
+							<td data-label="ESAS">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="Patient">
+								<div class="slds-truncate"><a id="" href="javascript:void(0);"></a></div>
+							</td>
+							<td data-label="Caregiver">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="Living Conditions">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">12/29/2016 <br />Julianne Whelan</div>
+								<p></p>
+							</td>
+							<td data-label="Exam">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="ADL">
+								<div class="slds-truncate"><a id="" href="javascript:void(0);"></a></div>
+							</td>
+							<td data-label="PPS">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="ESAS">
+								<div class="slds-truncate"><a id="" href="javascript:void(0);"></a></div>
+							</td>
+							<td data-label="Patient">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="Caregiver">
+								<div class="slds-truncate"><a id="" href="javascript:void(0);"></a></div>
+							</td>
+							<td data-label="Living Conditions">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">12/20/2016 <br />Julianne Whelan</div>
+								<p></p>
+							</td>
+							<td data-label="Exam">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="ADL">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="PPS">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="ESAS">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="Patient">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="Caregiver">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+							<td data-label="Living Conditions">
+								<div class="slds-truncate"><a class="ViewADL" href="javascript:void(0);">View</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Attachments</div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Visit Date">Date</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Name</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Added by">Added by</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Visit Date">
+								<div class="slds-truncate">2/20/2017</div>
+							</td>
+							<td data-label="Level">
+								<div class="slds-truncate"><a href="javascript:void(0);">CBC Lab</a></div>
+							</td>
+							<td data-label="Performed by">
+								<div class="slds-truncate"><span>Julianne Whelan</span></div>
+							</td>
+							<td data-label="Action">
+								<!-- div class="slds-truncate"><a href="javascript:void(0);" class="riskedit">Edit</a><a href="javascript:void(0);" class="risksave slds-hide">Save</a></div -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab-vertical-3" class="profile slds-tabs--vertical__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">
+				<div class="slds-text-heading--small">Patient Information <a href="javascript:void(0);" class="slds-float--right"></a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Type">Type</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Value">Value</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Gender</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">Female</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">DOB</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">7/18/1940</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Photo</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate"></div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Member ID</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">123456789</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Program</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">ProHealth</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Primary Language</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">English</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Marital Status</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">Married</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Race/Ethnicity</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">White</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Religion</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">Baptist</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Special Instructions</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">Make sure to go in the backdoor</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Contact Information <a href="javascript:void(0);" class="slds-float--right"></a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Type">Type</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Value">Value</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Address</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate">123 Main Street NY, NY 123456</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">Phone</div>
+							</td>
+							<td data-label="Value">
+								<div class="slds-truncate phonedata">555-555-5555 (Mobile)</div>
+								<div class="slds-truncate phonedatanew slds-hide">333-333-1234 (Home)</div>
+								<div class="phoneentry slds-form--inline slds-hide">
+									<div class="slds-form-element slds-size--1-of-2">
+									  <label class="slds-form-element__label" for="text-input-01">Phone Number</label>
+									  <div class="slds-form-element__control">
+									    <input type="phone" id="text-input-01" class="slds-input" placeholder="" />
+									  </div>
+									</div>
+									<div class="slds-form-element slds-size--1-of-2">
+									  <label class="slds-form-element__label" for="select-01">Type</label>
+									  <div class="slds-form-element__control">
+									    <div class="slds-select_container">
+									      <select id="select-01" class="slds-select">
+									        <option>Mobile</option>
+									        <option>Home</option>
+									        <option>Other</option>
+									      </select>
+									    </div>
+									  </div>
+									</div>
+								</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);" class="phoneedit">Edit</a>
+									<a href="javascript:void(0);" class="phonesave slds-hide">Save</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Family Caregivers (1) <a href="javascript:void(0);" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Name</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Relationship">Relationship</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Phone">Phone</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Email">Email</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Maria</div>
+								<p></p>
+							</td>
+							<td data-label="Relationship">
+								<div class="slds-truncate">Daughter - Main Caregiver</div>
+							</td>
+							<td data-label="Phone">
+								<div class="slds-truncate"><a href="javascript:void(0);">555-555-5555</a></div>
+							</td>
+							<td data-label="Email">
+								<div class="slds-truncate"></div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Home Services (1) <a href="javascript:void(0);" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Name</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Relationship">Relationship</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Phone">Phone</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Email">Email</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Jessica</div>
+								<p>Good Sheperd Hospice</p>
+							</td>
+							<td data-label="Relationship">
+								<div class="slds-truncate">Private Hire Home Heath Aide</div>
+							</td>
+							<td data-label="Phone">
+								<div class="slds-truncate"><a href="javascript:void(0);">555-555-5555</a></div>
+							</td>
+							<td data-label="Email">
+								<div class="slds-truncate"></div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">PCP <a href="javascript:void(0);" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Name">Name</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Practice">Practice</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Phone">Phone</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Fax">Fax?</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Name">
+								<div class="slds-truncate">Dr. John Smith</div>
+								<p></p>
+							</td>
+							<td data-label="Practice">
+								<div class="slds-truncate"></div>
+							</td>
+							<td data-label="Phone">
+								<div class="slds-truncate">215-123-4567</div>
+							</td>
+							<td data-label="Fax">
+								<div class="slds-truncate"></div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="slds-text-heading--small">Advance Directives <a href="javascript:void(0);" class="slds-float--right">Add New</a></div>
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Type">Type</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="DNR">DNR</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Date">Date</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Action"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="Type">
+								<div class="slds-truncate">MOLST</div>
+								<p></p>
+							</td>
+							<td data-label="DNR">
+								<div class="slds-truncate">Yes</div>
+							</td>
+							<td data-label="Date">
+								<div class="slds-truncate">12/20/2016</div>
+							</td>
+							<td data-label="Action">
+								<div class="slds-truncate"><a href="javascript:void(0);">Edit</a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="slds-grid slds-wrap">
+		<div class="slds-col">
+		<div id="CallSuccess" class="slds-hide">
+			<div class="slds-notify_container">
+			  <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+			    <span class="slds-assistive-text">Success</span>
+					<button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+						<img src="assets/icons/utility/close_60.png" class="slds-button__icon slds-button__icon--large" />
+						<span class="slds-assistive-text">Close</span>
+					</button>
+					<div class="slds-notify__content slds-grid">
+						<img src="assets/icons/utility/notification_60.png" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex" />
+						<div class="slds-col slds-align-middle">
+			        <h2 class="slds-text-heading--small ">Your phone call was logged successfully.</h2>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div id="Task" class="slds-hide" data-load="new-task.html"></div>
+		<div id="Call" class="slds-hide" data-load="new-call.html"></div>
+		<div id="Virtual" class="slds-hide" data-load="new-virtual.html"></div>
+		<div id="Followup" class="slds-hide" data-load="new-appt.html"></div>
+		<div id="HCE" class="slds-hide" data-load="new-hce.html"></div>
+		<div id="Discharge" class="slds-hide" data-load="discharge-patient.html"></div>
+		<div id="ADL" class="slds-hide" data-load="view-adl.html"></div>
+		<div id="Order" class="slds-hide" data-load="new-order.html"></div>
+		<div id="Appt" class="slds-hide" data-load="new-appt.html"></div>
+		<div id="Team" class="slds-hide" data-load="new-team.html"></div>
+		<div id="Med" role="dialog" aria-labelledby="dialog-heading-id" class="slds-docked-composer slds-grid slds-grid--vertical slds-nowrap slds-is-open bottom-right slds-hide">
+			<header class="slds-docked-composer__header slds-grid slds-grid--align-spread slds-shrink-none">
+				<div class="slds-media slds-media--center">
+					<div class="slds-media__figure">
+						<span class="slds-icon_container slds-icon-custom-custom59">
+							<img src="assets/icons/custom/custom59_60.png" class="slds-icon slds-icon--small" />
+							<span class="slds-assistive-text">Med Icon</span>
+						</span>
+					</div>
+					<div class="slds-media__body">
+						<h2 id="dialog-heading-id">New Medication</h2>
+					</div>
+				</div>
+				<div class="slds-docked-composer__actions">
+				  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Minimize window">
+				    <img src="assets/icons/utility/minimize_window_60.png" class="slds-button__icon"/>
+				    <span class="slds-assistive-text">Minimize window</span>
+				  </button>
+				  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Expand Composer">
+				    <img src="assets/icons/utility/expand_alt_60.png" class="slds-button__icon" />
+				    <span class="slds-assistive-text">Expand Composer</span>
+				  </button>
+				  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" id="TaskClose" title="Close">
+				    <img src="assets/icons/utility/close_60.png" class="slds-button__icon" />
+				    <span class="slds-assistive-text">Close</span>
+				  </button>
+				</div>
+			</header>
+			<div class="slds-docked-composer__body slds-docked-composer__body--form slds-col slds-grid slds-grid--vertical slds-nowrap">
+				<div data-load="meds-allergies.html"></div>
+			</div>
+			<footer class="slds-docked-composer__footer slds-shrink-none">
+				<div class="slds-float--right slds-grid slds-grid--align-end slds-size--1-of-2 slds-text-align--right">
+					<a href="profile.html"><button class="slds-button slds-button--brand">Add</button></a>
+				</div>
+			</footer>
+		</div>
+	</div>
+	</div>
+	</body>
+</html>

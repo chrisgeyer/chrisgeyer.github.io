@@ -1,0 +1,156 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <!-- script src="../js/scripts.js"></script -->
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+	  <div class="slds-grid">
+	    <div class="slds-col slds-has-flexi-truncate">
+	      <nav class="slds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+	        <ol class="slds-breadcrumb slds-list--horizontal">
+	          <li class="slds-breadcrumb__item slds-text-title--caps"><a href="javascript:void(0);">Patients</a></li>
+	          <li class="slds-breadcrumb__item slds-text-title--caps"><a href="javascript:void(0);">Nurse</a></li>
+	        </ol>
+	      </nav>
+	      <h1 class="slds-page-header__title slds-truncate" title="Contacts (will truncate)">Search Results (55)</h1>
+	    </div>
+	    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+	      <div class="slds-button-group">
+	        <a href="enroll.html" class="slds-button slds-button--neutral">Add Patient</a>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="slds-grid">
+	  </div>
+	</div>
+	<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+	  <thead>
+	    <tr class="slds-text-title--caps">
+				<th scope="col">
+	        <div class="slds-truncate" title="Acuity">Acuity</div>
+	      </th>
+				<th scope="col">
+	        <div class="slds-truncate" title="Patient">Patient</div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Summary">Summary</div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Caregiver">Caregiver</div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Last Visit">Last Visit</div>
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient1.jpg" class="good"></a></div>
+	      </th>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">Mary Williams</a></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate">85yr old woman with dementia</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Daughter, Sally - 123-456-7890</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">14 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient2.jpg" class="red"></a></div>
+	      </th>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">Josephine Kelly</a></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate">70yr old woman with COPD</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Husband, Sam - 123-456-7890</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">28 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient3.jpg" class="yellow"></a></div>
+	      </th>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">David Brown</a></div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate">75yr old man with cancer</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Wife, Patty - 123-456-7890</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">41 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <th scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"></div>
+	      </th>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate">Sylvia Wright</div>
+	      </td>
+	      <td data-label="Summary">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate"></div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">
+						<a href="initial-1.html" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+						  <span class="slds-text-not-selected">Initial Visit</span>
+						</a>
+					</div>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<div class="slds-align--absolute-center">
+		<a href="javascript:void(0);" class="slds-button slds-button--neutral slds-m-around--medium">Load More / View All?</a>
+	</div>
+		<!-- div id="footer" data-load="footer.html"></div>
+    <script type="text/javascript">
+     $(function() {
+		  $('a[href*="#"]:not([href="#"])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
+	</script -->
+	</body>
+</html>

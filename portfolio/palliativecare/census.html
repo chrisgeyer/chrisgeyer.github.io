@@ -1,0 +1,243 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/awesomplete.css" />
+		<script src="../js/awesomplete.js" async></script>
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+						$.getScript('scripts.js');
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body id="Census" class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+	  <div class="slds-grid">
+	    <div class="slds-col slds-has-flexi-truncate">
+				<div class="slds-button-group slds-float--right" role="group">
+					<button id="NewVisit" class="slds-button slds-button--neutral">New Visit</button>
+					<button id="NewCall" class="slds-button slds-button--neutral">Phone Call</button>
+					<button id="NewVirtual" class="slds-button slds-button--neutral">Video Call</button>
+					<button id="AddTask" class="slds-button slds-button--neutral">Task</button>
+					<button id="NewOrder" class="slds-button slds-button--neutral">Order</button>
+					<button id="NewAppt" class="slds-button slds-button--neutral">Schedule</button>
+				</div>
+	      <nav class="slds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+	        <ol class="slds-breadcrumb slds-list--horizontal">
+	          <li class="slds-breadcrumb__item slds-text-title--caps">Patients</li>
+	          <li class="slds-breadcrumb__item slds-text-title--caps"><span class="slds-p-left--medium">Julianne Whelan</span>
+							<button id="Arrow" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="Switch View">
+								<img src="assets/icons/utility/down_120.png" />
+								<span class="slds-assistive-text">Switch View</span>
+							</button>
+						</li>
+					</ol>
+					<div id="Switch" class="slds-hide">
+						<div class="slds-dropdown slds-dropdown--left" role="listbox">
+							<ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-242">
+										<span class="slds-truncate">All</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-243">
+										<span class="slds-truncate">Name1</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-244">
+										<span class="slds-truncate">Name2</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-245">
+										<span class="slds-truncate">Name3</span>
+									</span>
+								</li>
+								<li role="presentation">
+									<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-246">
+										<span class="slds-truncate">Name4</span>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+	      </nav>
+	      <h1 class="slds-page-header__title slds-truncate">Patient Census (55)</h1>
+	    </div>
+	  </div>
+	  <div class="slds-grid">
+	  </div>
+	</div>
+	<div class="slds-p-around--large">
+	<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+	  <thead>
+	    <tr class="slds-text-title--caps">
+				<th scope="col">
+	        <div class="slds-truncate" title="Risk">Risk <img src="assets/icons/utility/arrowdown_60.png" class="slds-button--icon-x-small" />
+					</div>
+	      </th>
+				<th scope="col">
+	        <div class="slds-truncate" title="Patient">Name</div>
+	      </th>
+				<th scope="col">
+	        <div class="slds-truncate" title="Condition">Condition</div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Caregiver">Caregiver</div>
+	      </th>
+				<th scope="col">
+	        <div class="slds-truncate" title="6mo Admits">6mo <span class="break">Admits</span></div>
+	      </th>
+	      <th scope="col">
+	        <div class="slds-truncate" title="Last Visit">
+						<div class="slds-form-element slds-m-top--xx-small">
+						  <label class="slds-form-element__label" for="select-01"></label>
+						  <div class="slds-form-element__control">
+						    <div class="slds-select_container">
+						      <select id="select-01" class="slds-select">
+						        <option>Visit Type</option>
+						        <option>All</option>
+										<option>Initial</option>
+										<option>Follow-up</option>
+										<option>Overdue</option>
+						      </select>
+						    </div>
+						  </div>
+						</div>
+					</div>
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient1.jpg" class="red"></a></div>
+	      </td>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">Mary Williams</a> <br /> 11/11/1931 <br />85yr F</div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Condition">
+	        <div class="slds-truncate">Dementia</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Daughter, Sally Williams - <span class="break">123-456-7890</span></div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Admits">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">14 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <td scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient2.jpg" class="red"></a></div>
+	      </td>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">Josephine Kelly</a> <br /> 7/27/1947 <br />89yr F</div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Condition">
+	        <div class="slds-truncate">COPD, Heart Failure</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Husband, Sam Kelly - <span class="break">123-456-7890</span></div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Admits">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">28 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <td scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient3.jpg" class="yellow"></a></div>
+	      </td>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">David Brown</a> <br /> 4/6/1941 <br />75yr M</div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Condition">
+	        <div class="slds-truncate">Prostate Cancer</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Wife, Patty Brown - <span class="break">123-456-7890</span></div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Admits">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">26 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <td scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"><a href="profile.html"><img src="../img/patient4.jpg" class="good"></a></div>
+	      </td>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate"><a href="profile.html">Mabel Sullivan</a> <br /> 6/19/1936 <br />80yr F</div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Condition">
+	        <div class="slds-truncate">Breast Cancer</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">Husband, Reginald Sullivan - <span class="break">123-456-7890</span></div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Admits">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">41 days ago</div>
+	      </td>
+	    </tr>
+			<tr>
+	      <td scope="row" data-label="Patient Acuity">
+	        <div class="slds-truncate"></div>
+	      </td>
+				<td data-label="Patient Name">
+	        <div class="slds-truncate">Sylvia Wright <br /> 7/18/1940 <br />76yr F</div>
+	      </td>
+				<td data-label="Condition">
+	        <div class="slds-truncate">--</div>
+	      </td>
+				<td class="slds-text-align--left" data-label="Admits">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td data-label="Caregiver">
+	        <div class="slds-truncate">--</div>
+	      </td>
+	      <td data-label="Last Visit">
+	        <div class="slds-truncate">
+						<a href="initial-1.html" class="slds-button slds-button--brand slds-not-selected" aria-live="assertive">
+						  <span class="slds-text-not-selected">Initial Visit</span>
+						</a>
+					</div>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<div class="slds-align--absolute-center slds-section-title--divider">
+			<span class="slds-icon_container slds-icon--x-small slds-m-horizontal--large">
+				<img src="assets/icons/utility/chevronleft_120.png" />
+			</span>Viewing 1-5<span class="slds-icon_container slds-icon--x-small slds-m-horizontal--small">
+				<img src="assets/icons/utility/chevronright_120.png" />
+			</span>
+	</div>
+	</div>
+	<div id="Visit" class="slds-hide" data-load="new-visit.html"></div>
+	<div id="Call" class="slds-hide" data-load="new-call.html"></div>
+	<div id="Virtual" class="slds-hide" data-load="new-virtual.html"></div>
+	<div id="Task" class="slds-hide" data-load="new-task.html"></div>
+	<div id="Order" class="slds-hide" data-load="new-order.html"></div>
+	<div id="Appt" class="slds-hide" data-load="new-appt.html"></div>
+	</body>
+</html>

@@ -1,0 +1,131 @@
+<div role="dialog" aria-labelledby="dialog-heading-id" class="slds-docked-composer slds-grid slds-grid--vertical slds-nowrap slds-is-open bottom-right">
+<header class="slds-docked-composer__header slds-grid slds-grid--align-spread slds-shrink-none">
+<div class="slds-media slds-media--center">
+	<div class="slds-media__figure">
+		<span class="slds-icon_container slds-icon-standard-event">
+			<img src="assets/icons/standard/event_60.png" class="slds-icon slds-icon--small slds-icon-standard-event" ?>
+			<span class="slds-assistive-text">Appointment Icon</span>
+		</span>
+	</div>
+	<div class="slds-media__body">
+		<h2 id="dialog-heading-id">New Appointment</h2>
+	</div>
+</div>
+<div class="slds-docked-composer__actions">
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Minimize window">
+    <img src="assets/icons/utility/minimize_window_60.png" class="slds-button__icon"/>
+    <span class="slds-assistive-text">Minimize window</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Expand Composer">
+    <img src="assets/icons/utility/expand_alt_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Expand Composer</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" id="TaskClose" title="Close">
+    <img src="assets/icons/utility/close_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+</header>
+<div class="slds-docked-composer__body slds-docked-composer__body--form slds-col slds-grid slds-grid--vertical slds-nowrap">
+<fieldset class="slds-form--compound">
+	<legend class="slds-assistive-text">Log new task</legend>
+	<div class="slds-form-element__group">
+		<div class="slds-form-element__row">
+			<div class="slds-form-element slds-size--1-of-2">
+				<label class="slds-form-element__label" for="patient-lookup">Patient</label>
+				<div class="slds-form-element__control">
+					<input class="slds-input" type="text" id="patient-lookup" list="mylist" />
+					<datalist id="mylist">
+						<option>Mary Williams</option>
+						<option>Josephine Kelly</option>
+						<option>David Brown</option>
+						<option>Mabel Sulivan</option>
+						<option>Sylvia Wright</option>
+						<option>Hillary Karsten</option>
+						<option>Gabe Smith</option>
+			      <option>Harvey Magellan</option>
+			      <option>Cathy Ryan</option>
+			      <option>Rose Walsh</option>
+					</datalist>
+				</div>
+			</div>
+		</div>
+		<div class="slds-form-element__row">
+		<div class="slds-form-element">
+		  <label class="slds-form-element__label" for="SelectAppt">Visit Type</label>
+		  <div class="slds-form-element__control">
+		    <div class="slds-select_container">
+		      <select id="SelectAppt" class="slds-select">
+		        <option>Choose</option>
+						<option>Follow up</option>
+		        <option>Initial</option>
+						<option>Phone</option>
+						<option>Other</option>
+		      </select>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div id="Duration" class="slds-hide">
+	<div class="slds-form-element__row">
+	<div class="slds-form-element">
+		<label class="slds-form-element__label" for="DurationVal">Duration</label>
+		<div class="slds-form-element__control">
+			<div class="slds-select_container">
+				<select id="DurationVal" class="slds-select">
+					<option>Choose</option>
+					<option>30 min</option>
+					<option>45 min</option>
+					<option>1 hr</option>
+					<option>2 hr</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div></div>
+	<div class="slds-form-element__row">
+	<div class="slds-form-element">
+		<label class="slds-form-element__label" for="Staff">Staff</label>
+		<div class="slds-form-element__control">
+			<input class="slds-input" type="text" id="Staff" value="Julianne Whelan" />
+		</div>
+	</div>
+</div>
+	<div class="slds-form-element__row">
+	<div class="slds-form-element slds-size--1-of-2">
+		<label class="slds-form-element__label" for="Date">Date</label>
+		<div class="slds-form-element__control">
+			<input class="slds-input" type="date" id="Date" />
+		</div>
+	</div>
+	<div id="Available" class="slds-form-element slds-size--1-of-2 slds-hide">
+		<label class="slds-form-element__label" for="Time">Time</label>
+		<div class="slds-form-element__control">
+			<div class="slds-select_container">
+				<select id="Time" class="slds-select">
+					<option>Choose</option>
+					<option>10am</option>
+					<option>1:30pm</option>
+					<option>3:30pm</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+		<div class="slds-form-element__row">
+		<div class="slds-form-element">
+  <label class="slds-form-element__label" for="ApptDesc">Description</label>
+  <div class="slds-form-element__control">
+    <textarea id="ApptDesc" class="slds-textarea" placeholder=""></textarea>
+  </div>
+</div>
+</div>
+	</div>
+</fieldset>
+</div>
+<footer class="slds-docked-composer__footer slds-shrink-none">
+<div class="slds-float--right slds-grid slds-grid--align-end slds-size--1-of-2 slds-text-align--right">
+	<a href="schedule.html"><button class="slds-button slds-button--brand">Save</button></a>
+</div>
+</footer>
+</div>

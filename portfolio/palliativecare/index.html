@@ -1,0 +1,322 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/awesomplete.css" />
+		<script src="../js/awesomplete.js" async></script>
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+				$(this).load($(this).data("load"), function(){
+					$.getScript('scripts.js');
+				});
+			});
+		})
+		</script>
+ 	</head>
+	<body id="Dash" class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+			<div class="slds-grid">
+		    <div class="slds-col slds-has-flexi-truncate">
+					<div class="slds-button-group slds-float--right" role="group">
+						<button id="NewVisit" class="slds-button slds-button--neutral">New Visit</button>
+						<button id="NewCall" class="slds-button slds-button--neutral">Phone Call</button>
+						<button id="NewVirtual" class="slds-button slds-button--neutral">Video Call</button>
+						<button id="AddTask" class="slds-button slds-button--neutral">Task</button>
+						<button id="NewOrder" class="slds-button slds-button--neutral">Order</button>
+						<button id="NewAppt" class="slds-button slds-button--neutral">Schedule</button>
+					</div>
+		      <nav class="slds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+		        <ol class="slds-breadcrumb slds-list--horizontal">
+		          <li class="slds-breadcrumb__item slds-text-title--caps">Home</li>
+		          <li class="slds-breadcrumb__item slds-text-title--caps"><span class="slds-p-left--medium">Julianne Whelan</span>
+								<button id="Arrow" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="Switch View">
+									<img src="assets/icons/utility/down_120.png" />
+									<span class="slds-assistive-text">Switch View</span>
+								</button>
+							</li>
+		        </ol>
+						<div id="Switch" class="slds-hide">
+							<div class="slds-dropdown slds-dropdown--left" role="listbox">
+								<ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-242">
+											<span class="slds-truncate">Name1</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-243">
+											<span class="slds-truncate">Name2</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-244">
+											<span class="slds-truncate">Name3</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-245">
+											<span class="slds-truncate">Name4</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-246">
+											<span class="slds-truncate">Name5</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+		      </nav>
+		      <h1 class="slds-page-header__title slds-truncate" title="Contacts (will truncate)">Dashboard</h1>
+		    </div>
+		  </div>
+		</div>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-col slds-size--1-of-2 slds-p-around--large">
+				<article class="slds-card slds-card--narrow">
+					<div class="slds-card__header slds-grid">
+						<header class="slds-media slds-media--center slds-has-flexi-truncate">
+							<div class="slds-media__body slds-truncate">
+								<h2>Schedule</h2>
+							</div>
+							<div class="slds-float--right">
+								<span class="slds-icon_container">
+									<img src="assets/icons/utility/dayview_60.png" class="slds-icon--small" />
+								</span>
+							</div>
+						</header>
+					</div>
+					<div class="slds-card__body slds-p-horizontal--medium slds-m-bottom--medium">
+						<ul class="slds-has-dividers--bottom">
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">9am</span>
+								<a href="profile.html"><strong>Vannessa Trivett</strong></a>
+								<br />
+								<span class="slds-text-body--small home">Home Visit</span>
+							</li>
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">10am</span>
+								<a href="profile.html"><strong>Mary Williams</strong></a>
+								<span class="slds-text-body--small home">Home Visit</span>
+							</li>
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">11am</span>
+								<a href="profile.html"><strong>Sylvia Wright</strong></a>
+								<span class="slds-text-body--small initial">Initial Visit</span>
+							</li>
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">1pm</span>
+								<a href="profile.html"><strong>Rose Wilksen</strong></a>
+								<span class="slds-text-body--small home">Home Visit</span>
+							</li>
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">3pm</span>
+								<a href="profile.html"><strong>Carl Lehoux</strong></a>
+								<span class="slds-text-body--small phonecall">Phone Call</span>
+							</li>
+						</ul>
+					</div>
+					<div class="slds-card__footer"></div>
+					</article>
+				</div>
+						<div class="slds-col slds-size--1-of-2 slds-p-around--large">
+							<article class="slds-card slds-card--narrow">
+								<div class="slds-card__header slds-grid">
+								  <header class="slds-media slds-media--center slds-has-flexi-truncate">
+								    <div class="slds-media__body slds-truncate">
+								      <h2>Overdue Follow Up Visits (2)</h2>
+								    </div>
+										<div class="slds-float--right">
+											<span class="slds-icon_container slds-icon-custom-custom94">
+												<img src="assets/icons/custom/custom94_60.png" class="slds-icon--small" />
+											</span>
+								    </div>
+								  </header>
+								</div>
+								<div class="slds-card__body slds-p-horizontal--medium slds-m-bottom--medium">
+									<ul class="slds-has-dividers--bottom">
+									  <li class="slds-item slds-p-vertical--small">
+											<button class="ScheduleFollowup slds-button slds-float--right">Schedule</button>
+											<a href="profile.html"><strong>Eunice Schipper</strong></a>
+											<p class="slds-text-body--small">Last visit 2 months ago</p>
+										</li>
+									  <li class="slds-item slds-p-vertical--small">
+											<button class="ScheduleFollowup slds-button slds-float--right">Schedule</button>
+											<a href="profile.html"><strong>Leland Mainor</strong></a>
+											<p class="slds-text-body--small">Last visit 40 days ago</p>
+										</li>
+									</ul>
+								</div>
+								<div class="slds-card__footer"></div>
+								</article>
+							</div>
+							<div class="slds-col slds-size--1-of-2 slds-p-around--large">
+								<article class="slds-card slds-card--narrow">
+									<div class="slds-card__header slds-grid">
+										<header class="slds-media slds-media--center slds-has-flexi-truncate">
+											<div class="slds-media__body slds-truncate">
+												<h2>Tasks</h2>
+											</div>
+											<div class="slds-float--right">
+												<span class="slds-icon_container">
+													<img src="assets/icons/utility/task_60.png" class="slds-icon--small" />
+												</span>
+											</div>
+										</header>
+									</div>
+									<div class="slds-card__body slds-p-horizontal--medium slds-m-bottom--medium">
+										<ul class="slds-has-dividers--bottom">
+											<li class="slds-item slds-p-vertical--small">
+												<span class="slds-float--right slds-text-body--small">Today</span>
+												<a href="javascript:void(0);"><strong>Complete Unfinished Visit</strong></a>
+												<p class="slds-text-body--small">Mary Williams</p>
+											</li>
+											<li class="slds-item slds-p-vertical--small">
+												<span class="slds-float--right slds-text-body--small">Yesterday</span>
+												<a href="profile.html"><strong>Med Check</strong></a>
+												<p class="slds-text-body--small">David Brown</p>
+											</li>
+											<li class="slds-item slds-p-vertical--small">
+												<span class="slds-float--right slds-text-body--small">4 days ago</span>
+												<a href="profile.html"><strong>Task3</strong></a>
+												<p class="slds-text-body--small">Patient Name</p>
+											</li>
+										</ul>
+									</div>
+									<div class="slds-card__footer"></div>
+									</article>
+								</div>
+			<div class="slds-col slds-size--1-of-2 slds-p-around--large">
+				<article class="slds-card slds-card--narrow">
+					<div class="slds-card__header slds-grid">
+						<header class="slds-media slds-media--center slds-has-flexi-truncate">
+							<div class="slds-media__body slds-truncate">
+								<h2>Hospital/ER Admissions (3)</h2>
+							</div>
+							<div class="slds-float--righr">
+								<span class="slds-icon_container slds-icon-custom-custom94">
+									<img src="assets/icons/action/join_group_60.png" class="slds-icon--small" />
+								</span>
+							</div>
+						</header>
+					</div>
+					<div class="slds-card__body slds-p-horizontal--medium slds-m-bottom--medium">
+						<div class="slds-button-group" role="group">
+							<button class="slds-button slds-button--neutral">1 day</button>
+							<button class="slds-button slds-button--neutral slds-theme--shade">1 week</button>
+							<button class="slds-button slds-button--neutral">1 month</button>
+						</div>
+						<ul class="slds-has-dividers--bottom">
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">Today</span>
+								<a href="profile.html"><strong>Vannessa Trivett</strong></a> - Pneumonia
+								<p class="slds-text-body--small">Highland Medical Clinic - Lindenhurst, NY</p>
+							</li>
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">Yesterday</span>
+								<a href="profile.html"><strong>Rose Wilksen</strong></a> - Acute renal failure
+								<p class="slds-text-body--small">[ER only] Progress General Hospital - Levittown, NY</p>
+							</li>
+							<li class="slds-item slds-p-vertical--small">
+								<span class="slds-float--right slds-text-body--small">4 days ago</span>
+								<a href="profile.html"><strong>Carl Lehoux</strong></a> - Cardiac dysrhythmia
+								<p class="slds-text-body--small">Broadwater Clinic - Mineola, NY</p>
+							</li>
+						</ul>
+					</div>
+					<div class="slds-card__footer"></div>
+					</article>
+				</div>
+				<div class="slds-col slds-size--1-of-2 slds-p-around--large">
+					<article class="slds-card slds-card--narrow">
+						<div class="slds-card__header slds-grid">
+							<header class="slds-media slds-media--center slds-has-flexi-truncate">
+								<div class="slds-media__body slds-truncate">
+									<h2>Orders</h2>
+								</div>
+								<div class="slds-float--right">
+									<span class="slds-icon_container ">
+										<img src="assets/icons/utility/orders_60.png" class="slds-icon--small" />
+									</span>
+								</div>
+							</header>
+						</div>
+						<div class="slds-card__body slds-p-horizontal--medium slds-m-bottom--medium">
+							<ul class="slds-has-dividers--bottom">
+								<li class="slds-item slds-p-vertical--small">
+									<span class="slds-float--right slds-text-body--small">Today</span>
+									<a href="javascript:void(0);"><strong>DME - Oxygen</strong></a>
+									<p class="slds-text-body--small">Mary Williams</p>
+								</li>
+								<li class="slds-item slds-p-vertical--small">
+									<span class="slds-float--right slds-text-body--small">Yesterday</span>
+									<a href="profile.html"><strong>Hospice - Heart Failure (Terminal)</strong></a>
+									<p class="slds-text-body--small">David Brown</p>
+								</li>
+							</ul>
+						</div>
+						<div class="slds-card__footer"></div>
+						</article>
+					</div>
+				<div class="slds-col slds-size--1-of-2 slds-p-around--large">
+					<article class="slds-card slds-card--narrow">
+						<div class="slds-card__header slds-grid">
+						  <header class="slds-media slds-media--center slds-has-flexi-truncate">
+						    <div class="slds-media__body slds-truncate">
+						      <h2>Hospital/SNF Discharges (1)</h2>
+						    </div>
+								<div class="slds-float--right">
+									<span class="slds-icon_container slds-icon-custom-custom94">
+										<img src="assets/icons/action/leave_group_60.png" class="slds-icon--small" />
+									</span>
+						    </div>
+						  </header>
+						</div>
+						<div class="slds-card__body slds-p-horizontal--medium slds-m-bottom--medium">
+							<div class="slds-button-group" role="group">
+							  <button class="slds-button slds-button--neutral slds-theme--shade">1 day</button>
+							  <button class="slds-button slds-button--neutral">1 week</button>
+							  <button class="slds-button slds-button--neutral">1 month</button>
+							</div>
+							<ul class="slds-has-dividers--bottom">
+							  <li class="slds-item slds-p-vertical--small">
+									<span class="slds-float--right slds-text-body--small">Today</span>
+									<a href="profile.html"><strong>Jim Mcanally</strong></a> - Congestive heart failure
+									<p class="slds-text-body--small">Home - Brooklyn, NY</p>
+								</li>
+							</ul>
+						</div>
+						<div class="slds-card__footer"></div>
+						</article>
+					</div>
+				</div>
+				<div id="CallSuccess" class="slds-hide">
+					<div class="slds-notify_container">
+					  <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+					    <span class="slds-assistive-text">Success</span>
+					    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+					      <img src="assets/icons/utility/close_60.png" class="slds-button__icon slds-button__icon--large" />
+					      <span class="slds-assistive-text">Close</span>
+					    </button>
+					    <div class="slds-notify__content slds-grid">
+					      <img src="assets/icons/utility/notification_60.png" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex" />
+					      <div class="slds-col slds-align-middle">
+					        <h2 class="slds-text-heading--small ">Your phone call was logged successfully.</h2>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div id="Visit" class="slds-hide" data-load="new-visit.html"></div>
+				<div id="Call" class="slds-hide" data-load="new-call.html"></div>
+				<div id="Virtual" class="slds-hide" data-load="new-virtual.html"></div>
+				<div id="Task" class="slds-hide" data-load="new-task.html"></div>
+				<div id="Order" class="slds-hide" data-load="new-order.html"></div>
+				<div id="Appt" class="slds-hide" data-load="new-appt.html"></div>
+	</body>
+</html>

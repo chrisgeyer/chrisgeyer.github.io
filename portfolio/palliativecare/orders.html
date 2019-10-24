@@ -1,0 +1,283 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+						$.getScript('scripts.js');
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body id="Orders" class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+	  	<div class="slds-grid">
+		    <div class="slds-col slds-has-flexi-truncate">
+		      <nav class="slds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+		        <ol class="slds-breadcrumb slds-list--horizontal">
+		          <li class="slds-breadcrumb__item slds-text-title--caps">Orders</li>
+		          <li class="slds-breadcrumb__item slds-text-title--caps"><span class="slds-p-left--medium">Gwen Jones MD</span>
+								<button id="Arrow" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="Switch View">
+									<img src="assets/icons/utility/down_120.png" />
+									<span class="slds-assistive-text">Switch View</span>
+								</button>
+							</li>
+		        </ol>
+						<div id="Switch" class="slds-hide">
+							<div class="slds-dropdown slds-dropdown--left" role="listbox">
+								<ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-242">
+											<span class="slds-truncate">Name1</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-243">
+											<span class="slds-truncate">Name2</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-244">
+											<span class="slds-truncate">Name3</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-245">
+											<span class="slds-truncate">Name4</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-246">
+											<span class="slds-truncate">Name5</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+		      </nav>
+		      <h1 class="slds-page-header__title slds-truncate" title="Contacts (will truncate)">Orders</h1>
+		    </div>
+		    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+		      <div class="slds-button-group">
+		        <a href="javascript:void(0);" id="NewOrder" class="slds-button slds-button--neutral">Create Order</a>
+		      </div>
+		    </div>
+	  	</div>
+		</div>
+		<!-- div class="slds-p-around--large" -->
+		<div class="slds-tabs--default">
+		  <ul class="slds-tabs--default__nav" role="tablist">
+		    <!-- li class="slds-tabs--default__item slds-text-title--caps slds-active" title="Item One" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">Needs Approval (2)</a></li -->
+		    <!-- li class="slds-tabs--default__item slds-text-title--caps" title="Item Two" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">Assigned to others (3)</a></li-->
+		  </ul>
+		  <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+				<div class="slds-grid slds-p-horizontal--large">
+			  </div>
+				<div class="slds-container--fluid slds-p-horizontal--large">
+			<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+			  <thead>
+			    <tr class="slds-text-title--caps">
+						<th scope="col">
+			        <div class="slds-truncate">Type</div>
+			      </th>
+						<th scope="col">
+			        <div class="slds-truncate">Patient</div>
+			      </th>
+						<!-- th scope="col">
+			        <div class="slds-truncate">Status</div>
+			      </th -->
+			      <th scope="col">
+			        <div class="slds-truncate">Due Date <img src="assets/icons/utility/arrowdown_60.png" class="slds-button--icon-x-small" />
+							</div>
+			      </th>
+			      <th scope="col">
+			        <div class="slds-truncate"></div>
+			      </th>
+			    </tr>
+			  </thead>
+			  <tbody>
+					<tr class="overdue">
+			      <td data-label="Name">
+			        <div class="slds-truncate"><p><strong>DME - Oxygen</strong><br />70% saturation | 6L/min for COPD</p></div>
+			      </td>
+						<td data-label="Patient">
+			        <div class="slds-truncate"><a href="profile.html">Mary Williams</a></div>
+			      </td>
+						<!-- td data-label="Status">
+			        <div class="slds-truncate">Completed</div>
+			      </td -->
+						<td data-label="Due Date">
+			        <div class="slds-truncate"><p><strong>4 days ago</strong><br /></p></div>
+			      </td>
+			      <td data-label="Action">
+			        <div class="slds-truncate">
+								<!-- a href="javascript:void(0)" id="EditTask" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Edit</span>
+								</a -->
+								<a href="javascript:void(0)" class="EditOrder slds-button slds-button--brand slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Review</span>
+								</a>
+							</div>
+			      </td>
+			    </tr>
+					<tr>
+			      <td data-label="Name">
+			        <div class="slds-truncate"><p><strong>Labs</strong><br />Blood Work - Supporting documentation text</p></div>
+			      </td>
+						<td data-label="Patient">
+			        <div class="slds-truncate"><a href="profile.html">David Brown</a></div>
+			      </td>
+						<!-- td data-label="Status">
+			        <div class="slds-truncate">Approved</div>
+			      </td -->
+			      <td data-label="Due Date">
+			        <div class="slds-truncate"><p><strong>Today</strong><br /></p></div>
+			      </td>
+			      <td data-label="Action">
+			        <div class="slds-truncate">
+								<!-- a href="javascript:void(0)" id="EditTask" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Edit</span>
+								</a -->
+								<a href="javascript:void(0)" id="" class="slds-button slds-button--brand slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Review</span>
+								</a>
+							</div>
+			      </td>
+			    </tr>
+			  </tbody>
+			</table>
+			<div class="slds-align--absolute-center">
+				<button class="slds-button slds-button--neutral slds-m-around--medium" style="border-color:#ddd;"><img src="assets/icons/utility/add_60.png" class="slds-button--icon-x-small" /> Show Approved</button>
+			</div>
+		</div>
+			</div>
+		  <div id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+					<div class="slds-grid slds-p-horizontal--large">
+				  </div>
+					<div class="slds-container--fluid slds-p-horizontal--large">
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+				  <thead>
+				    <tr class="slds-text-title--caps">
+							<th scope="col">
+				        <div class="slds-truncate">Name</div>
+				      </th>
+							<th scope="col">
+				        <div class="slds-truncate">Patient</div>
+				      </th>
+				      <th scope="col">
+				        <div class="slds-truncate">Due Date <img src="assets/icons/utility/arrowdown_60.png" class="slds-button--icon-x-small" />
+								</div>
+				      </th>
+				      <th scope="col">
+				        <div class="slds-truncate"></div>
+				      </th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="Name">
+				        <div class="slds-truncate"><p><strong>Hospice Referral</strong><br />Please complete the paperwork for Mary to enter hospice.</p></div>
+				      </td>
+							<td data-label="Patient">
+				        <div class="slds-truncate"><a href="profile.html">Mary Williams</a></div>
+				      </td>
+				      <td data-label="Due Date">
+				        <div class="slds-truncate"><p><strong>Today</strong><br /> for Betsy</p></div>
+				      </td>
+				      <td data-label="Action">
+				        <div class="slds-truncate">
+									<a href="javascript:void(0)" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+							  		<span class="slds-text-not-selected">Edit</span>
+									</a>
+								</div>
+				      </td>
+				    </tr>
+						<tr>
+							<td data-label="Name">
+				        <div class="slds-truncate"><p><strong>Task 2</strong><br />Description for task 2</p></div>
+				      </td>
+							<td data-label="Patient">
+				        <div class="slds-truncate"><a href="profile.html">Josephine Kelly</a></div>
+				      </td>
+				      <td data-label="Created">
+				        <div class="slds-truncate"><p><strong>in 3 days</strong><br />for Betsy</p></div>
+				      </td>
+				      <td data-label="Action">
+								<div class="slds-truncate">
+									<a href="javascript:void(0)" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+							  		<span class="slds-text-not-selected">Edit</span>
+									</a>
+								</div>
+				      </td>
+				    </tr>
+						<tr>
+							<td data-label="Name">
+				        <div class="slds-truncate"><p><strong>Task 3</strong><br />Description for task 3</p></div>
+				      </td>
+							<td data-label="Patient">
+				        <div class="slds-truncate"><a href="profile.html">David Brown</a></div>
+				      </td>
+				      <td data-label="Created">
+				        <div class="slds-truncate"><p><strong>in 5 days</strong><br />for Marianne</p></div>
+				      </td>
+				      <td data-label="Action">
+								<div class="slds-truncate">
+									<a href="javascript:void(0)" class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+							  		<span class="slds-text-not-selected">Edit</span>
+									</a>
+								</div>
+				      </td>
+				    </tr>
+				  </tbody>
+				</table>
+				<div class="slds-align--absolute-center">
+					<button class="slds-button slds-button--neutral slds-m-around--medium" style="border-color:#ddd;"><img src="assets/icons/utility/add_60.png" class="slds-button--icon-x-small" /> Show Completed</button>
+				</div>
+			</div>
+				</div>
+		</div>
+		<div id="OrderSuccess" class="slds-hide">
+		<div class="slds-notify_container">
+		  <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+		    <span class="slds-assistive-text">Success</span>
+				<button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+					<img src="assets/icons/utility/close_60.png" class="slds-button__icon slds-button__icon--large" />
+					<span class="slds-assistive-text">Close</span>
+				</button>
+				<div class="slds-notify__content slds-grid">
+					<img src="assets/icons/utility/notification_60.png" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex" />
+					<div class="slds-col slds-align-middle">
+		        <h2 class="slds-text-heading--small ">Your new order <a href="javascript:void(0);">Order3</a> was successfully created.</h2>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div id="OrderFail" class="slds-hide">
+	<div class="slds-notify_container">
+		<div class="slds-notify slds-notify--toast slds-theme--error" role="alert">
+			<span class="slds-assistive-text">Success</span>
+			<button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+				<img src="assets/icons/utility/close_60.png" class="slds-button__icon slds-button__icon--large" />
+				<span class="slds-assistive-text">Close</span>
+			</button>
+			<div class="slds-notify__content slds-grid">
+				<img src="assets/icons/utility/notification_60.png" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex" />
+				<div class="slds-col slds-align-middle">
+					<h2 class="slds-text-heading--small "><a href="javascript:void(0);">Order3</a> was rejected.</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<div id="Order" class="slds-hide" data-load="new-order.html"></div>
+	</body>
+</html>

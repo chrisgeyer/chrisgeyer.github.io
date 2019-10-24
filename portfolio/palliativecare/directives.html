@@ -1,0 +1,74 @@
+<div class="slds-tabs--scoped">
+	<ul class="slds-tabs--scoped__nav" role="tablist">
+		<li class="slds-tabs--scoped__item slds-text-title--caps slds-active" title="Item One" role="presentation"><a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab-scoped-1__item">Health Care Proxy</a></li>
+		<li class="slds-tabs--scoped__item slds-text-title--caps" title="Item Two" role="presentation"><a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-2" id="tab-scoped-2__item">Directives</a></li>
+	</ul>
+	<div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+		<div class="slds-form-element">
+			<label class="slds-form-element__label" for="HCPName">Name</label>
+			<div class="slds-form-element__control">
+				<input id="HCPName" class="slds-input" type="text" />
+			</div>
+		</div>
+		<div class="slds-form-element">
+			<label class="slds-form-element__label" for="HCPPhone">Phone</label>
+			<div class="slds-form-element__control">
+				<input id="HCPPhone" class="slds-input" type="tel" />
+			</div>
+		</div>
+		<div class="slds-form-element">
+			<label class="slds-form-element__label" for="HCPRelation">Relationship</label>
+			<div class="slds-form-element__control">
+				<div class="slds-select_container">
+					<select id="HCPRelation" class="slds-select">
+						<option>Choose</option>
+						<option>Spouse</option>
+		        <option>Daughter</option>
+		        <option>Son</option>
+						<option>Parent</option>
+						<option>Friend</option>
+		        <option>Other</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="slds-align--absolute-center">
+			<a href="javascript:void(0);" class="slds-button slds-button--neutral slds-m-around--medium">Add Alternate Medical Decision Maker</a>
+		</div>
+	</div>
+	<div id="tab-scoped-2" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">
+		<div class="slds-form-element">
+			<div class="slds-form-element__control">
+				<span class="slds-checkbox">
+					<input type="checkbox" name="options" id="checkbox-308" />
+					<label class="slds-checkbox__label" for="checkbox-308">
+						<span class="slds-checkbox--faux"></span>
+						<span class="slds-form-element__label">MOLST/POLST</span>
+					</label>
+				</span>
+			</div>
+		</div>
+		<div class="slds-form-element">
+			<div class="slds-form-element__control">
+				<span class="slds-checkbox">
+					<input type="checkbox" name="options" id="checkbox-308" />
+					<label class="slds-checkbox__label" for="checkbox-308">
+						<span class="slds-checkbox--faux"></span>
+						<span class="slds-form-element__label">DNR</span>
+					</label>
+				</span>
+			</div>
+		</div>
+		<div class="slds-form-element">
+			<div class="slds-form-element__control">
+				<span class="slds-checkbox">
+					<input type="checkbox" name="options" id="checkbox-308">
+					<label class="slds-checkbox__label" for="checkbox-308">
+						<span class="slds-checkbox--faux"></span>
+						<span class="slds-form-element__label">Other</span>
+					</label>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>

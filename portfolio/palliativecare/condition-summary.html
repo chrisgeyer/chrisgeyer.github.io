@@ -1,0 +1,83 @@
+<div class="slds-form-element">
+  <label class="slds-form-element__label" for="ChiefComplaint">Major Concern</label>
+  <div class="slds-form-element__control">
+    <textarea id="ChiefComplaint" class="slds-textarea" placeholder=""></textarea>
+  </div>
+</div>
+<div class="slds-form-element">
+  <label class="slds-form-element__label" for="PrimaryDiagnosis">Primary Diagnosis</label>
+  <div class="slds-form-element__control">
+    <input id="PrimaryDiagnosis" class="slds-input" type="text"  list="mylist" />
+		<datalist id="mylist">
+			<option>ALS</option>
+			<option>Breast Cancer</option>
+			<option>COPD</option>
+			<option>Colon Cancer</option>
+			<option>Heart Failure</option>
+			<option>Dementia</option>
+			<option>Chronic Kidney Disease</option>
+      <option>Leukemia and Lymphoma</option>
+      <option>Liver disease</option>
+      <option>Lung Cancer</option>
+      <option>Multiple Myeloma</option>
+      <option>Multiple Sclerosis</option>
+      <option>Ovarian Cancer</option>
+      <option>Pancreatic Cancer</option>
+      <option>Parkinson’s Disease</option>
+      <option>Prostate Cancer</option>
+      <option>Pulmonary Fibrosis</option>
+      <option>Stroke</option>
+      <option>Vascular Disease</option>
+		</datalist>
+		<a href="javascript:void(0);" id="AddSecondary" class="add">Add Another Chronic Condition</a>
+  </div>
+</div>
+<div class="slds-hide" id="AddSecondaryDiagnosis">
+  <label class="slds-form-element__label" for="SecondaryDiagnosis">Chronic Conditions</label>
+  <div class="slds-form-element__control">
+    <input id="SecondaryDiagnosis" class="slds-input" type="text" list="mylist2" />
+    <input id="Diagnosis3" class="slds-input slds-hide" type="text" value="ALS" />
+		<datalist id="mylist2">
+      <option>ALS</option>
+			<option>Breast Cancer</option>
+			<option>COPD</option>
+			<option>Colon Cancer</option>
+			<option>Heart Failure</option>
+			<option>Dementia</option>
+			<option>Chronic Kidney Disease</option>
+      <option>Leukemia and Lymphoma</option>
+      <option>Liver disease</option>
+      <option>Lung Cancer</option>
+      <option>Multiple Myeloma</option>
+      <option>Multiple Sclerosis</option>
+      <option>Ovarian Cancer</option>
+      <option>Pancreatic Cancer</option>
+      <option>Parkinson’s Disease</option>
+      <option>Prostate Cancer</option>
+      <option>Pulmonary Fibrosis</option>
+      <option>Stroke</option>
+      <option>Vascular Disease</option>
+		</datalist>
+    <a href="javascript:void(0)" class="add">Add Another</a>
+  </div>
+</div>
+<!-- div class="slds-form-element">
+  <label class="slds-form-element__label" for="Problem">Other Diagnosis</label>
+  <div class="slds-form-element__control">
+    <input id="Problem" class="slds-input" type="text" />
+		<a href="javascript:void(0)" id="AddProblem">Add Another</a>
+  </div>
+</div -->
+<!-- div class="slds-hide" id="AddProblem2">
+  <label class="slds-form-element__label" for="Problem2">Problem</label>
+  <div class="slds-form-element__control">
+    <input id="Problem2" class="slds-input" type="text" />
+		<a href="javascript:void(0)" id="">Add Another</a>
+  </div>
+</div -->
+<div class="slds-form-element">
+  <label class="slds-form-element__label" for="IllnessHistory">History of Present Illness</label>
+  <div class="slds-form-element__control">
+    <textarea id="IllnessHistory" class="slds-textarea" placeholder=""></textarea>
+  </div>
+</div>

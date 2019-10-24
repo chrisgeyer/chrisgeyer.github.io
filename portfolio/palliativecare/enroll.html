@@ -1,0 +1,251 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <!-- script src="../js/scripts.js"></script -->
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+					});
+			});
+		})
+
+		</script>
+ 	</head>
+	<body class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="enroll slds-container--fluid slds-p-around--large slds-size--1-of-2">
+			<div class="slds-text-heading--large slds-m-bottom--medium">Enroll New Patient</div>
+			<h3 class="slds-section-title--divider">1. Patient Information</h3>
+			<div class="slds-form--stacked slds-box">
+			  <div class="slds-form-element">
+			    <label class="slds-form-element__label" for="inputSample2">Program Enroll Date</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="date" />
+			    </div>
+			  </div>
+			  <div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Member ID/Health Insurance Number</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+				  <label class="slds-form-element__label" for="select-01">Program</label>
+				  <div class="slds-form-element__control">
+				    <div class="slds-select_container">
+				      <select id="select-01" class="slds-select">
+				        <option>Choose</option>
+				        <option>UnitedHealthcare</option>
+				        <option>ProHEALTH</option>
+				      </select>
+				    </div>
+				  </div>
+				</div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">First Name</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Last Name</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="inputSample2">Date of Birth</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="date" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+				  <label class="slds-form-element__label" for="select-01">Gender</label>
+				  <div class="slds-form-element__control">
+				    <div class="slds-select_container">
+				      <select id="select-01" class="slds-select">
+				        <option>Choose</option>
+				        <option>Female</option>
+				        <option>Male</option>
+				      </select>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<h3 class="slds-section-title--divider">2. Contact Information</h3>
+			<div class="slds-form--stacked slds-box">
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Phone</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="tel" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Phone Number Type</label>
+			    <div class="slds-form-element__control">
+						<div class="slds-select_container">
+				      <select id="select-01" class="slds-select">
+				        <option>Choose</option>
+				        <option>Type1</option>
+				        <option>Type2</option>
+				      </select>
+				    </div>
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Street</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">City</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-grid slds-wrap">
+				<div class="slds-form-element slds-float--left slds-size--1-of-2">
+			    <label class="slds-form-element__label" for="textareaSample2">State</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element slds-float--left slds-size--1-of-2" style="margin:0;">
+			    <label class="slds-form-element__label" for="textareaSample2">Zip</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				</div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Assigned Nurse</label>
+
+			    <!-- div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div -->
+			  </div>
+			</div>
+			<h3 class="slds-section-title--divider">3. Demographic Information</h3>
+			<div class="slds-form--stacked slds-box">
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Primary Language</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="inputSample2">Marital Status</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+				  <label class="slds-form-element__label" for="select-01">Race</label>
+				  <div class="slds-form-element__control">
+				    <div class="slds-select_container">
+				      <select id="select-01" class="slds-select">
+								<option>Choose</option>
+								<option>American Indian or Alaska Native</option>
+								<option>Asian</option>
+								<option>Black or African American</option>
+								<option>Native Hawaiian or Other Pacific Islander</option>
+								<option>White</option>
+								<option>Hispanic or Latino</option>
+								<option>Not Hispanic or Latino</option>
+							</select>
+				    </div>
+				  </div>
+				</div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">Religion</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+			</div>
+			<h3 class="slds-section-title--divider"><div class="slds-float--right"><a href="javascript:void(0);">Add Another</a></div>4. PCP Information</h3>
+			<div class="slds-form--stacked slds-box">
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">PCP Name</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">PCP Practice</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="text" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">PCP Phone</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="tel" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">PCP Email</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="email" />
+			    </div>
+			  </div>
+				<div class="slds-form-element">
+			    <label class="slds-form-element__label" for="textareaSample2">PCP Fax</label>
+			    <div class="slds-form-element__control">
+			      <input id="inputSample2" class="slds-input" type="tel" />
+			    </div>
+			  </div>
+			</div>
+			<h3 class="slds-section-title--divider">5. Schedule Initial Visit</h3>
+			<div class="slds-form--stacked slds-box">
+				<div class="slds-form-element">
+				  <label class="slds-form-element__label" for="select-01">Date/Time</label>
+				  <div class="slds-form-element__control">
+				    <div class="slds-select_container">
+				      <select id="select-01" class="slds-select">
+								<option>Choose</option>
+								<option>Time1</option>
+								<option>Time2</option>
+								<option>Time3</option>
+							</select>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<div class="slds-align--absolute-center">
+				<a href="engagement.html" data-enroll="yes" onclick="enroll(this)"><button class="slds-button slds-button--brand slds-m-around--medium">Complete</button></a>
+			</div>
+			</div>
+		</div>
+		<script>
+		function enroll(elem) {
+      event.preventDefault();
+      sessionStorage.setItem("enroll", elem.dataset.enroll);
+      location.href = elem.href;
+    }
+		</script>
+		<!-- div id="footer" data-load="footer.html"></div>
+    <script type="text/javascript">
+     $(function() {
+		  $('a[href*="#"]:not([href="#"])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
+	</script -->
+	</body>
+</html>

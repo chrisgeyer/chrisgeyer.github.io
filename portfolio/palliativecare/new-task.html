@@ -1,0 +1,127 @@
+<div role="dialog" aria-labelledby="dialog-heading-id" class="slds-docked-composer slds-grid slds-grid--vertical slds-nowrap slds-is-open bottom-right">
+<header class="slds-docked-composer__header slds-grid slds-grid--align-spread slds-shrink-none">
+<div class="slds-media slds-media--center">
+  <div class="slds-media__figure">
+    <span class="slds-icon_container slds-icon-standard-task">
+      <img src="assets/icons/standard/task_60.png" class="slds-icon slds-icon--small"/>
+      <span class="slds-assistive-text">Task Icon</span>
+    </span>
+  </div>
+  <div class="slds-media__body">
+    <h2 id="dialog-heading-id"><span id="New">New</span><span id="Edit">Edit</span> Task</h2>
+  </div>
+</div>
+<div class="slds-docked-composer__actions">
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Minimize window">
+    <img src="assets/icons/utility/minimize_window_60.png" class="slds-button__icon"/>
+    <span class="slds-assistive-text">Minimize window</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Expand Composer">
+    <img src="assets/icons/utility/expand_alt_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Expand Composer</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" id="TaskClose" title="Close">
+    <img src="assets/icons/utility/close_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+</header>
+<div class="slds-docked-composer__body slds-docked-composer__body--form slds-col slds-grid slds-grid--vertical slds-nowrap">
+<fieldset class="slds-form--compound">
+  <legend class="slds-assistive-text">Log new task</legend>
+  <div class="slds-form-element__group">
+    <div class="slds-form-element__row">
+  		<div class="slds-form-element">
+  		  <label class="slds-form-element__label" for="SelectTask">Task</label>
+  		  <div class="slds-form-element__control">
+  		    <div class="slds-select_container">
+  		      <select id="SelectTask" class="slds-select">
+  		        <option>Choose</option>
+  						<option>Patient follow up</option>
+  		        <option>Prescribe medication</option>
+              <option>Order hospice</option>
+              <!-- option>Order DME</option>
+              <option>Order labs</option -->
+              <option>Other</option>
+  		      </select>
+  		    </div>
+          <div id="OtherTask" class="slds-hide">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="Other"></label>
+              <div class="slds-form-element__control">
+                <input class="slds-input" type="text" id="" />
+              </div>
+            </div>
+          </div>
+  		  </div>
+  		</div>
+  	</div>
+    <div class="slds-form-element__row">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="TaskDesc">Description</label>
+        <div class="slds-form-element__control">
+          <textarea id="TaskDesc" class="slds-textarea" placeholder=""></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="slds-form-element__row">
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="TaskPatient">Patient</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="text" id="TaskPatient" />
+        </div>
+      </div>
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="TaskAssigned">Assigned To</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="text" id="TaskAssigned" />
+        </div>
+      </div>
+    </div>
+    <div class="slds-form-element__row">
+      <!-- div class="slds-form-element slds-size--1-of-2" id="Status">
+        <div class="slds-form-element">
+    		  <label class="slds-form-element__label" for="TaskStatus">Status</label>
+    		  <div class="slds-form-element__control">
+    		    <div class="slds-select_container">
+    		      <select id="TaskStatus" class="slds-select">
+    		        <option>Choose</option>
+    						<option>In Progress</option>
+    		        <option>On Hold</option>
+                <option>Complete</option>
+    		      </select>
+    		    </div>
+    		  </div>
+    		</div>
+      </div -->
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="TaskDate">Due Date</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="date" id="TaskDate" />
+        </div>
+      </div>
+      <!-- div class="slds-form-element slds-size--1-of-2">
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="">&nbsp;</label>
+          <div class="slds-form-element__control">
+            <span class="slds-checkbox">
+              <input type="checkbox" name="options" id="checkbox-1956" checked="" />
+              <label class="slds-checkbox__label" for="checkbox-1956">
+                <span class="slds-checkbox--faux"></span>
+                <span class="slds-form-element__label">Urgent</span>
+              </label>
+            </span>
+          </div>
+        </div>
+      </div -->
+    </div>
+  </div>
+</fieldset>
+</div>
+<footer class="slds-docked-composer__footer slds-shrink-none">
+<div class="slds-float--right slds-grid slds-grid--align-end slds-size--1-of-2 slds-text-align--right">
+  <a href="javascript:void(0);" id="Delete" class="slds-text-color--error slds-m-around--x-small">Delete</a>
+  <a href="javascript:void(0);" id="CreateTask"><button class="slds-button slds-button--brand"><span id="Complete">Save</span><span id="Create">Create</span></button></a>
+</div>
+</footer>
+</div>

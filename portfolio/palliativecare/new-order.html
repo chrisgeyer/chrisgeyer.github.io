@@ -1,0 +1,200 @@
+<div role="dialog" aria-labelledby="dialog-heading-id" class="slds-docked-composer slds-grid slds-grid--vertical slds-nowrap slds-is-open bottom-right">
+<header class="slds-docked-composer__header slds-grid slds-grid--align-spread slds-shrink-none">
+<div class="slds-media slds-media--center">
+  <div class="slds-media__figure">
+    <span class="slds-icon_container slds-icon-standard-task">
+      <img src="assets/icons/standard/report_60.png" class="slds-icon slds-icon--small" />
+      <span class="slds-assistive-text">Order Icon</span>
+    </span>
+  </div>
+  <div class="slds-media__body">
+    <h2 id="dialog-heading-id"><span id="New">New</span><span id="Edit">Edit</span> Order</h2>
+  </div>
+</div>
+<div class="slds-docked-composer__actions">
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Minimize window">
+    <img src="assets/icons/utility/minimize_window_60.png" class="slds-button__icon"/>
+    <span class="slds-assistive-text">Minimize window</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" title="Expand Composer">
+    <img src="assets/icons/utility/expand_alt_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Expand Composer</span>
+  </button>
+  <button class="slds-button slds-button--icon slds-button--icon-inverse slds-button--icon-x-small" id="TaskClose" title="Close">
+    <img src="assets/icons/utility/close_60.png" class="slds-button__icon" />
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+</header>
+<div class="slds-docked-composer__body slds-docked-composer__body--form slds-col slds-grid slds-grid--vertical slds-nowrap">
+<fieldset class="slds-form--compound">
+  <legend class="slds-assistive-text">Log new task</legend>
+  <div class="slds-form-element__group">
+    <div class="slds-form-element__row">
+  		<div class="slds-form-element">
+  		  <label class="slds-form-element__label" for="SelectOrder">Order</label>
+  		  <div class="slds-form-element__control">
+  		    <div class="slds-select_container">
+  		      <select id="SelectOrder" class="slds-select">
+  		        <option>Choose</option>
+              <!-- option>Hospice</option -->
+              <option>DME</option>
+              <option>Labs</option>
+              <option>Other</option>
+  		      </select>
+  		    </div>
+  		  </div>
+  		</div>
+  	</div>
+    <div id="DME" class="slds-hide">
+      <div class="slds-form-element__row">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="DMEType">Type</label>
+        <div class="slds-form-element__control">
+  		    <div class="slds-select_container">
+  		      <select id="DMEType" class="slds-select">
+  		        <option>Choose</option>
+              <option>Oxygen</option>
+              <option>Walker</option>
+              <option>Wheelchair</option>
+              <option>Other</option>
+  		      </select>
+  		    </div>
+  		  </div>
+      </div>
+    </div>
+    <div class="dmeoxygen slds-hide">
+      <div class="slds-form-element__row">
+        <div class="slds-form-element slds-size--1-of-2">
+          <label class="slds-form-element__label" for="Saturation">Saturation</label>
+          <div class="slds-form-element__control">
+            <input class="slds-input" type="text" id="Saturation" />
+          </div>
+        </div>
+        <div class="slds-form-element slds-size--1-of-2">
+          <label class="slds-form-element__label" for="Oxygen">Oxygen</label>
+          <div class="slds-form-element__control">
+            <div class="slds-select_container">
+              <select id="Oxygen" class="slds-select">
+                <option>Choose One</option>
+                <option>Room Air</option>
+                <option>Supplemental</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="Supplemental" class="slds-hide">
+          <div class="slds-form-element">
+            <label class="slds-form-element__label" for="inputSample2">L/min</label>
+            <div class="slds-form-element__control">
+              <input id="inputSample2" class="slds-input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- div class="slds-form-element__row">
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="DMEDiagnosis">Diagnosis</label>
+          <div class="slds-form-element__control">
+            <input class="slds-input" type="text" id="DMEDiagnosis" />
+          </div>
+        </div>
+      </div -->
+    </div>
+    <div id="Hospice" class="slds-hide">
+      <div class="slds-form-element__row">
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="DMEDiagnosis">Diagnosis</label>
+          <div class="slds-form-element__control">
+            <input class="slds-input" type="text" id="DMEDiagnosis" />
+          </div>
+        </div>
+        <div class="slds-form-element slds-size--1-of-2">
+          <div class="slds-form-element__control">
+            <span class="slds-checkbox">
+              <input type="checkbox" name="options" id="checkbox-146" checked="" />
+              <label class="slds-checkbox__label" for="checkbox-146">
+                <span class="slds-checkbox--faux"></span>
+                <span class="slds-form-element__label">Terminal Illness</span>
+              </label>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="slds-form-element__row">
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="TaskDesc">Supporting Documentation</label>
+          <div class="slds-form-element__control">
+            <textarea id="TaskDesc" class="slds-textarea" placeholder=""></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dmeoxygen slds-hide">
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="Liters">Order L/min</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="text" id="Liters" />
+        </div>
+      </div>
+    </div>
+    <div id="HospiceDesc" class="slds-form-element__row">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="OrderDesc">Notes</label>
+        <div class="slds-form-element__control">
+          <textarea id="OrderDesc" class="slds-textarea" placeholder=""></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="slds-form-element__row">
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="OrderPatient">Patient</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="text" id="OrderPatient" list="mylist" />
+          <datalist id="mylist">
+						<option>Mary Williams</option>
+						<option>Josephine Kelly</option>
+						<option>David Brown</option>
+						<option>Mabel Sulivan</option>
+						<option>Sylvia Wright</option>
+						<option>Hillary Karsten</option>
+						<option>Gabe Smith</option>
+			      <option>Harvey Magellan</option>
+			      <option>Cathy Ryan</option>
+			      <option>Rose Walsh</option>
+					</datalist>
+        </div>
+      </div>
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="OrderDate">Due Date</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="date" id="OrderDate" />
+        </div>
+      </div>
+    </div>
+    <div class="slds-form-element__row">
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="TaskAssigned">Approver</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="text" id="TaskAssigned" />
+        </div>
+      </div>
+      <!-- div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="TaskAssigned">Assigned to</label>
+        <div class="slds-form-element__control">
+          <input class="slds-input" type="text" id="TaskAssigned" />
+        </div>
+      </div -->
+    </div>
+  </div>
+</fieldset>
+</div>
+<footer class="slds-docked-composer__footer slds-shrink-none">
+<div class="slds-float--right slds-grid slds-grid--align-end slds-text-align--right">
+  <a href="javascript:void(0);" id="Delete" class="slds-text-color--error slds-m-around--x-small">Deny</a>
+  <!-- button class="CreateOrder slds-button slds-button--neutral">Create and Approve</button -->
+  <button class="CreateOrder slds-button slds-button--brand"><span id="Complete">Approve</span><span id="Create">Create &amp; Approve</span></button>
+</div>
+</footer>
+</div>

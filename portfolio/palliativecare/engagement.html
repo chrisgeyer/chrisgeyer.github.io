@@ -1,0 +1,333 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+						$.getScript('scripts.js');
+					});
+			});
+		})
+		$(document).ready(function() {
+			if (sessionStorage.getItem("enroll")) {
+				$('#EnrollSuccess').removeClass('slds-hide');
+				$('#tab-default-2__item').click();
+				sessionStorage.clear();
+			}
+		});
+		</script>
+ 	</head>
+	<body id="Engage" class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-page-header" role="banner">
+	  	<div class="slds-grid">
+		    <div class="slds-col slds-has-flexi-truncate">
+		      <nav class="slds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+		        <ol class="slds-breadcrumb slds-list--horizontal">
+		          <li class="slds-breadcrumb__item slds-text-title--caps">Engagement</li>
+		          <li class="slds-breadcrumb__item slds-text-title--caps"><span class="slds-p-left--medium">Pete Smith</span>
+								<button id="Arrow" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="Switch View">
+									<img src="assets/icons/utility/down_120.png" />
+									<span class="slds-assistive-text">Switch View</span>
+								</button>
+							</li>
+		        </ol>
+						<div id="Switch" class="slds-hide">
+							<div class="slds-dropdown slds-dropdown--left" role="listbox">
+								<ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0" id="listbox-option-242">
+											<span class="slds-truncate">All</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-243">
+											<span class="slds-truncate">Name1</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-244">
+											<span class="slds-truncate">Name2</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-245">
+											<span class="slds-truncate">Name3</span>
+										</span>
+									</li>
+									<li role="presentation">
+										<span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="-1" id="listbox-option-246">
+											<span class="slds-truncate">Name4</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+		      </nav>
+		      <h1 class="slds-page-header__title slds-truncate" title="Contacts (will truncate)">Engagement</h1>
+		    </div>
+		    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+					<div class="slds-button-group slds-float--right" role="group">
+						<button id="NewHCE" class="slds-button slds-button--neutral">Add Hospital/ER Event</button>
+						<button class="slds-button slds-button--neutral"><a href="enroll.html">Enroll Patient</a></button>
+					</div>
+		    </div>
+	  	</div>
+		</div>
+		<div class="slds-tabs--default">
+		  <ul class="slds-tabs--default__nav" role="tablist">
+		    <li class="slds-tabs--default__item slds-text-title--caps slds-active" title="Item One" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">Hopsital/ER Events (2)</a></li>
+		    <li class="slds-tabs--default__item slds-text-title--caps" title="Item Two" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">Enrolled Patients (3)</a></li>
+		  </ul>
+		  <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+				<div class="slds-grid slds-p-horizontal--large">
+			  </div>
+				<div class="slds-container--fluid slds-p-horizontal--large">
+			<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+			  <thead>
+			    <tr class="slds-text-title--caps">
+						<th scope="col">
+			        <div class="slds-truncate">Patient</div>
+			      </th>
+						<th scope="col">
+			        <div class="slds-truncate">Medicare ID</div>
+			      </th>
+			      <th scope="col">
+			        <div class="slds-truncate">Hospital</div>
+			      </th>
+			      <th scope="col">
+			        <div class="slds-truncate">Admitting Diagnosis</div>
+			      </th>
+						<th scope="col">
+			        <div class="slds-truncate">ER Visit</div>
+			      </th>
+						<th scope="col">
+			        <div class="slds-truncate">Admission Date</div>
+			      </th>
+						<th scope="col">
+			        <div class="slds-truncate">Discharge Date</div>
+			      </th>
+						<th scope="col">
+			        <div class="slds-truncate"></div>
+			      </th>
+			    </tr>
+			  </thead>
+			  <tbody>
+					<tr>
+						<td data-label="Patient">
+			        <div class="slds-truncate"><a href="profile.html">Vannessa Trivett</a></div>
+			      </td>
+			      <td data-label="Due Date">
+			        <div class="slds-truncate">1234567890</div>
+			      </td>
+			      <td data-label="Hospital">
+			        <div class="slds-truncate">Highland Medical Clinic<br />Lindenhurst, NY</div>
+			      </td>
+						<td data-label="Admitting Diagnosis">
+							<div class="slds-truncate">Pneumonia</div>
+						</td>
+						<td data-label="ER Visit">
+							<div class="slds-truncate">--</div>
+						</td>
+						<td data-label="Admission Date">
+							<div class="slds-truncate">Today</div>
+						</td>
+						<td data-label="Discharge Date">
+							<div class="slds-truncate">--</div>
+						</td>
+						<td data-label="Action">
+							<div class="slds-truncate">
+								<a href="javascript:void(0)" class="EditHCE slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Edit</span>
+								</a>
+							</div>
+						</td>
+			    </tr>
+					<tr>
+						<td data-label="Patient">
+			        <div class="slds-truncate"><a href="profile.html">Rose Wilksen</a></div>
+			      </td>
+			      <td data-label="Due Date">
+			        <div class="slds-truncate">1234567890</div>
+			      </td>
+			      <td data-label="Hospital">
+			        <div class="slds-truncate">Progress General Hospital<br />Levittown, NY </div>
+			      </td>
+						<td data-label="Admitting Diagnosis">
+							<div class="slds-truncate">Acute renal failure</div>
+						</td>
+						<td data-label="ER Visit">
+							<div class="slds-truncate">Yes</div>
+						</td>
+						<td data-label="Admission Date">
+							<div class="slds-truncate">Yesterday</div>
+						</td>
+						<td data-label="Discharge Date">
+							<div class="slds-truncate">--</div>
+						</td>
+						<td data-label="Action">
+							<div class="slds-truncate">
+								<a href="javascript:void(0)" class="EditHCE slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Edit</span>
+								</a>
+							</div>
+						</td>
+			    </tr>
+					<tr id="HCE3" class="slds-hide">
+						<td data-label="Patient">
+			        <div class="slds-truncate"><a href="profile.html">Carl Lehoux</a></div>
+			      </td>
+			      <td data-label="Due Date">
+			        <div class="slds-truncate">1234567890</div>
+			      </td>
+			      <td data-label="Hospital">
+			        <div class="slds-truncate">Broadwater Clinic<br />Mineola, NY</div>
+			      </td>
+						<td data-label="Admitting Diagnosis">
+							<div class="slds-truncate">Cardiac dysrhythmia</div>
+						</td>
+						<td data-label="ER Visit">
+							<div class="slds-truncate">--</div>
+						</td>
+						<td data-label="Admission Date">
+							<div class="slds-truncate">4 days ago</div>
+						</td>
+						<td data-label="Discharge Date">
+							<div class="slds-truncate">--</div>
+						</td>
+						<td data-label="Action">
+							<div class="slds-truncate">
+								<a href="javascript:void(0)" class="EditHCE slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+						  		<span class="slds-text-not-selected">Edit</span>
+								</a>
+							</div>
+						</td>
+			    </tr>
+			  </tbody>
+			</table>
+			</div>
+			</div>
+		  <div id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+					<div class="slds-grid slds-p-horizontal--large">
+				  </div>
+					<div class="slds-container--fluid slds-p-horizontal--large">
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+				  <thead>
+				    <tr class="slds-text-title--caps">
+							<th scope="col">
+				        <div class="slds-truncate">Patient</div>
+				      </th>
+							<th scope="col">
+				        <div class="slds-truncate">DOB</div>
+				      </th>
+				      <th scope="col">
+				        <div class="slds-truncate">Age</div>
+				      </th>
+				      <th scope="col">
+				        <div class="slds-truncate">Gender</div>
+				      </th>
+							<th scope="col">
+				        <div class="slds-truncate">Phone</div>
+				      </th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="Patient">
+				        <div class="slds-truncate"><a href="profile.html">Earl Walker</a></div>
+				      </td>
+							<td data-label="DOB">
+				        <div class="slds-truncate">7/23/1939</div>
+				      </td>
+				      <td data-label="Age">
+				        <div class="slds-truncate">78</div>
+				      </td>
+				      <td data-label="Gender">
+				        <div class="slds-truncate">Male</div>
+				      </td>
+							<td data-label="Phone">
+				        <div class="slds-truncate">414-234-9876</div>
+				      </td>
+				    </tr>
+						<tr>
+							<td data-label="Patient">
+				        <div class="slds-truncate"><a href="profile.html">Gladys Scott</a></div>
+				      </td>
+							<td data-label="DOB">
+				        <div class="slds-truncate">3/15/1946</div>
+				      </td>
+				      <td data-label="Age">
+				        <div class="slds-truncate">70</div>
+				      </td>
+				      <td data-label="Gender">
+				        <div class="slds-truncate">Female</div>
+				      </td>
+							<td data-label="Phone">
+				        <div class="slds-truncate">433-223-9936</div>
+				      </td>
+				    </tr>
+						<tr>
+							<td data-label="Patient">
+				        <div class="slds-truncate"><a href="profile.html">Helen Turner</a></div>
+				      </td>
+							<td data-label="DOB">
+				        <div class="slds-truncate">10/6/1933</div>
+				      </td>
+				      <td data-label="Age">
+				        <div class="slds-truncate">83</div>
+				      </td>
+				      <td data-label="Gender">
+				        <div class="slds-truncate">Female</div>
+				      </td>
+							<td data-label="Phone">
+				        <div class="slds-truncate">744-233-9498</div>
+				      </td>
+				    </tr>
+				  </tbody>
+				</table>
+				</div>
+			</div>
+		</div>
+		<div id="HCESuccess" class="slds-hide">
+		<div class="slds-notify_container">
+		  <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+		    <span class="slds-assistive-text">Success</span>
+				<button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+					<img src="assets/icons/utility/close_60.png" class="slds-button__icon slds-button__icon--large" />
+					<span class="slds-assistive-text">Close</span>
+				</button>
+				<div class="slds-notify__content slds-grid">
+					<img src="assets/icons/utility/notification_60.png" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex" />
+					<div class="slds-col slds-align-middle">
+		        <h2 class="slds-text-heading--small ">Your event was successfully added.</h2>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div id="EnrollSuccess" class="slds-hide">
+	<div class="slds-notify_container">
+		<div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+			<span class="slds-assistive-text">Success</span>
+			<button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+				<img src="assets/icons/utility/close_60.png" class="slds-button__icon slds-button__icon--large" />
+				<span class="slds-assistive-text">Close</span>
+			</button>
+			<div class="slds-notify__content slds-grid">
+				<img src="assets/icons/utility/notification_60.png" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex" />
+				<div class="slds-col slds-align-middle">
+					<h2 class="slds-text-heading--small ">Your patient was successfully enrolled.</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<div id="HCE" class="slds-hide" data-load="new-hce.html"></div>
+	</body>
+</html>

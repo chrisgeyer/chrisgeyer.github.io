@@ -1,0 +1,106 @@
+<html lang="en">
+	<head>
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+						$.getScript('scripts.js');
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body class="palliative">
+		<div id="header" data-load="header.html"></div>
+		<div class="slds-container--fluid slds-p-around--large visit">
+			<div class="slds-text-heading--medium slds-m-bottom--medium">Initial Home Visit - Sylvia Wright</div>
+			<div class="slds-wizard" role="navigation">
+			  <ol class="slds-wizard__list">
+			    <li class="slds-wizard__item slds-is-active">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Navigation">Patient<br /> Information</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Actions">Condition<br /> Summary</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Compact Layout">Medications &amp;<br /> Allergies</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Review">Vitals</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Review">Physical<br /> Exam</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Review">Assessments</span>
+			      </a>
+			    </li>
+			    <li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Invite">Home<br /> Services</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Invite">Advance<br /> Directives</span>
+			      </a>
+			    </li>
+					<li class="slds-wizard__item">
+			      <a href="javascript:void(0);" class="slds-wizard__link">
+			        <span class="slds-wizard__marker"></span>
+			        <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Invite">Visit<br /> Summary</span>
+			      </a>
+			    </li>
+			  </ol>
+			  <span class="slds-wizard__progress">
+			    <span class="slds-wizard__progress-bar" style="width:0%;"></span>
+			  </span>
+			</div>
+			<div class="slds-form--stacked slds-box slds-size--1-of-2 slds-m-top--large">
+				<div data-load="patient-info.html"></div>
+				<div class="slds-align--absolute-center">
+					<a href="initial-2.html" class="slds-button slds-button--brand slds-m-around--medium">Complete</a>
+				</div>
+			</div>
+			<div class="slds-notify_container">
+  <div class="slds-notify slds-notify--toast slds-theme--error" role="alert">
+    <span class="slds-assistive-text">Error</span>
+    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close">
+      <img src="assets/icons/utility/close_60.png" class="slds-button--icon-x-small" />
+      <span class="slds-assistive-text">Close</span>
+    </button>
+    <div class="slds-notify__content slds-grid">
+        <img src="assets/icons/utility/warning_60.png" class="slds-button--icon-x-small" />
+      <div class="slds-col slds-align-middle">
+        <h2 class="slds-text-heading--small">You encountered some errors when trying to save.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+	</body>
+</html>

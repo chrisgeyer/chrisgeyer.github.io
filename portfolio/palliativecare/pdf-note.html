@@ -1,0 +1,205 @@
+<html lang="en">
+		<title>Palliative Care - Salesforce</title>
+		<meta name="viewport" content="initial-scale=1">
+    <link href="assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+		<link href="../css/palliative.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body class="palliative">
+		<div class="slds-notify_container" style="position:static;">
+			<div class="slds-notify slds-notify--alert slds-theme--alert-texture slds-clearfix" role="alert">
+				<span class="slds-assistive-text">Info</span>
+				<h2 class="slds-float--left"><a href="profile.html">< Back to profile</a></h2>
+			</div>
+		</div>
+		<div class="slds-page-header" role="banner">
+		  <div class="slds-grid">
+		    <div class="slds-has-flexi-truncate">
+					<div class="slds-col slds-float--right slds-size--1-of-5">
+						<div class="slds-global-header__logo">
+							<img src="../img/optum_care_logo.png" alt="">
+							<p>Palliative Care</p>
+							<p>Phone: 123-456-7890</p>
+						</div>
+					</div>
+		      <div class="slds-col slds-size--4-of-5 slds-media slds-no-space slds-grow">
+		        <div class="slds-media__figure">
+		          <img src="../img/sylvia.png" class="" />
+		        </div>
+		        <div class="slds-media__body">
+							<p class="slds-text-title--caps slds-line-height--reset">&nbsp;</p>
+		          <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Sylvia Wright
+								<span class="">DNR</span>
+							</span>
+							</h1>
+							<!-- p class="slds-text-title--caps slds-line-height--reset">76 yr old Female with Heart Failure, COPD</p -->
+							<p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">7/18/1940</a></p>
+							<p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">76yr F</a></p>
+				      <p class="slds-text-title slds-truncate">Heart Failure, COPD</p>
+						</div>
+		      </div>
+		    </div>
+		  </div>
+			<ul class="slds-grid slds-page-header__detail-row">
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Patient Phone</p>
+		      <p class="slds-text-body--regular slds-truncate"><a href="javascript:void(0)">555-555-5555</a></p>
+		    </li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Patient Address</p>
+		      <p class="slds-text-body--regular slds-truncate">123 Main Street NY, NY 123456</a></p>
+		    </li>
+		    <!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Caregiver</p>
+		      <p class="slds-text-body--regular slds-truncate"><a href="javascript:void(0)">Maria, Daughter - 555-555-5555</a></p>
+		    </li -->
+		    <!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field2">DOB</p>
+		      <p class="slds-text-body--regular">7/18/1940</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 3">6mo Admits</p>
+					<p class="slds-text-body--regular">1</p>
+				</li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 3">6mo ER</p>
+					<p class="slds-text-body--regular">--</p>
+				</li>
+		    <li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Last Visit</p>
+					<p class="slds-text-body--regular">Today</p>
+				</li -->
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Ethnicity</p>
+		      <p class="slds-text-body--regular slds-truncate">White</p>
+		    </li>
+				<li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">Program</p>
+		      <p class="slds-text-body--regular slds-truncate">UHC</p>
+		    </li>
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field1">PCP</p>
+		      <p class="slds-text-body--regular slds-truncate"><a href="javascript:void(0)">Dr. John Smith - 215-123-4567</a></p>
+		    </li -->
+		    <!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">DNR</p>
+		      <p class="slds-text-body--regular">Yes</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Allergies</p>
+		      <p class="slds-text-body--regular">Penicillin, Ciproflaxin</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Member ID</p>
+		      <p class="slds-text-body--regular">1234567</p>
+		    </li -->
+				<!-- li class="slds-page-header__detail-block">
+		      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">Death Date</p>
+		      <p></p>
+		    </li -->
+		  </ul>
+		</div>
+		<div class="slds-p-around--medium slds-has-divider--bottom">
+			<h3 class="slds-section__title">Visit Summary</h3>
+			<p class="slds-m-bottom--small">12/20/2016 seen by: Julianne Whelan &amp; Dr. Gwen Jones</p>
+			<p class="slds-m-bottom--small"><strong>Summary Assessment</strong><br />This 76-year-old woman has dyspnea due to COPD. She understands her diagnosis and prognosis. She and her daughter made it quite clear that they do not want to suffer and would like to be cared for at home. They would like no heroic or extraordinary measures used to keep her alive.</p>
+			<p><strong>Plan</strong><br /><ol>
+				<li>COPD – increased prednisone to 10 mg/day</li>
+				<li>Contact local hospice provider to evaluate patient for enrollment.</li>
+				<li>MOLST completed.  DNR and DNH orders.</li>
+			</ol></p>
+		</div>
+		<div class="slds-p-around--medium slds-has-divider--bottom">
+			<h3 class="slds-section__title">Condition Summary</h3>
+			<p><strong>Major Concern</strong> - Heart Failure</p>
+			<p><strong>Primary Diagnosis</strong> - COPD</p>
+			<p><strong>Problem List</strong> - COPD</p>
+			<p><strong>History of Present Illness</strong> - COPD</p>
+		</div>
+		<div class="slds-p-around--medium slds-has-divider--bottom">
+			<h3 class="slds-section__title">Clinical Details</h3>
+			<p><strong>Vitals</strong></p>
+			<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-m-bottom--large">
+				<thead>
+					<tr class="slds-text-title--caps">
+						<!-- th scope="col">
+							<div class="slds-truncate" title="Visit Date">Visit</div>
+						</th -->
+						<th scope="col">
+							<div class="slds-truncate" title="">BP</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="">HR</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="">Temp</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="">RR</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="">O<sup>2</sup></div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="">Height</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="">Weight</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- td data-label="Visit Date">
+							<div class="slds-truncate">12/20/2016<br />Julianne Whelan</div>
+						</td -->
+						<td data-label="">
+							<div class="slds-truncate">120/80</div>
+						</td>
+						<td data-label="">
+							<div class="slds-truncate">96</div>
+						</td>
+						<td data-label="">
+							<div class="slds-truncate">96.5</div>
+						</td>
+						<td data-label="">
+							<div class="slds-truncate">44</div>
+						</td>
+						<td data-label="">
+							<div class="slds-truncate">96</div>
+						</td>
+						<td data-label="">
+							<div class="slds-truncate">80</div>
+						</td>
+						<td data-label="">
+							<div class="slds-truncate">120</div>
+						</td>
+					</tr>
+					<!-- tr class="slds-hide details">
+						Blood pressure 120/80 O2 Saturation 90% Pulse 80 bpm respiratory Rate 25 bpm
+					</tr -->
+				</tbody>
+			</table>
+			<p><strong>Assessments?</strong></p>
+		</div>
+		<div class="slds-p-around--medium slds-has-divider--bottom">
+			<h3 class="slds-section__title">Medication Details</h3>
+			<ul>
+			  <li>Trazodone 50mg PO BID</li>
+			  <li>Bisacodyl 10mg PO BID</li>
+			  <li>Levomepromazine 25mg PO BID</li>
+				<li>Metoclopramide 10mg PO BID</li>
+				<li>Prednisolone 5mg PO BID</li>
+			</ul>
+		</div>
+	</body>
+</html>
