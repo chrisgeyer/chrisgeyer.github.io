@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>DudeRequest</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alfg/ping.js@0.2.2/dist/ping.min.js" type="text/javascript"></script>
+    <style>
+      body {background:#f5f5f5; margin:0; padding:1%; font-family:sans-serif;}
+      a {color:#FF5C39;}
+      h1 {color:#FF5C39; margin-bottom:1em; text-align:center;}
+      h1 span {color:#003D4C;}
+      h3 {color:#003D4C;}
+      .button, [type="file"] + label {display:inline-block; float:right; background:#FF5C39; color:#fff; border-radius:100px; padding:0.7em; text-decoration:none; transition:all 0.2s;}
+      .button.primary {background:#FF5C39; color:#fff;}
+      .button.secondary, [type="file"] + label {background:#fff; color:#FF5C39; margin-left:3%;}
+      .fourth .primary {display:block; float:none; margin-bottom:0.5em;}
+      .card {background:#fff; padding:1%; margin:0 auto; width:98%;}
+      .hide {display:none;}
+      .right {float:right;}
+      .chat {animation:message1 9s;}
+      .user {width:2em; float:left;}
+      .message {border-radius:20px; overflow:hidden; margin-left:3em; padding:1em; box-shadow:1px 1px 0px #ddd; background:#C6DAE7; margin-bottom:1em}
+      @keyframes message1 {
+      	0% {
+      		opacity: 0;
+      		transform: translateY(50%);
+      	}
+      	10%, 100% {
+      		opacity: 1;
+      		transform: translateY(0%);
+      	}
+      }
+      .message p {margin-top:0;}
+      .message input {font-size:16px; vertical-align: middle; width:75%; /*margin:0 0 0 5%;*/ border:none; border-bottom:1px solid #333; background:transparent; height:2.5em;}
+      .message input:focus {outline:0;}
+      .response {background: #ddd; color: #FF5C39; text-align: right; margin-left: 20%;}
+      #map {height: 400px; width: 100%;}
+      [type="file"] {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important;
+        white-space: nowrap;
+        width: 1px;
+      }
+      [type="file"] + label {float:left;}
+      [type="file"] + label:hover {border: 3px solid #FF5C39;}
+      [type="file"]:focus + label {outline: 1px dotted #000;}
+    </style>
+  </head>
+  <body>
+    <h1><span>Dude</span>Request</h1>
+    <div class="card">
+      <div class="chat first hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Welcome to DudeRequest!<br/> Looks like you are new here, can you tell me your name?</p>
+        <input id="Name" type="text" /> <a href="javascript:void(0);" id="NameOk" class="button primary">OK</a></div>
+      </div>
+      <div class="chat second hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Thanks<span id="Greet"></span>! <br/> First, please tell me if your issue is a facility emergency (i.e. flooding)?</p>
+          <a href="javascript:void(0);" id="EmergYes" class="button secondary">Yes</a>
+          <a href="javascript:void(0);" id="EmergNo" class="button secondary">No</a></div>
+      </div>
+      <div class="chat threeA hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>[Add Later] </p>
+          <input id="IssueA" type="text" /> <a href="javascript:void(0);" id="IssueOkA" class="button primary">OK</a></div>
+      </div>
+      <div class="chat threeB hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>That's a relief! <br/> Please tell me about your issue</p>
+          <input id="IssueB" type="text" /> <a href="javascript:void(0);" id="IssueOkB" class="button primary">OK</a></div>
+      </div>
+      <div class="chat fourth hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Looks like you are having a HVAC issue, can you answer any of the following questions?</p>
+          <a href="javascript:void(0);" id="Q1" class="button primary">Do you feel any air blowing?</a>
+          <a href="javascript:void(0);" id="Q2" class="button primary">What is the air temperature?</a>
+          <a href="javascript:void(0);" id="Q3" class="button primary">[Question]</a>
+          <a href="javascript:void(0);" id="Skip" class="button secondary">Skip</a>
+        </div>
+      </div>
+      <div class="chat context1 hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Do you feel any air blowing?</p>
+          <a href="javascript:void(0);" id="ContextYes" class="button secondary">Yes</a>
+          <a href="javascript:void(0);" id="ContextNo" class="button secondary">No</a></div>
+      </div>
+      <div class="chat fifth hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Now tell me where your issue occurs? You can enter an address or tap on map</p>
+          <input id="Location" type="text" />
+          <div id="map"></div>
+          <input type="text" id="Additional" placeholder="Additional information about location (room, etc.)" /><a href="javascript:void(0);" id="LocationOk" class="button primary">OK</a></div>
+      </div>
+      <div class="chat sixth hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Almost wrapped up, can you take a picture of the issue for me?</p>
+          <a href="javascript:void(0);" id="PhotoYes" class="button secondary">Yes</a>
+          <a href="javascript:void(0);" id="PhotoNo" class="button secondary">No</a></div>
+      </div>
+      <div class="chat image hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Send me your photo</p>
+          <input type="file" id="Camera" accept="image/*" capture>
+          <label for="Camera">Capture Photo</label>
+          <a href="javascript:void(0);" id="PhotoOk" class="button primary">OK</a></div>
+      </div>
+      <div class="chat seventh hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Alright, looks like I have all I need to send this information to [DudeSchool] get your issue taken care of. <br/> Let me know how you would like to be notified.</p>
+          <a href="javascript:void(0);" id="ConfirmPhone" class="button secondary">Phone</a>
+          <a href="javascript:void(0);" id="ConfirmEmail" class="button secondary">Email</a>
+          <a href="javascript:void(0);" id="ConfirmNo" class="button secondary">No Thanks</a></div>
+      </div>
+      <div class="chat contact hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>Great, please tell me your <span id="Method"></span></p>
+          <input id="Contact" type="text" /> <a href="javascript:void(0);" id="ContactOk" class="button primary">OK</a></div>
+      </div>
+      <div class="chat finish hide">
+        <img class="user" src="DudeLogo.svg" />
+        <div class="message"><p>We are all done here, thanks for using DudeRequest! <br/> You can text #Help to [123-456-7890] if you need to submit another issue next time. <br/>Please send me this tracking code [977923423] if you want to check in on the status.</p></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var map;
+      var geocoder;
+      var markers = [];
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 18.5
+        });
+        geocoder = new google.maps.Geocoder;
+        var input = document.getElementById('Location');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(input);
+
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        searchBox.addListener('places_changed', function() {
+          for(i = 0; i < markers.length; i++){
+            markers[i].setMap(null);
+          }
+          // TODO reverse geocode address for marker on map
+          geocodeAddr(geocoder, $('#Location').val(), map);
+        });
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {lat: position.coords.latitude, lng: position.coords.longitude};
+            geocodeLatLng(geocoder, pos, map);
+          }, function() {
+            handleLocationError(true, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, map.getCenter());
+        }
+
+        google.maps.event.addListener(map, 'click', function(event){
+          for(i = 0; i < markers.length; i++){
+            markers[i].setMap(null);
+          }
+          var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+          geocodeLatLng(geocoder, latlng, map);
+        });
+      }
+
+      function geocodeLatLng(geocoder, latlng, map) {
+        //marker.setMap(null);
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+            if (results[0]) {
+              markers.push(new google.maps.Marker({
+                position: latlng,
+                map: map
+              }));
+              map.setCenter(latlng);
+              $('#Location').val((results[0].formatted_address));
+            } else {
+              console.log('No results found');
+            }
+          } else {
+            console.log('Geocoder failed due to: ' + status);
+          }
+        });
+      }
+      function geocodeAddr(geocoder, address, map) {
+        //marker.setMap(null);
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            if (results[0]) {
+              var latlng = {
+                lat: results[0].geometry.location.lat(),
+                lng: results[0].geometry.location.lng()
+              };
+              markers.push(new google.maps.Marker({
+                position: latlng,
+                map: map
+              }));
+              map.setCenter(latlng);
+            } else {
+              console.log('No results found');
+            }
+          } else {
+            console.log('Geocoder failed due to: ' + status);
+          }
+        });
+      }
+
+      window.onload = function() {
+        $('.first').slideDown(1000);
+      }
+      $('#NameOk').on('click', function() {
+        var name = $('#Name').val();
+        $('#Greet').text(' ' + name);
+        $('#LearnYes').addClass('right');
+        response($('#Name').val(), 'first');
+        $('.second').slideDown(1000);
+      });
+      $('#EmergNo').on('click', function() {
+        $('#EmergNo').addClass('selected');
+        response('Non-emergency', 'second');
+        $('.threeB').slideDown(1000);
+      });
+      $('#IssueOkB').on('click', function() {
+        response($('#IssueB').val(), 'threeB');
+        $('.fourth').slideDown(1000);
+      });
+      $('#Q1').on('click', function() {
+        $('.fourth').hide();
+        $('.context1').slideDown(1000);
+      });
+      $('#Skip').on('click', function() {
+        response('No context', 'fourth');
+        $('.fifth').slideDown(1000);
+      });
+      $('#ContextYes').on('click', function() {
+        response('Yes, air blowing', 'context1');
+        $('.fifth').slideDown(1000);
+      });
+      $('#ContextNo').on('click', function() {
+        response('No air blowing', 'context1');
+        $('.fifth').slideDown(1000);
+      });
+      $('#LocationOk').on('click', function() {
+        var room = $('#Additional').val();
+        if (room = '') {
+          response($('#Location').val(), 'fifth');
+        } else {
+          response($('#Location').val() + '<br/>' + $('#Additional').val() , 'fifth');
+        }
+        $('.sixth').slideDown(1000);
+      });
+      $('#PhotoYes').on('click', function() {
+        $('.sixth').hide();
+        //response('Yes', 'sixth');
+        $('.image').slideDown(1000);
+      });
+      $('#PhotoNo').on('click', function() {
+        response('No image', 'sixth');
+        $('.user').hide();
+        $('.message').hide();
+        $('.message.response').show();
+        $('.seventh').slideDown(1000);
+        $('.seventh .message').show();
+      });
+      $('#PhotoOk').on('click', function() {
+        response('[Image]', 'image');
+        $('.user').hide();
+        $('.message').hide();
+        $('.message.response').show();
+        $('.seventh').slideDown(1000);
+        $('.seventh .user').show();
+        $('.seventh .message').show();
+      });
+      $('#ConfirmPhone').on('click', function() {
+        $('.seventh').hide();
+        $('.contact').slideDown(1000);
+        $('.contact .user').show();
+        $('.contact .message').show();
+        $('#Method').text('phone');
+      });
+      $('#ConfirmEmail').on('click', function() {
+        $('.seventh').hide();
+        $('.contact').slideDown(1000);
+        $('.contact .user').show();
+        $('.contact .message').show();
+        $('#Method').text('email');
+      });
+      $('#ConfirmNo').on('click', function() {
+        response('No contact', 'seventh');
+        $('.finish').slideDown(1000);
+        $('.finish .user').show();
+        $('.finish .message').show();
+      });
+      $('#ContactOk').on('click', function() {
+        response($('#Contact').val(), 'contact');
+        $('.contact .message').hide();
+        $('.contact .user').hide();
+        $('.contact .response').show();
+        $('.finish').slideDown(1000);
+        $('.finish .user').show();
+        $('.finish .message').show();
+      });
+      function response(input, step) {
+        var selector = '.' + step + ' .message';
+        $(selector + ' input').addClass('hide');
+        $(selector + ' .button').addClass('hide');
+        $(selector).after('<div class="message response">' + input + '</div>')
+      }
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+      } else {
+        console.log('Geolocation is not supported by this browser.');
+      }
+      function geoSuccess(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        console.log("lat:" + lat + " lng:" + lng);
+      }
+      function geoError() {
+        console.log("Geocoder failed.");
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxetpyHVZjCvML6Y_cBGW1CHoCdEOnpps&libraries=places&callback=initMap"
+   type="text/javascript"></script>
+  </body>
+</html>
