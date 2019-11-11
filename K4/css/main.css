@@ -108,7 +108,7 @@ textarea {
   .plan {background:#FF5C39; position:absolute; top:15%; left:10%; width:75%; height:500px; padding:1em; color:#FF5C39;}
 
   .close {float: left; height: 50px; margin-top: 13px; margin-right: 10px;}
-  p {margin:0; color:#FF5C39;}
+  p {/*margin:0;*/ color:#333;}
   .right {float:right;}
 
   body {background:#fff; font-family:sans-serif;}
@@ -128,6 +128,13 @@ textarea {
   section > div {margin:0 auto; width:80%; overflow:hidden;}
   section h1 {text-align:center; color:#5c5346; margin-top:0;}
 
+  .page {background:#fff; padding:1em;}
+  .page img {float:right; width:50%;}
+  .list {padding:0; overflow:hidden;}
+  .list li {float:left; width:33%; display:inline;}
+  .page p a {margin:0 !important;}
+  .author {float:right;}
+
   .appshot {display:inline-block; width:35%; text-align:center; vertical-align:top;}
   .appshot img {max-width:250px; animation:drop 1s ease;}
   @keyframes drop {
@@ -145,9 +152,13 @@ textarea {
     100% {left:auto;}
   }
   .form li {list-style:none;}
+  .form ul {padding:0;}
   .form label {color:#a69f98; font-weight:700; display:block;}
-  .form input {padding:0.25em; width:80%; margin-bottom:0.5em;}
-  .form textarea {width:80%; height:6em; padding:0.25em; margin-bottom:0.5em; border:1px solid #ccc;}
+  .form input {padding:0.25em; width:70%; margin-bottom:0.5em;}
+  .form img {margin-bottom:0.5em;}
+  .form select {width:70%; margin-bottom:0.5em;}
+  .form textarea {width:70%; height:6em; padding:0.25em; margin-bottom:0.5em; border:1px solid #ccc;}
+  .form .button {margin:1em auto; width:50%; text-align:center; display:block;}
   .button {padding:1em; text-decoration:none; transition:all 0.2s; border:2px solid #8c6057; color:#8c6057; background:transparent; border-radius:3px; margin-top:-0.5em;}
   .button:hover {background:#8c6057; color:#fff;}
   .ctaconfirm {position: absolute; top:-2rem; left: 42%;}
@@ -156,7 +167,7 @@ textarea {
 
   .review {display:inline-block; width:29%; background:#fff; vertical-align:top; border-radius:4px;}
   main a {color:#8c6057; text-decoration:none; margin:1.3em;}
-  .review .button {margin:0 auto 1em; width:25%; display:block;}
+  .review .button {margin:0 auto 1em; width:25%; display:block; text-align:center;}
   .review a:hover {text-decoration:underline;}
   .review p {margin-bottom:1.5em; color:#333;}
   .icontainer {
@@ -295,27 +306,33 @@ textarea {
    Modify as content requires.
   ========================================================================== */
 
-  @media only screen and (min-width:50em) {
+  @media only screen and (min-width:40em) {
     .review {margin-right:2%; padding:1%;}
   }
 
   @media only screen and (max-width:75em) {
     .review {width:45%; margin-bottom:1em;}
-    .review img {max-width:200px; display:block; margin:0 auto 1em;}
-  }
-
-  @media only screen and (max-width:50em) {
-    section > div {width:95% !important;}
-    .modal > div {width:60%;}
-    .appshot img {width:100%;}
+    .review img {display:block; margin:0 auto 1em;}
   }
 
   @media only screen and (max-width:40em) {
-    .appshot, .appdetails, .feature, .icontainer {width:100%;}
+    section > div {width:95% !important;}
+    .modal > div {width:60%;}
+    .appshot img {width:100%;}
+    header h2, header img {float:left;}
+    header {overflow:hidden;}
+    .review h3, .review p {padding:0 1em;}
+    main a {margin-top:0.5em;}
+  }
+
+  @media only screen and (max-width:40em) {
+    .appshot, .appdetails, .review, .icontainer {width:100%;}
     .appdetails ul {padding:0 0 0 1.5em;}
     .appdetails .button {display:block; margin:1em;}
-    .form input {width:95%;}
+    .form input, .form textarea, .form select {width:95%;}
     .modal > div {width:80%;}
+    .page img {float:none; width:100%;}
+    .author {float:none;}
   }
 
   @media print,
