@@ -129,7 +129,7 @@ textarea {
   section h1 {text-align:center; color:#5c5346; margin-top:0;}
 
   .page {background:#fff; padding:1em;}
-  .page img {float:right; width:50%;}
+  .page img {float:right; width:50%; margin-left:1em;}
   .list {padding:0; overflow:hidden;}
   .list li {float:left; width:33%; display:inline;}
   .page p a {margin:0 !important;}
