@@ -331,7 +331,7 @@ textarea {
     .appdetails .button {display:block; margin:1em;}
     .form input, .form textarea, .form select {width:95%;}
     .modal > div {width:80%;}
-    .page img {float:none; width:100%;}
+    .page img {float:none; width:100%; margin:0;}
     .author {float:none;}
   }
 
