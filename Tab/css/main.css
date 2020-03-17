@@ -131,6 +131,9 @@ textarea {
   
   
   .button {padding:1%; width:48%; text-align:center; background:#800000; color:#fff; display:block; text-decoration:none; position:fixed; bottom:0; font-weight:700;}
+  @media only screen and (max-width: 35em) {
+    .button {width:100%; padding:2.5%;}
+  }
   .apple {position:absolute; bottom:0; left:0; width:100%; z-index:100;}
   .success {background:#4BB543; padding:0.5em; text-align:center; font-size:2em; color:#fff;}
   .share {text-align:center; padding:1em;}
@@ -142,6 +145,9 @@ textarea {
   .price {color:#999; float:right; margin-top:1.75em;}
   .right {float:right}
   .details {color:#999; padding:1em;}
+  @media only screen and (max-width: 35em) {
+    .details .right {clear:both;}
+  }
   .order {border-top:1px solid #ddd; margin:0;}
   .order li {padding:0.7em 1em 0.7em 0;}
   .order a {text-decoration:none; color:#800;}
