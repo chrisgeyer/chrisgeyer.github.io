@@ -150,7 +150,7 @@ textarea {
   .details {color:#999; padding:1em;}
   @media only screen and (max-width: 35em) {
     .details {text-align:center;}
-    .details .right {float:none;}
+    .details .right {float:none; display:block;}
   }
   .order {border-top:1px solid #ddd; margin:0;}
   .order li {padding:0.7em 1em 0.7em 0;}
