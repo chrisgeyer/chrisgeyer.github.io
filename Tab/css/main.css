@@ -135,6 +135,9 @@ textarea {
     .button {width:100%; padding:2.5%;}
   }
   .apple {position:absolute; bottom:0; left:0; width:100%; z-index:100;}
+  @media only screen and (max-width: 35em) {
+    .apple {}
+  }
   .success {background:#4BB543; padding:0.5em; text-align:center; font-size:2em; color:#fff;}
   .share {text-align:center; padding:1em;}
   .button:hover {background:#fff; color:#800; border:2px solid #800;}
@@ -146,7 +149,8 @@ textarea {
   .right {float:right}
   .details {color:#999; padding:1em;}
   @media only screen and (max-width: 35em) {
-    .details .right {clear:both;}
+    .details {text-align:center;}
+    .details .right {float:none;}
   }
   .order {border-top:1px solid #ddd; margin:0;}
   .order li {padding:0.7em 1em 0.7em 0;}
