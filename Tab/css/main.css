@@ -172,7 +172,7 @@ textarea {
   .sub li {padding:0.5em;}
   .sub a {margin-right:1em; color:#800; background:#ddd; padding:0.3em; cursor:pointer;}
 
-  .half {width:49%;}
+  .half {width:24%; margin-left:24%;}
   
   ul.form {padding:0;}
   .form li {list-style-type:none;}
