@@ -172,7 +172,7 @@ textarea {
   .sub li {padding:0.5em;}
   .sub a {margin-right:1em; color:#800; background:#ddd; padding:0.3em; cursor:pointer;}
 
-  .half {width:24%; margin-left:24%;}
+  .half {width:23%; margin-left:25%;}
   #View {margin:0; background:#fff; color:#800000;}
   
   ul.form {padding:0;}
