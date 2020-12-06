@@ -113,6 +113,10 @@ textarea {
    input, select {width:80%; padding:0.5em;}
    #Calc {padding:1em; width:80%; text-align:center; text-decoration:none; background:#0089c4; display:block; color:#fff; font-weight:700;}
 
+   .right {float:right;}
+   .subcat {border-top:1px solid #ddd; border-bottom: 1px solid #ddd;}
+   .subcat li {padding-left: 20px; margin:0.5em 0;}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
