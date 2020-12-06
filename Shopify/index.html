@@ -25,103 +25,20 @@
   <!-- Add your site or application content here -->
   <main>
     <h1>Inventory by Product</h1>
-    <section class="filter">
-      <label>Show</label> <a id="All" href="javascript:void(0);" class="active">All</a> | <a id="Display" href="javascript:void(0);">Missing Barcodes</a>
+    <section>
+      <ul>
+        <li>First Product ($10.00) <img src="img/barcode.png" style="width:30px;" /><div class="right">34</div></li>
+        <li><div class="right">^</div>
+          <a class="expand" href="javascript:void(0);">Product Category</a>
+          <ul class="subcat hidden">
+            <li>A Product ($12.00) <img src="img/barcode.png" style="width:30px;" /><div class="right">14</div></li>
+            <li>B Product ($16.00) <a href="">Add Barcode</a> <div class="right">23</div></li>
+            <li>C Product ($21.00) <a href="" class="btn">Add Barcode</a> <div class="right">39</div></li>
+            <li>D Product ($18.00) <img src="img/barcode.png" style="width:30px;" /><div class="right">42</div></li>
+          </ul>
+        </li>
+      </ul>
     </section>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Product</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr class="barcode">
-          <td><img src="img/barcode.png" style="width:30px;" /></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr class="barcode">
-          <td><img src="img/barcode.png" style="width:30px;" /></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr class="barcode">
-          <td><img src="img/barcode.png" style="width:30px;" /></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr class="barcode">
-          <td><img src="img/barcode.png" style="width:30px;" /></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>[Name]</td>
-          <td>[Type]</td>
-          <td>$5.00</td>
-          <td>10</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
   </main>
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -130,13 +47,8 @@
   <script src="js/main.js"></script>
   <script>
     $(document).ready(function() {
-      $('#Display').on('click', function(){
-        $('.barcode').addClass('hidden');
-        $('.filter a').toggleClass('active');
-      });
-      $('#All').on('click', function(){
-        $('.barcode').removeClass('hidden');
-        $('.filter a').toggleClass('active');
+      $('.expand').on('click', function(){
+        $(this).next('.subcat').toggleClass('hidden');
       });
     });
   </script>
