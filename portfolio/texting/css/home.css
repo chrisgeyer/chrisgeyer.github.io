@@ -1,0 +1,114 @@
+.homeMenuContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    background: #fff;
+    width: 100%;
+}
+
+.homeMenuPanelWidth {
+    min-width: 350px;
+    padding: 15px;
+    flex: 1;
+}
+
+    .homeMenuPanelWidth .section-body {
+        min-height: unset;
+    }
+
+.homeMenuSpecialPadding {
+    padding: 15px 15px 0 15px !important;
+    display: inline-block;
+    width: 100%;
+}
+
+.bulletin-table tr td:first-child {
+    width: 175px;
+    vertical-align: top;
+}
+
+.bulletinRow:not(input):hover {
+    cursor: pointer;
+}
+
+.bulletinFeatures {
+    white-space: nowrap;
+}
+
+.bulletin-priority {
+    font-size:16px;
+    font-weight:700;
+    color:red;
+}
+
+.bulletinContent {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bulletinBody span {
+    cursor: default;
+}
+
+/*Phones*/
+@media only screen and (max-width : 767px) {
+    .bulletinRow {
+        height: auto;
+    }
+
+    .bulletinContent {
+        clear: both;
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+
+    .bulletinBody {
+        padding-left: 15px;
+    }
+
+    .section-body {
+        min-height: initial;
+    }
+
+    .bulletin-table tr td {
+        display:block;
+    }
+
+    .bulletin-table tr td:first-child {
+        width: 100%;
+        height: 36px;
+    }
+}
+
+.emphasisContainer {
+    height: 112px;
+    margin-top: 36px;
+    border: 1px solid #e6e0e0;    
+}
+
+    a.emphasisLink:hover {
+        text-decoration: none !important;
+    }
+
+    .emphasisContainer.creditCardIcon {
+        background: url(../images/ic-creditcard-01.svg) no-repeat;
+        background-size: 50px 112px;
+        background-position-x: 5px;
+        background: #1d78ac;
+    }
+
+    .emphasisContainer .content {
+        margin-left: 60px;
+        background: linear-gradient(#f1f1f1,#fbf5f5);
+        height: 100%;
+        padding-top: 32px;
+        padding-left: 8px;       
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
+.newTag {
+    font-size: 8pt;
+    font-weight: bold;
+    color: #c30000;
+}
