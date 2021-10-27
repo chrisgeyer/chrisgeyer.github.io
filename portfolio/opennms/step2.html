@@ -1,0 +1,539 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1><a href="index.html">Horizon</a></h1>
+			<input type="text" placeholder="Search" />
+			<a href="#" class="right">Sign out</a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="nodes.html">Nodes</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="settings.html">Settings</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>Identify your network inventory</h1>
+	    <div class="stepper">
+        <div class="stepper-steps">
+          <div class="stepper-step stepper-step-isValid">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">1</span>Add Nodes - 262 nodes
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-stepContent stepper-step-isActive">
+            	<span class="stepper-stepMarker">2</span>Configure Services
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">3</span>Schedule
+            </div>
+          </div>
+        </div>
+        <div class="stepper-content">
+					<h3>What services do you want to discover/detect?</h3>
+					<p>You can always come back and add more later.</p>
+					<div class="select add">
+						<a href="javascript:void(0);" class="choice">SNMP</a>
+						<a href="javascript:void(0);" class="choice">HTTP-S</a>
+						<a href="javascript:void(0);" class="choice">SSH</a>
+						<a href="javascript:void(0);" class="choice">ICMP</a>
+						<a href="javascript:void(0);" class="choice">WinRM</a>
+						<div id="Row" class="break"></div>
+						<p class="align-center"><a href="javascript:void(0);" id="ShowMore">More Services</a></p>
+						<div class="break"></div>
+						<br/>
+						<div id="More" class="hidden">
+							<a href="javascript:void(0);" class="choice">Citrix</a>
+							<a href="javascript:void(0);" class="choice">Process-Monitor-via-SNMP</a>
+							<a href="javascript:void(0);" class="choice">Generic-TCP</a>
+							<a href="javascript:void(0);" class="choice">Win32Service</a>
+							<div class="break"></div>
+							<a href="javascript:void(0);" class="choice">ActiveMQ</a>
+							<a href="javascript:void(0);" class="choice">BGP Session</a>
+							<a href="javascript:void(0);" class="choice">BSF</a>
+							<a href="javascript:void(0);" class="choice">Cisco IP SLA</a>
+							<a href="javascript:void(0);" class="choice">DHCP</a>
+							<a href="javascript:void(0);" class="choice">Dell OpenManageChassis</a>
+							<a href="javascript:void(0);" class="choice">DiskUsage</a>
+							<a href="javascript:void(0);" class="choice">FTP</a>
+							<a href="javascript:void(0);" class="choice">IMAP/S</a>
+							<a href="javascript:void(0);" class="choice">JDBC</a>
+							<a href="javascript:void(0);" class="choice">JSR160</a>
+							<a href="javascript:void(0);" class="choice">JDBC Database</a>
+							<a href="javascript:void(0);" class="choice">LDAP/S</a>
+							<a href="javascript:void(0);" class="choice">MSExchange</a>
+							<a href="javascript:void(0);" class="choice">Memcached</a>
+							<a href="javascript:void(0);" class="choice">NTP</a>
+							<a href="javascript:void(0);" class="choice">OMSAStorage</a>
+							<a href="javascript:void(0);" class="choice">PERC</a>
+							<a href="javascript:void(0);" class="choice">POP3</a>
+							<a href="javascript:void(0);" class="choice">RadiusAuth</a>
+							<a href="javascript:void(0);" class="choice">Reverse-DNS-Lookup</a>
+							<a href="javascript:void(0);" class="choice">SMB</a>
+							<a href="javascript:void(0);" class="choice">SMTP</a>
+							<a href="javascript:void(0);" class="choice">TrivialTime</a>
+							<a href="javascript:void(0);" class="choice">WEB</a>
+							<a href="javascript:void(0);" class="choice">WMI</a>
+							<div class="break"></div>
+							<p><a href="#">Create your own</a></p>
+							<div class="break"></div>
+						</div>
+					</div>
+					<p><a href="javascript:void(0);" id="Configure" class="btn right hidden">Configure</a>
+					<div id="SNMP" class="data half hidden">
+						<h3>SNMP <a href="#" class="small">Rename</a></h3>
+						<p><label>Community string (v1/v2c)</label><input type="text" /></p>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>Security Level (v3)</label><select id="Level"><option>noAuthNoPriv</option><option>authNoPriv</option><option>authPriv</option></select></p>
+							<p><label>Security Name</label><input type="text" /></p>
+							<p class="auth hidden"><label>Auth Passphrase</label><input type="text" /></p>
+							<p class="auth hidden"><label>Auth Protocol</label><select><option value="MD5">MD5</option><option value="SHA">SHA</option><option value="SHA-224">SHA-224</option><option value="SHA-256">SHA-256</option><option value="SHA-512">SHA-512</option></select></p>
+							<p class="priv hidden"><label>Privacy Passphrase</label><input type="text" /></p>
+							<p class="priv hidden"><label>Privacy Protocol</label><select><option value="DES">DES</option><option value="AES">AES</option><option value="AES192">AES192</option><option value="AES256">AES256</option></select></p>
+							<hr/>
+							<p><label><select>
+								<option>Hex</option><option>Match All</option>
+								<option>Maximum</option><option>Minimum</option>
+								<option>OID</option><option>Operand</option>
+								<option>Operator</option><option>Port</option>
+								<option>Reason Template</option><option>Walk</option>
+							</select><a href="">[doc link]</a></label> <input type="text" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another profile</a></p>
+					</div>
+					<div id="HTTP-S" class="data half hidden">
+						<h3>HTTP/S <a href="#" class="small">Rename</a></h3>
+						<p><label>Port</label><input type="text" placeholder="80" /></p>
+						<p><label>URL</label><input type="text" /></p>
+						<p><input type="checkbox" /> Use HTTPS</p>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>Return code</label><input type="text" /></p>
+							<p><label><select>
+								<option>Basic Authentication</option><option>Header</option>
+								<option>Host Name</option><option>Password</option>
+								<option>Resolve IP</option><option>Response Text</option>
+								<option>URL</option><option>User</option>
+								<option>User Agent</option><option>Verbose</option>
+							</select><a href="">[doc link]</a></label> <input type="text" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p class="hidden"><label><select><option>Include</option><option>Exclude</option></select></label><input type="text" /></p>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another HTTP service</a></p>
+					</div>
+					<div id="ICMP" class="data half hidden">
+						<h3>ICMP <a href="#" class="small">Rename</a></h3>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>DSCP</label><input type="text" /></p>
+							<p><input type="checkbox" checked /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another type</a></p>
+				 	</div>
+					<div id="SSH" class="data half hidden">
+						<h3>SSH <a href="#" class="small">Rename</a></h3>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>Banner</label><input type="text" /></p>
+							<p><label>Port</label><input type="text" value="22" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another type</a></p>
+				 	</div>
+					<div id="Citrix" class="data half hidden">
+						<h3>Citrix <a href="#" class="small">Rename</a></h3>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>Port</label><input type="text" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another type</a></p>
+				 	</div>
+					<div id="Process-Monitor-via-SNMP" class="data half hidden">
+						<h3>Process Monitor via SNMP <a href="#" class="small">Rename</a></h3>
+						<p><label>Type</label><select><option>Host Resources</option><option>Windows</option></select></p>
+						<!-- p><label>Service Name</label><input type="text" /></p>
+						<p><label><input type="checkbox" /> Match All (update label?)</label></p>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p -->
+						<div class="advanced hidden">
+							<p><label>Run Level</label></p>
+							<p><label>Banner</label><input type="text" /></p>
+							<p><label>Port</label><input type="text" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another type</a></p>
+				 	</div>
+					<div id="Generic-TCP" class="data half hidden">
+						<h3>TCP <a href="#" class="small">Rename</a></h3>
+						<p><label>Port</label><input type="text" value="" /></p>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>Banner</label><input type="text" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another type</a></p>
+				 	</div>
+					<div id="WinRM" class="data half hidden">
+						<h3>WinRM / WSMan <a href="#" class="small">Rename</a></h3>
+						<p><label>Username</label><input type="text" placeholder="" /></p>
+						<p><label>Password</label><input type="text" placeholder="" /></p>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><label>Port</label><input type="text" /></p>
+							<p><input type="checkbox" /> Use TLS</p>
+							<p><label>Object</label><input type="text" /></p>
+							<p><label>WQL Query</label><input type="text" /></p>
+							<p><input type="checkbox" /> Critical Service</p>
+							<p class="hidden"><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another profile</a></p>
+				 	</div>
+					<div id="Win32Service" class="data half hidden">
+						<h3>Win32 <a href="#" class="small">Rename</a></h3>
+						<p><label>Service Name</label><input type="text" /></p>
+						<p><label>Timeout</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><label>Retry</label>[default] <a href="#">customize</a><input type="text" placeholder="override" class="hidden" /></p>
+						<p><a href="javascript:void(0);" class="display">Advanced options</a></p>
+						<div class="advanced hidden">
+							<p><input type="checkbox" /> Critical Service</p>
+							<p><a href="javascript:void(0);" class="display">Add a filter</a></p>
+							<div class="advanced hidden">
+								<p>If <select><option></option><option>any</option><option>all</option></select><select><option>IP address</option><option>Hostname</option></select> matches <label>Value</label><input type="text" placeholder="IP, range" /> then <label>perform</label><select><option>Don't add node</option><option>Don't collect data</option></select></p>
+							</div>
+						</div>
+						<p><br/><a href="javascript:void(0);" class="test btn secondary">Test</a> <a href="javascript:void(0);">Add another type</a></p>
+				 	</div>
+					<div class="iptest half hidden">
+						<br/><br/>
+						<div id="Sample">
+						<strong>Here is a sample of what we collected so far</strong>
+						<h3><a href="javascript:void(0);" class="expand">Location1 (9)</a></h3>
+						<table class="hidden">
+							<tr>
+								<th width="10%">[Service Name]</th>
+								<th>ID</th>
+								<th>Hostname</th>
+								<th>IP</th>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node1</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node2</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node3</td>
+								<td></td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node4</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node5</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node6</td>
+								<td></td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node7</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node8</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node9</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node10</td>
+								<td></td>
+								<td>192.168.1.1</td>
+							</tr>
+						</table>
+						<h3><a href="javascript:void(0);" class="expand">Location2 (8)</a></h3>
+						<table class="hidden">
+							<tr>
+								<th width="10%">[ServiceName]</th>
+								<th>ID</th>
+								<th>Hostname</th>
+								<th>IP</th>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node1</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node2</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node3</td>
+								<td></td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node4</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node5</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node6</td>
+								<td></td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node7</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node8</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class=""></td>
+								<td>Node9</td>
+								<td>test.host.name.etc</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr>
+								<td class="">&#10003;</td>
+								<td>Node10</td>
+								<td></td>
+								<td>192.168.1.1</td>
+							</tr>
+						</table></div>
+						<div id="Availability" class="hidden">
+							<h3 style="margin-top:5px">Do you want to keep the default polling settings?</h3>
+							<ul>
+								<li><strong>Polling Interval</strong> - 5 mins</li>
+								<li><strong>Timeout</strong> - 3 seconds</li>
+								<li><strong>Retry</strong> - 1 time</li>
+							</ul>
+							<div class="select">
+								<a href="javascript:void(0);" class="choice default active">Keep Defaults</a>
+								<a href="javascript:void(0);" class="choice custom">Customize</a>
+							</div>
+							<div id="Custom" class="hidden">
+								<p><label>Polling Interval</label><input type="text" placeholder="" /></p>
+								<p><label>Timeout</label><input type="text" placeholder="default" /></p>
+								<p><label>Retry</label><input type="text" placeholder="default" /></p>
+							</div>
+						</div>
+						<p><br/>
+							<a href="javascript:void(0);" id="Next" class="btn right primary">Next</a>
+							<a href="javascript:void(0);" id="Monitor" class="btn secondary right">Add Availability Monitoring</a>
+						</p>
+					</div>
+				</div>
+        <div class="stepper-actions hidden">
+					<br/>
+					<a href="step3.html" class="btn right">This Looks Good</a>
+					<!-- a href="#" class="btn secondary right">Add Availability Monitoring</a -->
+        </div>
+        </div>
+	    </div>
+		</article>
+	</main>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+			const services = [];
+			var step = 0;
+			$('#ShowMore').on('click', function(){
+				$('#More').toggleClass('hidden');
+      });
+      $('.add .choice').on('click', function(){
+        $(this).toggleClass('active');
+				$('#Configure').removeClass('hidden');
+				services.push(this.text);
+				if($(this).closest('#More').length) {
+					$(this).insertBefore('#Row');
+					$('#More').toggleClass('hidden');
+				}
+      });
+			$('.default').on('click', function(){
+        $(this).toggleClass('success');
+      });
+			$('.custom').on('click', function(){
+        $(this).toggleClass('active');
+				$('#Custom').removeClass('hidden');
+      });
+			$('#Configure').on('click', function(){
+				$(this).parent().addClass('hidden');
+				$('#' + services[0]).removeClass('hidden');
+				$('.choice:contains(' + services[step] + ')').addClass('config');
+      });
+			$('#Monitor').on('click', function(){
+				$(this).addClass('hidden');
+				$('#Sample').addClass('hidden');
+				$('#Availability').removeClass('hidden');
+      });
+			$('.test').on('click', function(){
+				$('.iptest').removeClass('hidden');
+			});
+			$('.display').on('click', function(){
+				$(this).parent().next('.advanced').toggleClass('hidden');
+			});
+			$('.expand').on('click', function(){
+				$(this).parent().next().toggleClass('hidden');
+			});
+			$('#Level').change(function() {
+			  if ($(this).val() == 'authNoPriv') {
+			    $('.auth').removeClass('hidden');
+			  } else if ($(this).val() == 'authPriv') {
+			    $('.auth').removeClass('hidden');
+					$('.priv').removeClass('hidden');
+			  }
+				else {
+					$('.auth').addClass('hidden');
+					$('.priv').addClass('hidden');
+				}
+			});
+			$('#Next').on('click', function(){
+				$('.iptest').addClass('hidden');
+				$('.data').addClass('hidden');
+				$('.choice:contains(' + services[step] + ')').addClass('success');
+				step++;
+				if (step <= services.length - 2) {
+					$('#' + services[step]).removeClass('hidden');
+				}
+				else if (step = services.length - 1) {
+					$('#' + services[step]).removeClass('hidden');
+					$('#Next').addClass('hidden');
+					$('.stepper-actions').removeClass('hidden');
+				}
+      });
+    });
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

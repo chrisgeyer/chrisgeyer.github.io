@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1><a href="index.html">Cloud Console</a></h1>
+			<a href="#">Account Dropdown</a>
+			<input type="text" placeholder="Search" />
+			<a href="#" class="right">Sign out</a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="instances.html">Instances</a></li>
+				<li><a href="appliances.html">Appliances</a></li>
+				<li><a href="features.html">Features</a></li>
+				<li><a href="users.html">Users</a></li>
+				<li><a href="billing.html">Billing</a></li>
+				<li><a href="support.html">Support</a></li>
+			</ul>
+		</nav>
+		<article>
+			<a href="#" class="btn primary right">Invite</a>
+			<h1>User Management</h1>
+			<h4 class="expand"><div class="right">Access</div><a href="javascript:void(0);">Name</a></h4>
+			<h4 class="expand"><div class="right">Access</div><a href="javascript:void(0);">Name</a></h4>
+		</article>
+	</main>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.choice').on('click', function(){
+				$('.choice:not(#ShowChoice1, #ShowChoice2)').removeClass('active');
+				$('.data').addClass('hidden');
+				$('.iptest').addClass('hidden');
+				$('.stepper-actions').addClass('hidden');
+        $(this).addClass('active');
+				// add in reusable from ID with substring?
+      });
+			$('#ShowChoice1').on('click', function(){
+				$('#Discovery1').removeClass('hidden');
+				$('#Discovery2').addClass('hidden');
+				$('#ShowChoice2').removeClass('active');
+      });
+			$('#ShowChoice2').on('click', function(){
+				$('#Discovery2').removeClass('hidden');
+				$('#Discovery1').addClass('hidden');
+				$('#ShowChoice1').removeClass('active');
+      });
+			$('#ShowIPRange').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#IPRange').removeClass('hidden');
+      });
+			$('#ShowPassive').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Passive').removeClass('hidden');
+      });
+			$('.test').on('click', function(){
+				$('.iptest').removeClass('hidden');
+				$('.stepper-actions').removeClass('hidden');
+      });
+			$('#ShowManual').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Manual').removeClass('hidden');
+      });
+			$('#ShowDNS').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#DNS').removeClass('hidden');
+      });
+			$('#ShowSQL').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#SQL').removeClass('hidden');
+      });
+			$('#ShowAPI').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#API').removeClass('hidden');
+      });
+			$('.expand').on('click', function(){
+				$(this).parent().next().removeClass('hidden');
+      });
+			$('#Manual .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#DNS .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#API .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#IPRange .test').on('click', function(){
+				$('#Sample').removeClass('hidden');
+				$('#Fixed').addClass('hidden');
+      });
+    });
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

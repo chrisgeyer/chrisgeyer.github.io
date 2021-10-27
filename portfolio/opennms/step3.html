@@ -1,0 +1,316 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1><a href="index.html">Horizon</a></h1>
+			<input type="text" placeholder="Search" />
+			<a href="#" class="right">Sign out</a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="nodes.html">Nodes</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="settings.html">Settings</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>Identify your network inventory</h1>
+	    <div class="stepper">
+        <div class="stepper-steps">
+          <div class="stepper-step stepper-step-isValid">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">1</span>Add Nodes - 262 nodes
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-stepContent stepper-step-isValid">
+            	<span class="stepper-stepMarker">2</span>Configure Services - 2
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-stepContent stepper-step-isActive">
+            	<span class="stepper-stepMarker">3</span>Schedule
+            </div>
+          </div>
+        </div>
+        <div class="stepper-content">
+					<p><a href="javascript:void(0);" class="nodes">Review Node Summary</a></p>
+					<p><label>Name this batch/set</label><input type="text" value="SystemGeneratedName" /></p>
+					<div id="Cat1" class="data hidden">
+						<p>Now pinging devices to identify nodes</p>
+						<progress id="Count" max="100" value="0">100</progress> out of 500
+						<table id="Nodes">
+							<tr>
+								<th>ID</th>
+								<th>IP</th>
+							</tr>
+							<tr class="hidden">
+								<td>Node1</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node2</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node3</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node4</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node5</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node6</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node7</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node8</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node9</td>
+								<td>192.168.1.1</td>
+							</tr>
+							<tr class="hidden">
+								<td>Node10</td>
+								<td>192.168.1.1</td>
+							</tr>
+						</table>
+					</div>
+					<div id="Cat2" class="data" style="padding:0;">
+						<h3>When do you want to schedule this scan?</h3>
+						<p>You are about to ping [X] devices and this might take a while. If you want to be safe, schedule this at an off peak time for your network.</p>
+						<p><label>Date</label><input type="date" /></p>
+						<p><label>Time</label><input type="time" /></p>
+						<p><label>Re-run this scan?</label>
+							<select><option>Daily - 24hrs</option><option>Weekly - every 7 days</option><option>Never</option></select>
+						</p>
+						<!-- a href="javascript:void(0);" id="Sched" class="btn right">Run Now/Schedule Later</a -->
+					</div>
+          <div class="stepper-actions">
+						<br/>
+						<!-- p><label>Re-run this scan?</label>
+							<select><option>Never</option><option>Weekly</option><option>Daily</option></select>
+						</p -->
+            <a href="inventory.html" class="btn right">Schedule Scan</a>
+          </div>
+        </div>
+	    </div>
+		</article>
+	</main>
+	<div class="drawer__wrapper">
+    <div class="drawer__header">
+      <div class="drawer__title">
+        [Batch#] - 15 Nodes
+      </div>
+      <button class="drawer__close" data-drawer-close="" aria-label="Close Drawer"></button>
+    </div>
+    <div class="drawer__content">
+			<table class="">
+				<tr>
+					<th>ID</th>
+					<th style="width:35%">Hostname</th>
+					<th>IP</th>
+					<th>Service</th>
+				</tr>
+				<tr>
+					<td>Node1</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td>SNMP</td>
+				</tr>
+				<tr>
+					<td>Node2</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td>SNMP</td>
+				</tr>
+				<tr>
+					<td>Node3</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Node4</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Node5</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td>HTTP</td>
+				</tr>
+				<tr>
+					<td>Node6</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Node7</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td>HTTP</td>
+				</tr>
+				<tr>
+					<td>Node8</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td>SNMP</td>
+				</tr>
+				<tr>
+					<td>Node9</td>
+					<td>test.host.name.etc</td>
+					<td>192.168.1.1</td>
+					<td>HTTP</td>
+				</tr>
+				<tr>
+					<td>Node10</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Node11</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Node12</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td>SNMP</td>
+				</tr>
+				<tr>
+					<td>Node13</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td>SNMP</td>
+				</tr>
+				<tr>
+					<td>Node14</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td>HTTP</td>
+				</tr>
+				<tr>
+					<td>Node15</td>
+					<td></td>
+					<td>192.168.1.1</td>
+					<td>HTTP</td>
+				</tr>
+			</table>
+			<br/><br/>
+			<a href="#" class="btn">Remove Nodes</a>
+    </div>
+	</div>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.choice').on('click', function(){
+				$('.choice').removeClass('active');
+				$('.data').addClass('hidden');
+        $(this).addClass('active');
+      });
+			$('#ShowCat1').on('click', function(){
+				$('#Cat1').removeClass('hidden');
+				let bar = 1;
+				let id = setInterval(function() {
+					bar++;
+					console.log('bar increase');
+					$('#Count').val(bar);
+					if (bar >= 100) {
+						console.log('bar done');
+						clearInterval(id);
+					}
+					setTimeout(function(){$('#Nodes tr:eq(1)').removeClass('hidden');}, 500);
+					setTimeout(function(){$('#Nodes tr:eq(2)').removeClass('hidden');}, 800);
+					setTimeout(function(){$('#Nodes tr:eq(3)').removeClass('hidden');}, 1200);
+					setTimeout(function(){$('#Nodes tr:eq(4)').removeClass('hidden');}, 1700);
+					setTimeout(function(){$('#Nodes tr:eq(5)').removeClass('hidden');}, 2300);
+					setTimeout(function(){$('#Nodes tr:eq(6)').removeClass('hidden');}, 2400);
+					setTimeout(function(){$('#Nodes tr:eq(7)').removeClass('hidden');}, 2900);
+					setTimeout(function(){$('#Nodes tr:eq(8)').removeClass('hidden');}, 3100);
+					setTimeout(function(){$('#Nodes tr:eq(9)').removeClass('hidden');}, 5000);
+					setTimeout(function(){$('#Nodes tr:eq(10)').removeClass('hidden');}, 7500);
+					// if ($('#Nodes tr').hasClass('hidden')) {
+					// 	var rand = Math.round(Math.random() * 10);
+					// 	console.log(rand);
+					// 	setTimeout(function() {
+	        //     ShowRow();
+	    		// 	}, rand);
+					// }
+				}, 80);
+				setTimeout(function(){$('.stepper-actions').removeClass('hidden');}, 8500);
+      });
+			$('#ShowCat2').on('click', function(){
+				$('#Cat2').removeClass('hidden');
+				$('.stepper-actions').removeClass('hidden');
+      });
+			$('#Sched').on('click', function(){
+				$(this).addClass('hidden');
+				$('.stepper-actions').removeClass('hidden');
+      });
+			$('#ShowCat4').on('click', function(){
+				$('#Cat4').removeClass('hidden');
+      });
+			$('#SaveCat').on('click', function(){
+				$('.active').addClass('success');
+      });
+			$('.nodes').on('click', function(){
+				$('.drawer__wrapper').addClass('open');
+      });
+			$('.drawer__close').on('click', function(){
+				$('.drawer__wrapper').removeClass('open');
+      });
+    });
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1><a href="index.html">Cloud Console</a></h1>
+			<a href="#">Account Dropdown</a>
+			<input type="text" placeholder="Search" />
+			<a href="#" class="right">Sign out</a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="instances.html">Instances</a></li>
+				<li><a href="appliances.html">Appliances</a></li>
+				<li><a href="features.html">Features</a></li>
+				<li><a href="users.html">Users</a></li>
+				<li><a href="billing.html">Billing</a></li>
+				<li><a href="support.html">Support</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>Setup your OpenNMS Instance</h1>
+	    <div class="stepper">
+        <div class="stepper-steps">
+          <div class="stepper-step stepper-step-isValid">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">1</span>Instance Details
+            </div>
+          </div>
+          <div class="stepper-step stepper-step-isValid">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">2</span>Monitoring Locations
+            </div>
+          </div>
+          <div class="stepper-step stepper-step-isValid">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">3</span>Configure Minions
+            </div>
+          </div>
+					<div class="stepper-step stepper-step-isActive">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">4</span>Add Features & Users
+            </div>
+          </div>
+        </div>
+        <div class="stepper-content">
+					<h3 class="hidden">Do you have any managed network information?</h3>
+					<div class="select hidden">
+						<a href="javascript:void(0);" id="ShowChoice1" class="choice">I have formatted device data</a>
+						<a href="javascript:void(0);" id="ShowChoice2" class="choice">Let OpenNMS find devices for me</a>
+					</div>
+					<div id="Discovery1" class="hidden">
+						<h3>How would you like to import your network devices?</h3>
+							<div class="select">
+							<a href="#" id="ShowManual" class="choice">Manually</a>
+							<a href="#" id="ShowDNS" class="choice">DNS import</a>
+							<!-- a href="#" class="choice">SQL Import</a -->
+							<a href="#" id="ShowAPI" class="choice">Controller API</a>
+						</div>
+					</div>
+					<div id="Discovery2" class="hidden">
+						<h3>How would you like to discover devices on your network?</h3>
+						<div class="select">
+							<a href="javascript:void(0);" id="ShowIPRange" class="choice">IP Range</a>
+							<a href="javascript:void(0);" id="ShowPassive" class="choice">Passive Discovery</a>
+						</div>
+					</div>
+						<div id="IPRange" class="data half hidden">
+							<p><label>Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+						<p><label>Start</label><input type="text"></p>
+						<p><label>End</label><input type="text"></p>
+						<a href="#">Add filter</a>
+						<p class="hidden"><label><select><option>Include</option><option>Exclude</option></select></label><input type="text"></p>
+						<p>
+							<br><a href="javascript:void(0);" class="test btn primary">Test</a> <a href="javascript:void(0);">Add another range</a></p>
+						</div>
+						<div id="Passive" class="data half hidden">
+							<p><label>Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+							<p>Send device traps and syslogs to</p>
+							<p>192.168.1.1</p>
+							<p>in order for OpenNMS to discover</p>
+							<hr>
+							<em>[insert example command line instructions for cisco, juniper, etc]</em>
+						</div>
+						<div id="Manual" class="data half hidden">
+							<h4><a href="#">Download sample file</a></h4>
+							<input type="file"><a class="test btn secondary">Upload</a>
+							<p><a href="#">Paste text</a></p>
+						</div>
+						<div id="DNS" class="data half hidden">
+							<p><label>Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+							<p><label>Host</label><input type="text"></p>
+							<p><label>Zone</label><input type="text"></p>
+							<a href="#">More options</a>
+							<p>
+								<br><a href="javascript:void(0);" class="test btn primary">Test</a> <a href="javascript:void(0);">Add another DNS</a>
+							</p>
+						</div>
+						<div id="API" class="data half" style="margin-right:3%">
+							<h3>Enable Features</h3>
+							<h4 class="expand"><div class="right"><a href="javascript:void(0);">enable</a></div>Time Series Data</h4>
+							<h4 class="expand"><div class="right"><a href="javascript:void(0);">enable</a></div>NetFlows</h4>
+							<h4 class="expand"><div class="right"><a href="javascript:void(0);">enable</a></div>Route Monitoring</h4>
+							<h4 class="expand"><div class="right"><a href="javascript:void(0);">enable</a></div>ALEC</h4>
+						</div>
+						<div id="" class="data half">
+							<h3>Invite Users</h3>
+							<p><label>Email</label><input type="text"></p>
+							<p><label>Role</label><select><option>Role1</option><option>Role2</option><select></p>
+							<a href="#">Add Another</a>
+						</div>
+					</div>
+          <div class="stepper-actions">
+            <a href="instances.html" class="btn right">Build Instance</a>
+          </div>
+        </div>
+		</article>
+	</main>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.choice').on('click', function(){
+				$('.choice:not(#ShowChoice1, #ShowChoice2)').removeClass('active');
+				$('.data').addClass('hidden');
+				$('.iptest').addClass('hidden');
+				$('.stepper-actions').addClass('hidden');
+        $(this).addClass('active');
+				// add in reusable from ID with substring?
+      });
+			$('#ShowChoice1').on('click', function(){
+				$('#Discovery1').removeClass('hidden');
+				$('#Discovery2').addClass('hidden');
+				$('#ShowChoice2').removeClass('active');
+      });
+			$('#ShowChoice2').on('click', function(){
+				$('#Discovery2').removeClass('hidden');
+				$('#Discovery1').addClass('hidden');
+				$('#ShowChoice1').removeClass('active');
+      });
+			$('#ShowIPRange').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#IPRange').removeClass('hidden');
+      });
+			$('#ShowPassive').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Passive').removeClass('hidden');
+      });
+			$('.test').on('click', function(){
+				$('.iptest').removeClass('hidden');
+				$('.stepper-actions').removeClass('hidden');
+      });
+			$('#ShowManual').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Manual').removeClass('hidden');
+      });
+			$('#ShowDNS').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#DNS').removeClass('hidden');
+      });
+			$('#ShowSQL').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#SQL').removeClass('hidden');
+      });
+			$('#ShowAPI').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#API').removeClass('hidden');
+      });
+			$('.expand').on('click', function(){
+				$(this).parent().next().removeClass('hidden');
+      });
+			$('#Manual .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#DNS .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#API .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#IPRange .test').on('click', function(){
+				$('#Sample').removeClass('hidden');
+				$('#Fixed').addClass('hidden');
+      });
+    });
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

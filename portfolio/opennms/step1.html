@@ -1,0 +1,371 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1><a href="index.html">Horizon</a></h1>
+			<input type="text" placeholder="Search" />
+			<a href="#" class="right">Sign out</a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="nodes.html">Nodes</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="settings.html">Settings</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>Identify your network inventory</h1>
+	    <div class="stepper">
+        <div class="stepper-steps">
+          <div class="stepper-step stepper-step-isActive">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">1</span>Add Nodes
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">2</span>Configure Services
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-stepContent">
+            	<span class="stepper-stepMarker">3</span>Schedule
+            </div>
+          </div>
+        </div>
+        <div class="stepper-content">
+					<h3>Do you have any managed network information?</h3>
+					<div class="select">
+						<a href="javascript:void(0);" id="ShowChoice1" class="choice">I have formatted device data</a>
+						<a href="javascript:void(0);" id="ShowChoice2" class="choice">Let OpenNMS find devices for me</a>
+					</div>
+					<div id="Discovery1" class="hidden">
+						<h3>How would you like to import your network devices?</h3>
+							<div class="select">
+							<a href="#" id="ShowManual" class="choice">Manually</a>
+							<a href="#" id="ShowDNS" class="choice">DNS import</a>
+							<a href="#" id="ShowAPI" class="choice">Controller API</a>
+							<a href="#" id="ShowBulk" class="choice">Bulk Import</a>
+						</div>
+					</div>
+					<div id="Discovery2" class="hidden">
+						<h3>How would you like to discover devices on your network?</h3>
+						<div class="select">
+							<a href="javascript:void(0);" id="ShowIPRange" class="choice">IP Range</a>
+							<a href="javascript:void(0);" id="ShowPassive" class="choice">Passive Discovery</a>
+						</div>
+					</div>
+						<div id="IPRange" class="data half hidden">
+							<p><label>Monitoring Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+						<p><label>Start</label><input type="text" /></p>
+						<p><label>End (optional)</label><input type="text" /></p>
+						<a href="#">Add exclude filter</a>
+						<p class="hidden"><label><select><option>Include</option><option>Exclude</option></select></label><input type="text" /></p>
+						<p>
+							<br/><a href="javascript:void(0);" class="test btn primary">Test</a> <a href="javascript:void(0);">Add another range</a></p>
+						</div>
+						<div id="Passive" class="data half hidden">
+							<p><label>Monitoring Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+							<p>Send device traps and syslogs to</p>
+							<p>192.168.1.1</p>
+							<p>in order for OpenNMS to discover</p>
+							<hr/>
+							<em>[insert example command line instructions for cisco, juniper, etc]</em>
+						</div>
+						<div id="Manual" class="data half hidden">
+							<p><label>Monitoring Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+							<p><label>Node</label> <input type="text" /></p>
+							<p><label>Interface</label> <input type="text" /></p>
+							<p><label>Service</label> <input type="text" /></p>
+							<p><a href="javascript:void(0);" class="test btn">Add Node</a></p>
+						</div>
+						<div id="Bulk" class="data half hidden">
+							<h4><a href="#">Download sample CSV</a></h4>
+							<input type="file" /><a class="test btn secondary">Upload</a>
+							<!-- p><a href="#">Paste text</a></p -->
+						</div>
+						<div id="DNS" class="data half hidden">
+							<p><label>Monitoring Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+							<p><label>Host</label><input type="text" /></p>
+							<p><label>Zone</label><input type="text" /></p>
+							<a href="#">More options</a>
+							<p>
+								<br/><a href="javascript:void(0);" class="test btn primary">Test</a> <a href="javascript:void(0);">Add another DNS</a>
+							</p>
+						</div>
+						<div id="API" class="data half hidden">
+							<p><label>Monitoring Location</label><select><option>Location1</option><option>Location2</option><option>Location3</option></select></p>
+							<p><label>Type</label><select><option>VMware vSphere</option><option>OpenDaylight</option></option>Cisco ACI</option></select></p>
+							<p><label>Endpoint</label><input type="text" /></p>
+							<p><label>Key</label><input type="text" /></p>
+							<p><label>Secret</label><input type="text" /></p>
+							<p><br/><a href="javascript:void(0);" class="test btn primary">Test</a> <a href="javascript:void(0);">Add another controller type</a></p>
+						</div>
+						<div class="iptest half hidden">
+							<br/><br/>
+							<div id="None" class="hidden">
+								<strong>No results available to sample. Please reconfigure details and try again.</strong>
+							</div>
+							<div id="Results" class="hidden">
+							<strong id="Sample" class="hidden">Here is a sample of what we will collect from the potential 500 devices</strong>
+							<strong id="Fixed" class="hidden">Imported [X] nodes from [source]</strong>
+							<h3><a href="javascript:void(0);" class="expand">Location1 (9)</a></h3>
+							<table class="hidden">
+								<tr>
+									<th>ID</th>
+									<th>Hostname</th>
+									<th>IP</th>
+								</tr>
+								<tr>
+									<td>Node1</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node2</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node3</td>
+									<td></td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node4</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node5</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node6</td>
+									<td></td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node7</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node8</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node9</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+							</table>
+							<h3><a href="javascript:void(0);" class="expand">Location2 (8)</a></h3>
+							<table class="hidden">
+								<tr>
+									<th>ID</th>
+									<th>Hostname</th>
+									<th>IP</th>
+								</tr>
+								<tr>
+									<td>Node1</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node2</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node3</td>
+									<td></td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node4</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node5</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node6</td>
+									<td></td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node7</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+								<tr>
+									<td>Node8</td>
+									<td>test.host.name.etc</td>
+									<td>192.168.1.1</td>
+								</tr>
+							</table>
+							<p>Anything Missing? <a href="javascript:void(0);">Add More Nodes</a></p>
+							</div>
+							<div id="Policy" class="hidden">
+								<h3 style="margin-top:5px">Do you want to keep the default policy settings?</h3>
+								<ul>
+									<li>Find all IP interfaces</li>
+								</ul>
+								<br/><br/>
+								<div class="add">
+									<a href="javascript:void(0);" class="choice default">Keep Defaults</a>
+									<a href="javascript:void(0);" class="choice custom">Customize</a>
+								</div>
+								<div id="Custom" class="hidden">
+									<p><label></label><input type="text" placeholder="" /></p>
+									<p><label>Timeout</label><input type="text" placeholder="default" /></p>
+									<p><label>Retry</label><input type="text" placeholder="default" /></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+          <div class="stepper-actions hidden">
+            <a href="step2.html" class="btn right">This Looks Good</a>
+						<a href="javascript:void(0);" id="Filter" class="btn secondary right">Add Policy Filter</a>
+          </div>
+        </div>
+	    </div>
+		</article>
+	</main>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.select .choice').on('click', function(){
+				$('.choice:not(#ShowChoice1, #ShowChoice2)').removeClass('active');
+				$('.data').addClass('hidden');
+				$('.iptest').addClass('hidden');
+				$('.stepper-actions').addClass('hidden');
+        $(this).addClass('active');
+				// add in reusable from ID with substring?
+      });
+			$('#ShowChoice1').on('click', function(){
+				$('#Discovery1').removeClass('hidden');
+				$('#Discovery2').addClass('hidden');
+				$('#ShowChoice2').removeClass('active');
+      });
+			$('#ShowChoice2').on('click', function(){
+				$('#Discovery2').removeClass('hidden');
+				$('#Discovery1').addClass('hidden');
+				$('#ShowChoice1').removeClass('active');
+      });
+			$('#ShowIPRange').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#IPRange').removeClass('hidden');
+      });
+			$('#ShowPassive').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Passive').removeClass('hidden');
+      });
+			$('.test').on('click', function(){
+				random = Math.floor(Math.random() * 10) + 1;
+				$('.iptest').removeClass('hidden');
+				$('.stepper-actions').removeClass('hidden');
+				if (random < 8) {
+					$('#Results').removeClass('hidden');
+				}
+				else {
+					$('#None').removeClass('hidden');
+				}
+      });
+			$('#Filter').on('click', function(){
+				$(this).addClass('hidden');
+				$('#Results').addClass('hidden');
+				$('#Policy').removeClass('hidden');
+				$('.default').addClass('active');
+      });
+			$('.default').on('click', function(){
+        $(this).toggleClass('success');
+      });
+			$('.custom').on('click', function(){
+        $(this).toggleClass('active');
+				$('#Custom').removeClass('hidden');
+      });
+			$('#ShowManual').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Manual').removeClass('hidden');
+      });
+			$('#ShowBulk').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Bulk').removeClass('hidden');
+      });
+			$('#ShowDNS').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#DNS').removeClass('hidden');
+      });
+			$('#ShowSQL').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#SQL').removeClass('hidden');
+      });
+			$('#ShowAPI').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#API').removeClass('hidden');
+      });
+			$('.expand').on('click', function(){
+				$(this).parent().next().toggleClass('hidden');
+      });
+			$('#Manual .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#DNS .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#API .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#IPRange .test').on('click', function(){
+				$('#Sample').removeClass('hidden');
+				$('#Fixed').addClass('hidden');
+      });
+    });
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

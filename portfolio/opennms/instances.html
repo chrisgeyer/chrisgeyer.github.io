@@ -1,0 +1,121 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1><a href="index.html">Cloud Console</a></h1>
+			<a href="#">Account Dropdown</a>
+			<input type="text" placeholder="Search" />
+			<a href="#" class="right">Sign out</a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="instances.html">Instances</a></li>
+				<li><a href="appliances.html">Appliances</a></li>
+				<li><a href="features.html">Features</a></li>
+				<li><a href="users.html">Users</a></li>
+				<li><a href="billing.html">Billing</a></li>
+				<li><a href="support.html">Support</a></li>
+			</ul>
+		</nav>
+		<article>
+			<a href="#" class="btn primary right">Add New</a>
+			<h1>Instances</h1>
+			<div class="select">
+				<a href="step1.html" id="ShowChoice1" class="choice">Horizon Production</a>
+				<a href="javascript:void(0);" id="ShowChoice2" class="choice">Development</a>
+			</div>
+			<h3>Services</h3>
+			<h4 class="expand"><div class="right">enabled</div><a href="javascript:void(0);">Flows</a></h4>
+			<h4 class="expand"><div class="right">enable</div><a href="javascript:void(0);">ALEC</a></h4>
+			<h4 class="expand"><div class="right">enabled</div><a href="javascript:void(0);">APM</a></h4>
+			<h4 class="expand"><div class="right">enable</div><a href="javascript:void(0);">BGP</a></h4>
+		</article>
+	</main>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+			$('#ShowIPRange').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#IPRange').removeClass('hidden');
+      });
+			$('#ShowPassive').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Passive').removeClass('hidden');
+      });
+			$('.test').on('click', function(){
+				$('.iptest').removeClass('hidden');
+				$('.stepper-actions').removeClass('hidden');
+      });
+			$('#ShowManual').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#Manual').removeClass('hidden');
+      });
+			$('#ShowDNS').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#DNS').removeClass('hidden');
+      });
+			$('#ShowSQL').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#SQL').removeClass('hidden');
+      });
+			$('#ShowAPI').on('click', function(){
+				$('.data').addClass('hidden');
+				$('#API').removeClass('hidden');
+      });
+			$('.expand').on('click', function(){
+				$(this).parent().next().removeClass('hidden');
+      });
+			$('#Manual .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#DNS .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#API .test').on('click', function(){
+				$('#Sample').addClass('hidden');
+				$('#Fixed').removeClass('hidden');
+      });
+			$('#IPRange .test').on('click', function(){
+				$('#Sample').removeClass('hidden');
+				$('#Fixed').addClass('hidden');
+      });
+    });
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
