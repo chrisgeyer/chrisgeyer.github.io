@@ -105,7 +105,7 @@ textarea {
  a, a:visited {color:#0081AD; text-decoration:none;}
 
  .right {float:right;}
-img {margin-bottom:0.5em; margin-right:1em;}
+ img {margin-right:0.5em; margin-bottom:1em;}
 
  
 .select {display:flex; justify-content:space-around; flex-wrap:wrap;}
