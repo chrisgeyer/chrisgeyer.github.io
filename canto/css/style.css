@@ -87,6 +87,235 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+ body {font-family:sans-serif;}
+ header {background:#333; padding:0.5em 1em; display:flex;}
+ header h1 {color:#fff; display:inline-block; margin:0; vertical-align:middle;}
+ header input[type=text] {padding:0.25em;}
+
+ header > * {flex:1; justify-content:center;}
+ header .right {text-align:right;}
+
+ nav {background:#333; width:250px; float:left; height:100vh;}
+ nav li {list-style:none;}
+
+ article {margin-left:250px; padding:1em; max-width:1000px;}
+
+ a, a:visited {color:#0081AD; text-decoration:none;}
+
+ .right {float:right;}
+
+
+ .stepper {
+  background-color: #fff;
+  margin-bottom: 90px;
+  border-radius: 3px;
+}
+
+.stepper-steps {
+  height: 72px;
+  background-color: #efefef;
+  border-radius: 3px;
+}
+
+.stepper-steps-isOffset {
+  position: relative;
+  top: -30px;
+  margin: 0 15px -30px 15px;
+}
+
+.stepper-content {
+  padding: 24px;
+}
+
+.stepper-step {
+  float: left;
+  min-width: 19%;
+  padding: 24px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  text-align: center;
+}
+.fourths .stepper-step {width:20%;}
+.stepper-step:first-child {
+  text-align: left;
+}
+.stepper-step:last-child {
+  text-align: right;
+}
+.stepper-step::after {
+  content: "";
+  position: absolute;
+  bottom: 36px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #BDBDBD;
+}
+.stepper-step:first-child::after {
+  left: 24px;
+}
+.stepper-step:last-child::after {
+  right: 24px;
+}
+
+.stepper-step-isActive {
+  font-weight: 600;
+}
+
+.stepper-step-isValid {
+  font-weight: 600;
+}
+
+.stepper-step-isDisabled {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+
+.stepper-stepMarker {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  text-align: center;
+  color: white;
+  line-height: 24px;
+  background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 24px;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.stepper-step-isActive .stepper-stepMarker {
+  background-color: #0081AD;
+}
+
+.stepper-step-isValid .stepper-stepMarker {
+  text-indent: -10000px;
+  background: url('data:image/svg+xml;charset=utf8,<svg fill="#FFFFFF" height="20" viewBox="0 0 24 24" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/> <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat #2196F3;
+  background-position: 2px 1px;
+  background-color: green;
+}
+
+.stepper-stepContent {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  padding: 0 8px;
+  background-color: #efefef;
+}
+.select {display:flex; justify-content:space-around; flex-wrap:wrap;}
+.break {flex-basis:100%; height:0;}
+.choice {text-align:center; border:1px solid #ddd; border-radius:5px; padding:2em 1em;}
+.choice:hover {background:#ddd;}
+.choice.active {font-weight:700; border-color:#0081AD; background:#beeeff;}
+.choice.success {font-weight:700; border-color:green; background:#bfb; color:green;}
+.data {padding:2em 0 0;}
+a.btn {margin:1em 0; padding:1em; color:#fff; background:#0081AD;}
+a.btn.secondary {border:1px solid #0081AD; color:#0081AD; background:#fff;}
+a.btn.secondary.right {margin-right:1em;}
+label {display:block; font-weight:700;}
+input[type=text] {border:1px solid #ccc; padding:0.5em;}
+
+.half {width:48%; display:inline-block; vertical-align:top;}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+td.delete {color:red;font-weight:700;}
+
+.expand {padding:0.5em 1em; background:#ddd; border:1px solid #ccc;}
+
+#More {display:flex; flex-wrap:wrap;}
+
+.setting .choice {display:block; padding:1em; margin-bottom:0.5em;}
+
+.small {font-size:0.8em;}
+.quiet {font-size:0.6em; color:#999; font-weight:normal;}
+
+.detail label {display:inline-block; width:150px;}
+
+.drawer__header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+.drawer__close {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='15px' height='16px' viewBox='0 0 15 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='2.-Menu' transform='translate(-15.000000, -13.000000)' stroke='%23000000'%3E%3Cg id='Group' transform='translate(15.000000, 13.521000)'%3E%3Cpath d='M0,0.479000129 L15,14.2971819' id='Path-3'%3E%3C/path%3E%3Cpath d='M0,14.7761821 L15,-1.24344979e-14' id='Path-3'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  width: 15px;
+  height: 15px;
+}
+.drawer__wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  z-index: 9999;
+  overflow: auto;
+  transition: transform 0.3s;
+  will-change: transform;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  -webkit-transform: translateX(103%);
+  transform: translateX(103%); /* extra 3% because of box-shadow */
+  -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+  box-shadow: 0 2px 6px #777;
+}
+.drawer__content {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+.drawer__wrapper.open {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.node .choice {width:21%; padding:0 0.5em}
+.detail {padding:1em;}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
