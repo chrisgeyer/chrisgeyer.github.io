@@ -114,8 +114,7 @@ textarea {
 .choice:hover {background:#ddd;}
 .choice.active {font-weight:700; border-color:#0081AD; background:#beeeff;}
 .choice.success {font-weight:700; border-color:green; background:#bfb; color:green;}
-.data {padding:2em 0 0;}
-a.btn {margin:1em 0; padding:1em; color:#fff; background:#0081AD;}
+a.btn {margin:1em 0; padding:0.5em 1em; color:#fff; background:#0081AD;}
 a.btn.secondary {border:1px solid #0081AD; color:#0081AD; background:#fff;}
 a.btn.secondary.right {margin-right:1em;}
 label {display:block; font-weight:700;}
