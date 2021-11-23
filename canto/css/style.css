@@ -95,7 +95,7 @@ textarea {
  header > * {flex:1; justify-content:center;}
  header .right {text-align:right;}
 
- nav {background:#333; width:90px; float:left; height:100vh;}
+ nav {background:#333; width:90px; float:left; height:100vh; color:#ddd; text-align:center;}
  nav li {list-style:none;}
 
  main {padding:1em;}
