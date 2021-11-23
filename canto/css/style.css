@@ -111,7 +111,7 @@ textarea {
  
 .select {display:flex; justify-content:space-around; flex-wrap:wrap;}
 .break {flex-basis:100%; height:0;}
-.choice {text-align:center; border:1px solid #ddd; border-radius:5px; padding:2em 1em;}
+.choice {text-align:center; border:1px solid #ddd; border-radius:5px; padding:2em 1em; margin-right:1em;}
 .choice:hover {background:#ddd;}
 .choice.active {font-weight:700; border-color:#0081AD; background:#beeeff;}
 .choice.success {font-weight:700; border-color:green; background:#bfb; color:green;}
