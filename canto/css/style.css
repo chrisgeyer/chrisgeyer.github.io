@@ -105,7 +105,7 @@ textarea {
  a, a:visited {color:#0081AD; text-decoration:none;}
 
  .right {float:right;}
- img {margin-right:0.5em; margin-bottom:1em;}
+ img {margin-right:0.5em; margin-bottom:1em; max-width:100%;}
 
  
 .select {display:flex; justify-content:space-around; flex-wrap:wrap;}
@@ -122,39 +122,6 @@ label {display:block; font-weight:700;}
 input[type=text] {border:1px solid #ccc; padding:0.5em;}
 
 .half {width:48%; display:inline-block; vertical-align:top;}
-
-table {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  table-layout: fixed;
-}
-
-table caption {
-  font-size: 1.5em;
-  margin: .5em 0 .75em;
-}
-
-table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: .35em;
-}
-
-table th,
-table td {
-  padding: .625em;
-  text-align: center;
-}
-
-table th {
-  font-size: .85em;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-td.delete {color:red;font-weight:700;}
 
 .expand {padding:0.5em 1em; background:#ddd; border:1px solid #ccc;}
 
