@@ -97,7 +97,7 @@ textarea {
 
  nav {background:#333; width:90px; float:left; height:100vh; color:#ddd; text-align:center;}
  nav ul {padding:0;}
- nav li {list-style:none;}
+ nav li {list-style:none; margin-bottom:1em;}
 
  main {padding:1em;}
 
@@ -106,7 +106,7 @@ textarea {
  a, a:visited {color:#0081AD; text-decoration:none;}
 
  .right {float:right;}
- img {margin-right:0.5em; margin-bottom:1em; max-width:100%;}
+ main img {margin-right:0.5em; margin-bottom:1em; max-width:100%;}
 .filter {padding:0;}
 .filter li {display:inline; list-style-type:none;}
  
