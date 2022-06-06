@@ -1,0 +1,107 @@
+
+body {
+  background-color: #fff !important;z
+}
+
+header.title-bar .container img {
+    -webkit-filter: none;
+}
+
+nav a {
+    height:70px;
+}
+nav a.active {
+    background-color: #efefee;
+}
+
+section.action-bar-3 {
+    background-color: #434448;
+}
+
+.action-bar-3 a.primary:not(#cancel-action) {
+	color: #434448;
+    background-color: #ffffff; 
+    letter-spacing: 0.2em;
+}
+
+a.inactive {
+    background-color: #b1b3b3 !important;
+    opacity: 1.0;
+    cursor: not-allowed;
+}
+
+.table-head span.table-data {
+    color: #434448;   
+}
+
+span.table-data {
+	font-weight: 500;
+    color:#000000;
+}
+
+span.table-data a {
+    color:#0080c1;
+}
+
+a.primary {
+  color:#0080c1;
+}
+
+span.checkbox {
+    border: 1.5px solid #b1b3b3;
+    outline: 1px;
+}
+span.checkbox.checked {
+    background-color: #01579a;
+}
+
+span.square[type=Complete] {
+    color:#65c4b3;
+    background-color: transparent;
+}
+
+span.square[type=Open] {
+    color:#c73747;
+    background-color: transparent;
+}
+
+span.square[type=Pending] {
+    color:#7558a5;
+    background-color: transparent;
+}
+
+span.square[type='Under Review'] {
+    color:#0080c1;
+    background-color: transparent;
+}
+
+span.square[type='Further Action Needed'] {
+    color:#f6b629;
+    background-color: transparent;
+}
+
+span.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid;
+    color: #0080c1 !important;
+    cursor: pointer;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 30px;
+}
+
+.diamond {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #0080c1 !important;
+    line-height: 30px;
+    border-radius: 15px;
+    border: none;
+    transform: rotate(45deg);
+    border: 1px solid #f44336;
+    border: 1px solid;
+    cursor: pointer;
+}

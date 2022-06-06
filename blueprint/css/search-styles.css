@@ -1,0 +1,354 @@
+
+.table-head.fixed {
+    top: 110px;
+}
+
+.diamond .number i {
+    font-size: 16px;
+    color: #999;
+}
+
+section.action-bar-3 {
+	height: 64px;
+}
+
+.action-bar-3 a.primary:not(#cancel-action) {
+    padding: 10px 16px;
+    margin: 14px 8px 14px 0;
+}
+
+span.action-bar-text {
+	line-height: 64px;
+}
+
+a#cancel-action {
+    margin-top: 8px;
+}
+
+.more-info i {
+	transition:0.4s all ease;
+}
+.more-info i.rotate {
+	transform:rotate(180deg);
+}
+
+
+
+
+.square {
+    padding: 7px 15px;
+    background-color: #EEE;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
+    min-width: 72px;
+    border: 1px solid;
+    color: #2196F3;
+    /* background-color: #2196F3; */
+    background-color: rgba(33,150,243,0.08);
+    background-color: rbga(33,150,243,0.1);
+    /* border: 1px solid rgba(0,0,0,0.1); */
+    border-radius: 25px;
+}
+
+span.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid;
+    color: #2196F3;
+    cursor: pointer;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 30px;
+}
+
+ .diamond {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+     color: #2196F3;
+    line-height: 30px;
+    border-radius: 15px;
+    border: none;
+    /* border-radius: 3px; */
+    transform: rotate(45deg);
+    border: 1px solid #f44336;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+		.diamond .number i {
+    font-size: 16px;
+    color: #2196F3;
+    line-height: 27px;
+}
+
+.info-text-icon {
+    transition: 0.4s all ease;
+    transform: rotate(0deg);
+    width: 11px;
+    height: 14px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.info-text-icon.rotate {
+    transform: rotateX(180deg);
+}
+
+.legend .square {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 18px;
+    margin-right: 8px;
+    float: left;
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+input[name=universal-search]::-webkit-input-placeholder {
+	color:#CCC;
+}
+
+#narrow-search-name, #narrow-search-id, #narrow-search-dob {
+    height: 48px;
+    padding: 15px 96px 0 10px;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    line-height: 48px;
+    border-radius: 0;
+    border-bottom: 1px solid #DDD;
+    background-color: transparent;
+    box-shadow: none;
+    transition: 0.2s all ease;
+}
+
+#narrow-search-name:focus, #narrow-search-id:focus, #narrow-search-dob:focus {
+	box-shadow: none;
+}
+
+span.search-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    z-index: 5;
+    overflow: hidden;
+    transition: 0.2s all ease;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+span.search-menu.on {
+    display: inline-block;
+    width: 300px;
+    height: 334px;
+    border: 1px solid #DDD;
+    opacity: 1;
+}
+
+span.search-menu.on.small {
+    height:95px;
+}
+
+.search-history a {
+    width: 100%;
+    display: inline-block;
+    padding: 15px;
+    text-transform: none;
+       font-size: 14px;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+    letter-spacing: normal;
+    height: auto;
+    line-height: normal;
+}
+
+.search-history > a:hover {
+    background-color: #EEE;
+}
+
+.search-menu a i {
+    float: left;
+    display: inline-block;
+    position: relative;
+    color: #AAA;
+    font-size: 18px;
+    line-height: 19px;
+}
+
+input[name=universal-search] {
+    position: relative;
+    height: 48px;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 10px 0 10px;
+    right: 0;
+    transition: 0.4s all ease;
+    display: inline-block;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid #CCC;
+}
+
+.search-menu label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: #AAA;
+    line-height: normal;
+    font-weight: 300;
+    transition: 0.2s all ease;
+}
+
+.search-menu label.on {
+    
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+}
+
+.search-label {
+	transition:0.2s all ease;
+	opacity: 0;
+}
+
+.search-label.on {
+	opacity: 1;
+}
+
+.search-menu a i.rotate {
+    transform: rotate(-45deg);
+    margin-top: 3px;
+}
+
+button.fill-search {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    padding:0;
+    margin:0;
+    right: 0;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-history {
+    height: 284px;
+    transition: 0.2s all ease;
+}
+
+.search-history.hide {
+    height: 0px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.search-menu .clear-search {
+    right: 25px;
+}
+
+@-webkit-keyframes spinnerRotate
+{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+
+div#material-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    transition: 0.4s all ease;
+    opacity: 0;
+    z-index: 5;
+    background-color: #000;
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+div#material-spinner.on {
+    opacity: 1;
+}
+
+span.search-menu.slim {
+    height: 48px;
+}
+
+
+button.search i, button.notes i {
+    float: right;
+    line-height: 44px;
+    font-size: 21px;
+    margin-left: 5px;
+}
+
+button.search, button.notes {
+    background-color: transparent;
+    border: none;
+    line-height: 48px;
+    text-align: center;
+    height: 72px;
+    padding: 12px 12px;
+    cursor: pointer;
+    letter-spacing: 0.2em;
+    transition: 0.2s all ease;
+    outline: none;
+}
+
+button.search.active, button.notes.active {
+    background-color: #EEE;
+}
+
+.search-drawer { 
+    transition:0.2s all ease;
+    margin-top:0;
+}
+
+.search-drawer.hide { 
+    margin-top:-109px;
+}
+
+span.square.relative {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+    min-width: 0;
+    background-color: transparent;
+}
+
+.dob, .lob, .last-visit {
+    text-align: center !important;
+}
+
+.alerts, .lob, .last-visit { display: none !important; }
+
+.effective-dates {
+    text-align: left !important;
+}
+
+.search-drawer {
+    height: auto;
+}

@@ -1,0 +1,197 @@
+header {
+  height:226px;
+  z-index:10;
+}
+.header-banner-wrap {
+  width: 100%;
+  background: #f4f5f5;
+}
+.header-banner {
+  width: 1170px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+header img {
+  margin-top: 22px;
+}
+/*
+header h1 {
+  position: absolute;
+  top: 72px; 
+  left: 240px;
+  color: #fff;
+}*/
+
+.fixed-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; 
+}
+
+#header-border {
+  width: 100%;
+  height: 6px;
+  display: block;
+  background: #8f3f97; /* Old browsers */
+  background: -moz-linear-gradient(left, #8f3f97 0%, #fdc30e 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #8f3f97 0%,#fdc30e 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #8f3f97 0%,#fdc30e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f3f97', endColorstr='#fdc30e',GradientType=1 ); /* IE6-9 */
+}
+#main-nav {
+  width: 100%;
+  height: 70px;
+  background: #4b2d86;
+}
+
+#main-nav ul {
+  width: 1170px;
+  margin: 0 auto;
+}
+#main-nav li {
+  display: block;
+  line-height: 58px;
+  margin: 0 24px;
+  text-align: center;
+}
+#main-nav a {
+  color: #fff;
+  text-decoration: none; 
+  text-transform: uppercase;
+  font-size: 14px;
+  /*font-weight: bold;*/
+  padding: 6px 24px 0;
+}
+#main-nav a:hover {
+  background: #5b3b94;
+}
+#main-nav a.selected {
+  color: #fce380;
+  border-bottom: 6px solid #fdc30e;
+}
+
+#page-nav {
+  width:100%;
+  height:70px;
+  background: #fcfcfc;
+  border: 1px solid #e6e7e8;
+  border-right, border-left: 0;
+  postion:fixed;
+  z-index:10;
+}
+
+#page-nav ul { 
+  list-style-type: none;
+  margin: 0 auto;
+  padding-left:0;
+  width: 1170px; 
+  max-width: 100%;
+}
+#page-nav ul li { 
+  display: block; 
+  line-height: 60px;
+  margin: 0 24px;
+  text-align: center;
+}
+#page-nav ul li a {
+  text-decoration: none; 
+  color: #a9abae;
+  text-transform: uppercase;
+  font-size: 13px;
+  /*font-weight: bold;*/
+  padding: 4px 24px 0;
+}
+/*#page-nav ul li a.selected { color: #542d86; border:0; background:0; font-weight: 900; }*/
+#page-nav ul li.active a { color: #542d86; border:0; background:0; font-weight: 900; }
+#page-nav ul li a:hover { color: #999; background: 0; }
+
+.gray-wrap { 
+  background: #f5f5f5; 
+  border: 1px solid #dfdfdf;
+  border-left: 0;
+  border-right: 0;
+}
+#schedule {
+  width: 1170px;
+  margin: 60px auto;
+  position: relative;
+}
+h4 {
+  width: 75%;
+  line-height: 1.3em;
+}
+.helper {
+    position: absolute;
+    width: 25%;
+    right: 0;
+    top: 42px;
+}
+h5 { line-height: 1.4em; }
+
+th { font-size: 12px; font-weight: bold; }
+td { font-weight: bold; padding: 24px !important; }
+td .table-sub { font-weight: normal; }
+td .btn-default { border: 2px solid #00589a; border-radius: 4px; margin-left: 12px; font-weight: bold; padding: 12px 18px;}
+td .btn-link { color: #000; font-weight: bold; padding: 12px; }
+
+/* demo */
+.content{ width: 1170px; max-width: 100%; margin:0 auto; padding-top: 60px; }
+article { width: 720px; float: left; }
+article p:first-of-type { margin-top: 0; }
+aside { width: 120px; float: right; }
+aside img { max-width: 100%; }
+body { 
+  color: #292f36;
+  font-family: helvetica;
+  line-height: 1.6;
+}
+
+.page-tabs {
+  border-bottom: 4px solid #e72064;
+  margin: 24px 0;
+}
+.page-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    /*border: 1px solid transparent;*/
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 24px;
+}
+.page-tabs>li.active>a {
+    color: #fff;
+    cursor: default;
+    background-color: #ad1f59;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.drop-lg {
+  background: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid #666;
+  margin-right: 30px;
+}
+.btn-primary {
+  color: #000;
+  background: #fdc30e;
+  border-color: #faa919;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.footer {
+  text-align: center;
+  padding-bottom: 60px;
+}
+.footer nav { margin-top: 48px; }
+.footer nav a {
+  margin: 0 36px;
+  color: #888686;
+}
+
+/* resets */
+body { margin:0px; padding:0px; }
