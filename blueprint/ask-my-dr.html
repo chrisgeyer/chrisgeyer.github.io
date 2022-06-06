@@ -1,0 +1,350 @@
+<html>
+	<head>
+	<head>
+		<title>SMA - Ask My Doctor</title>
+		<meta name="viewport" content="initial-scale=1">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="style-wire" />
+    <link href="css/wireframe.css" rel="stylesheet" />
+    <link href="css/search-styles.css" rel="stylesheet" id="style-search" />
+    <link href="css/styles.css" rel="stylesheet" id="styles" />
+    <link href="css/dropit.css" rel="stylesheet" id="styles" />
+    <link href="css/additions.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link href="css/blueprint.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/search-scripts.js"></script>
+    <script src="js/dropit.js"></script>
+    <script src="js/pointer.js"></script>
+		<script src="js/blueprint.js"></script>
+		<script>
+			$(function(){
+				$("[data-load]").each(function(){
+						$(this).load($(this).data("load"), function(){
+						});
+				});
+			})
+		</script>
+ 	</head>
+	<body id="Dr" data-spy="scroll" data-target="#page-nav" data-offset="130">
+		<div id="overlay-clear"></div>
+		<div id="overlay-gray"></div>
+		<header class="title-bar">
+			<div class="container grid-12 full left width-1140">
+				<!-- <button class="menu right"><i class="material-icons">&#xE5D2;</i>Menu</button> -->
+				<div class="col-5 col-10-mobile relative text-left left" >
+					<a href="index-2.html"><img id="logo" src="img/SMA-logo.jpg" alt="logo"></a>
+				</div>
+				<div class="col-7 col-2-mobile relative text-right left">
+					<ul class="slim-menu dropit margin-top-20 hidden-xs">
+						<li class="dropit-trigger dropit-border">
+								<a href="javascript:void(0)" class="chevron">Language <i class="material-icons chevy" style="margin-left:4px;">keyboard_arrow_down</i></a>
+								<ul class="slim-menu-drop dropit-submenu" style="display: none;">
+										<li><a href="#" class="active"><i class="material-icons chevy drop-check">done</i>English</a></li>
+										<li><a href="index-esp.html"><i class="material-icons chevy drop-check">done</i>Espa&#241;ol</a></li>
+								</ul>
+						</li>
+						<li class="dropit-border"><a href="help.html">Help</a>
+						</li>
+						<li class="dropit-trigger"><a href="javascript:void(0)" class="chevron">My Account <i class="material-icons chevy" style="margin-left:4px;">keyboard_arrow_down</i></a>
+								<ul class="slim-menu-drop dropit-submenu" style="display: none;">
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="delegate.html">Delegate</a></li>
+									<li><a href="#">Logout</a></li>
+								</ul>
+						</li>
+					</ul>
+					<a id="btn-mobile-menu" class="right visible-xs" href="javascript:void(0)">
+						<i class="material-icons vertical-align-middle">menu</i>
+					</a>
+				</div>
+			</div>
+		</header>
+		<nav>
+			<div class="container z-2">
+				<a href="index.html" class="home">Home</a>
+				<a href="appointment.html" class="appt">Appointments</a>
+				<a href="health.html" class="health">My Health</a>
+				<a href="ask-my-dr.html" class="dr">Ask My Doctor</a>
+				<a href="javascript:void(0)">Referrals</a>
+				<a href="javascript:void(0)">Payments</a>
+			</div>
+			<a id="btn-mobile-menu-close" class="left visible-xs text-white absolute" href="javascript:void(0)" style="left:-60px; top:10px;">
+				<i class="material-icons vertical-align-middle fs-36">close</i>
+			</a>
+		</nav>
+		<div class="secondary-nav z-2 page-fixed-nav">
+			<div class="container">
+				<a href="#new-evisit" class="cm-1" data-id="new-evisit"
+				note-cm=""
+				note-wa="default">New E-Visit</a>
+        <a href="#evisit-list" class="cm-1" data-id="evisit-list" note-cm="" note-wa="default">E-Visit List</a>
+    	</div>
+		</div>
+		<div class="secondary-nav fixed-header page-fixed-nav">
+			<div class="container z-2">
+				<a href="#new-evisit" class="" data-id="new-evisit">New E-Visit</a>
+        <a href="#evisit-list" class="" data-id="evisit-list">E-Visit List</a>
+      </div>
+		</div>
+		<main>
+			<header class="page-title container full padding-left-15 padding-right-15 transition-std container-full margin-top-60 margin-bottom-0">
+ 				<div class="grid-12 full left inline-block width-1140" note-config="C3-F1">
+          <span id="new-evisit" class="col-8 left inline-block padding-right-15 beta" style="padding-top:70px;margin-top:-70px;">
+            <h3 class="left cm-2" note-cm="">New E-Visit</h3><br style="clear:both;">
+				<p class="left intro cm-3" note-cm="" note-ux="Text added letting the user know how many E-Visits can be open at once. The number of E-Visits that can be open at once is configurable by CDO.">Use the E-visit feature to ask your provider a medical question online. You may have two open E-Visits at a time.
+				<br class="clear-all" />
+				<a href="evisit-type.html" class="cm-4" note-cm="" note-wa="default"><button class="btn-primary margin-top-20 margin-right-15 pop">Start New E-Visit</button></a></p>
+            </span>
+            <span class="col-1 left inline-block padding-left-15 future" style="padding-top:45px;">
+	            <span class="icon-info_hollow icon-purple right fs-28"></span>
+            </span>
+						<span class="grid-12 col-3 left inline-block padding-left-15 future" style="padding-top:30px;">
+                <p class="small cm-3" note-cm="">Do not use E-Visit for emergencies. If you think you may have a medical emergency, immediately call 911 or go to the nearest emergency room.</p>
+            </span>
+        </div>
+			</header>
+			<section class="container flavor-layer padding-top-15 padding-bottom-15 future">
+				<div class="grid-12 full width-1170 vertical-center relative">
+					<span class="col-1 left text-left hidden">
+						<span class="arrow-left"><img src="img/chevron_left.png"></span>
+					</span>
+					<span class="col-4 left text-center">
+						<p class="fs-22">Need to see a Doctor now?</p>
+					</span>
+					<span class="col-6 left border-left-white padding-left-40 margin-top-10">
+					<p class="ul2">Use NowClinic to talk with a healthcare provider through video, chat, phone and mobile devices. <a href="javascript:void(0);">Go to NowClinic ></a></p>
+					</span>
+					<span class="col-1 left text-right hidden">
+						<span class="arrow-right"><img src="img/chevron_right.png"></span>
+					</span>
+				</div>
+			</section>
+			<div class="container full left margin-top-40 padding-mobile-0 width-1140 padding-left-0 padding-right-0 beta" note-config="C3-F2">
+          <div class="grid-12 full left inline-block width-1140 margin-bottom-20">
+            	<span id="evisit-list" class="col-10 left inline-block"><h3 note-ux="E-Visits are listed in order of newest to oldest submitted date. All pending E-visits are listed on this page. 5 rows of content appear on this page by default unless there are more than 5 pending E-Visits. For example, if a user has 10 E-Visits, 2 of which are pending, that means 2 pending E-Visits will appear on this page, and 3 completed E-Visits will appear on this page." note-cm="E-Visit List">E-Visit List <span class="appointment-type" style="display:none;"><span class="new">2</span> New Messages</span></h3></span>
+				<span class="col-2 left inline-block padding-left-15">
+				    <a href="javascript:void(0)"><button class="btn-tertiary right" note-config="C3-F4"><span class="icon-print margin-right-10 vertical-align-sub fs-22" note-cm="Print Section" note-wa="custom JS"></span>Print Section</button></a>
+				</span>
+          </div>
+			<div id="evisit-list-container" class="margin-bottom-30">
+				<section class="table margin-bottom-0">
+					<div class="table-head">
+							<span class="table-data medication cm-5" note-cm="">
+								<span class="inline-block relative">
+									<span class="inline-block left">Submitted Date</span>
+								</span>
+							</span>
+							<span class="table-data prescribed cm-5" note-cm="" note-ux="Category: E-Visit can be initiated by either 1) the user, 2) one of the user's delegates (if applicable) or 3) by a provider.">
+								<span class="inline-block relative">
+									<span class="inline-block left">Category</span>
+								</span>
+							</span>
+							<span class="table-data supply">
+								<span class="inline-block relative cm-5" note-cm="" note-ux="2 statuses are possible: Either 'Pending' (provider response is pending) or 'Completed' (provider has responded). If response is pending from an Express E-Visit (where provider name is not known), then provider name will not be shown. Once an Express E-Visit provider does respond, then the provider name will be shown (since the name will not be known until the provider responds). If the E-Visit is a Regular E-Visit (and not an Express E-Visit), then provider name will always be listed, both in pending and completed statuses.">
+									<span class="inline-block left">Status</span>
+								</span>
+							</span>
+              <span class="table-data renew">
+                  <span class="inline-block relative">
+                      <span class="inline-block left"></span>
+                  </span>
+              </span>
+              <span class="table-data medShow text-right" style="padding-right: 49px;">
+                  <span class="inline-block relative">
+                      <span class="inline-block left"></span>
+                  </span>
+              </span>
+					</div>
+					<div class="table-row">
+						<span class="table-data border-bottom-0 medication cm-6" note-cm="SERVICE:date and time" style="width:20%;"><p><strong>
+						<SCRIPT LANGUAGE="Javascript">
+						var dayNames = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+
+						var monthNames = new Array(
+						"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+						// var now = new Date();
+						// document.write(dayNames[now.getDay()] + ", " + monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear()); /* gets today */
+
+						var newdate = new Date();
+						newdate.setDate(newdate.getDate() - 1);
+						document.write(dayNames[newdate.getDay()] + " " + monthNames[newdate.getMonth()] + " " + newdate.getDate() + ", " + newdate.getFullYear());
+
+						</SCRIPT>
+						<!-- Mon Feb 6, 2017 -->
+						</strong></br/>11:40 AM</p></span>
+						<span class="table-data border-bottom-0 prescribed cm-6" note-cm="SERVICE:category type/initiated by" style="width:20%;"><p><strong>Referral Question</strong><br />Initiated by Patient</p></span>
+						<span class="table-data border-bottom-0 supply cm-6" note-cm="SERVICE:status type/provider name" style="width:20%;"><p><strong>Pending</strong></p></span>
+						<span class="table-data border-bottom-0 renew vertical-align-middle" style="width:20%;"></span>
+						<span class="table-data border-bottom-0 medShow text-right vertical-align-middle" style="width:20%;" note-ua="Date, Record ID"><button class="btn-tertiary med-show read pop"><span note-wa="custom JS">Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+					</div>
+				</section>
+				<div class="margin-bottom-20 medication-detail" style="display:none;" id="past-container-1">
+					<div class="table-head">
+							<span class="table-data medication">
+								<span class="inline-block relative">
+									<span class="inline-block left">From</span>
+								</span>
+							</span>
+							<span class="table-data prescribed">
+								<span class="inline-block relative">
+									<span class="inline-block left">Message</span>
+								</span>
+							</span>
+					</div>
+					<div class="table-row past-item-2" style="display: table-row;">
+						<span class="table-data cm-6" note-cm="SERVICE:from name/date and time" style="width:18%;"><p><strong>Pat Davis</strong><br />February 6, 2017, 9:50 PM</p></span>
+						<span class="table-data cm-6" note-cm="SERVICE:message text" style="width:75%;">My internist said I need to see an orthopedic surgeon for my ankle. Could you please give me a referral to someone who can do a good job?</span>
+					</div>
+					<div class="table-row past-item-2" style="display: table-row;">
+						<span class="table-data border-bottom-0 cm-6" note-cm="SERVICE:doctor name" style="width:18%;"><p><strong>Dr. Siebel Ross</strong></p></span>
+						<span class="table-data border-bottom-0 cm-6" note-cm="SERVICE:status" style="width:75%;">In progress</span>
+					</div>
+				</div>
+				<section class="table border-top-gray margin-bottom-0">
+					<div class="table-row">
+						<span class="table-data border-bottom-0 medication" style="width:20%;"><p><strong>Fri Jan 27, 2017</strong><br />9:00 AM</p></span>
+						<span class="table-data border-bottom-0 prescribed" style="width:20%;"><p><strong>Test Results</strong><br />Initiated By Patient</p></span>
+						<span class="table-data border-bottom-0 supply" style="width:20%;"><p><strong>Completed</strong><br />For Dr. Siebel</p></span>
+						<span class="table-data border-bottom-0 renew vertical-align-middle" style="width:20%;"></span>
+						<span class="table-data border-bottom-0 medShow text-right vertical-align-middle" note-ua="" style="width:20%;"><button class="btn-tertiary med-show read pop"><span note-wa="custom JS">Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+					</div>
+				</section>
+				<div class="margin-bottom-20 medication-detail" style="display:none;" id="past-container-2">
+					<div class="table-head">
+							<span class="table-data medication">
+								<span class="inline-block relative">
+									<span class="inline-block left">From</span>
+								</span>
+							</span>
+							<span class="table-data prescribed">
+								<span class="inline-block relative">
+									<span class="inline-block left">Message</span>
+								</span>
+							</span>
+					</div>
+					<div class="table-row past-item-2" style="display: table-row;">
+						<span class="table-data" style="width:18%;"><p><strong>Pat Davis</strong><br />January 27, 2017, 9:00 AM</p></span>
+						<span class="table-data" style="width:75%;">Hello. I&apos;m wondering when my test results will be ready. And how can I retrieve the results? Will I need to come into the office or will they show up on this website?</span>
+					</div>
+					<div class="table-row past-item-2" style="display: table-row;">
+						<span class="table-data border-bottom-0" style="width:18%;"><p><strong>Dr. Siebel Ross</strong><br />January 30, 2017, 10:31 AM</p></span>
+						<span class="table-data border-bottom-0" style="width:75%;">Your test results will be available by the middle of next week. You can access them in the patient portal under My Health in the My Orders section. Have a great day!</span>
+					</div>
+				</div>
+				<section class="table border-top-gray margin-bottom-0">
+					<div class="table-row">
+						<span class="table-data border-bottom-0 medication" style="width:20%;"><p><strong>Thu Dec 15, 2016</strong><br />8:20 AM</p></span>
+						<span class="table-data border-bottom-0 prescribed" style="width:20%;"><p><strong>Medical Question</strong><br />Initiated by Provider</p></span>
+						<span class="table-data border-bottom-0 supply" style="width:20%;"><p><strong>Completed</strong><br />For Dr. Siebel</p></span>
+						<span class="table-data border-bottom-0 renew vertical-align-middle" style="width:20%;"></span>
+						<span class="table-data border-bottom-0 medShow text-right vertical-align-middle" note-ua="" style="width:20%;"><button class="btn-tertiary"><span note-wa="custom JS">Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+					</div>
+				</section>
+				<section class="table border-top-gray margin-bottom-0">
+					<div class="table-row">
+						<span class="table-data border-bottom-0 medication" style="width:20%;"><p><strong>Fri Oct 14, 2016</strong><br />3:20 PM</p></span>
+						<span class="table-data border-bottom-0 prescribed" style="width:20%;"><p><strong>Medical Question</strong><br />Initiated by Patient</p></span>
+						<span class="table-data border-bottom-0 supply" style="width:20%;"><p><strong>Completed</strong><br />For Dr. Siebel</p></span>
+						<span class="table-data border-bottom-0 renew vertical-align-middle" style="width:20%;"></span>
+						<span class="table-data border-bottom-0 medShow text-right vertical-align-middle" note-ua="" style="width:20%;"><button class="btn-tertiary"><span note-wa="custom JS">Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+					</div>
+				</section>
+				<section class="table border-top-gray border-bottom-gray margin-bottom-0">
+					<div class="table-row">
+						<span class="table-data border-bottom-0 medication" style="width:20%;"><p><strong>Mon Aug 8, 2016</strong><br />11:40 AM</p></span>
+						<span class="table-data border-bottom-0 prescribed" style="width:20%;"><p><strong>Rx Renewal</strong><br />Initiated by Provider</p></span>
+						<span class="table-data border-bottom-0 supply" style="width:20%;"><p><strong>Completed</strong><br />For Dr. Siebel</p></span>
+						<span class="table-data border-bottom-0 renew vertical-align-middle" style="width:20%;"></span>
+						<span class="table-data border-bottom-0 medShow text-right vertical-align-middle" note-ua="" style="width:20%;"><button class="btn-tertiary"><span note-wa="custom JS">Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+					</div>
+				</section>
+<!-- 				<section class="table border-top-gray margin-bottom-0">
+					<div class="table-row">
+						<span class="table-data medication" style="width:20%;"><p><strong>Fri May 13, 2016</strong><br />12:40 PM</p></span>
+						<span class="table-data prescribed" style="width:20%;"><p><strong>Referral Question</strong><br />Initiated by Provider</p></span>
+						<span class="table-data supply" style="width:20%;"><p><strong>Completed</strong><br />For Dr. Siebel</p></span>
+						<span class="table-data renew vertical-align-middle" style="width:20%;"></span>
+						<span class="table-data medShow text-right vertical-align-middle" style="width:20%;"><button class="btn-tertiary"><span>Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+					</div>
+				</section>
+ -->			</div>
+		<div class="container full right width-1140 inline-block padding-right-0">
+			<a href="evisit-all.html"><button class="btn-primary right pop cm-4" note-cm="" note-wa="default">View All E-Visits</button></a>
+		</div>
+	</div>
+			<div class="container"><div class="page-break inline-block full margin-top-80"><span class="page-break-head">Questions?</span></div></div>
+			<div class="container-full light-gray-gradient">
+			  <div class="grid-12 full left inline-block margin-top-40 width-1140 padding-left-15 padding-right-15 margin-top-mobile-20">
+			    <span class="col-6 left inline-block padding-left-15 padding-right-15 col-12-mobile padding-left-mobile-0 padding-right-mobile-0">
+			      <p class="landing-sub">Common Questions</p>
+			      <p class="margin-top-mobile-0"><a href="javascript:void(0)" class="link-color padding-bottom-5 block">Should I use an E-Visit for medication renewals?</a>
+			      <a href="javascript:void(0)" class="link-color padding-bottom-5 block">How long will it take to receive a response from my doctor when using E-Visits?</a>
+			      <a href="javascript:void(0)" class="link-color padding-bottom-5 block">Why can't I ask billing questions via E-Visit?</a></p>
+			    </span>
+			    <span id="advocate" class="col-6 left inline-block padding-left-15 padding-right-15 border-left col-12-mobile padding-left-mobile-0 padding-right-mobile-0 border-left-mobile-0 border-top-mobile">
+			      <p class="landing-sub">Contact an Appointment Advocate</p>
+			      <p class="margin-top-mobile-0">If you have additional questions and would like to speak with an SMA Appointment Advocate, please call the number below to speak with a member of our support team.</p>
+			      <p><strong>800-SMA-HELP</strong></p>
+			    </span>
+			  </div>
+			</div>
+		</main>
+		<footer class="site-map margin-top-0">
+		  <div class="grid-12 container">
+		      <a href="appointment.html">Appointments</a>
+		      <a href="health.html">My Health</a>
+		      <a href="ask-my-doctor.html">Ask My Doctor</a>
+		      <a href="javascript:void(0">Referrals</a>
+		      <a href="javascript:void(0">Payments</a>
+		  </div>
+		</footer>
+		<footer class="slim">
+		  <div class="container text-left">
+		    <span class="inline-block left margin-right-45">&copy; 2017 OptumCare. All rights reserved.</span>
+		    <a href="privacy_policy.html">Privacy Policy</a>
+		    <a href="terms_conditions.html">Terms &amp; Conditions</a>
+		  </div>
+		</footer>
+
+		<!--<script>
+			$.ajax({
+			  url: 'https://randomuser.me/api/?results=25',
+			  dataType: 'json',
+			  success: function(data){
+			    console.log(data);
+			  }
+			});
+		</script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+     $(function() {
+		  $('a[href*="#"]:not([href="#"])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
+	$(document).on('click','#ghost-view-details',function(){
+		if($(this).hasClass('v1')) {
+			$('#page-image').attr('src','img/ask-my-dr-landing-b.jpg');
+			$(this).removeClass('v1');
+		} else {
+			$('#page-image').attr('src','img/ask-my-dr-landing-a.jpg');
+			$(this).addClass('v1');
+		}
+		});
+     </script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn3.userzoom.com/uz.js?cuid=C4D7AAAD43F6DF1188490022196C4538"></script>
+	</body>
+</html>

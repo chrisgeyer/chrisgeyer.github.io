@@ -1,0 +1,257 @@
+<html>
+	<head>
+		<title>SMA - Appointment Types</title>
+		<meta name="viewport" content="initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="style-wire" />
+    <link href="css/wireframe.css" rel="stylesheet" />
+    <link href="css/search-styles.css" rel="stylesheet" id="style-search" />
+    <link href="css/styles.css" rel="stylesheet" id="styles" />
+    <link href="css/dropit.css" rel="stylesheet" id="styles" />
+    <link href="css/additions.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link href="css/blueprint.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/search-scripts.js"></script>
+    <script src="js/dropit.js"></script>
+    <script src="js/pointer.js"></script>
+		<script src="js/blueprint.js"></script>
+		<script>
+			$(function(){
+				$("[data-load]").each(function(){
+						$(this).load($(this).data("load"), function(){
+						});
+				});
+			})
+		</script>
+ 	</head>
+	<body id="Dr" data-spy="scroll" data-target="#page-nav" data-offset="130">
+		<div id="overlay-clear"></div>
+		<div id="overlay-gray"></div>
+		<div id="material-spinner"></div>
+		<header class="title-bar">
+			<div class="container grid-12 full left width-1140">
+				<!-- <button class="menu right"><i class="material-icons">&#xE5D2;</i>Menu</button> -->
+				<div class="col-5 col-10-mobile relative text-left left" >
+					<a href="index-2.html"><img id="logo" src="img/SMA-logo.jpg" alt="logo"></a>
+				</div>
+				<div class="col-7 col-2-mobile relative text-right left">
+					<ul class="slim-menu dropit margin-top-20 hidden-xs">
+						<li class="dropit-trigger dropit-border">
+								<a href="javascript:void(0)" class="chevron pop">Language <i class="material-icons chevy" style="margin-left:4px;">keyboard_arrow_down</i></a>
+								<ul class="slim-menu-drop dropit-submenu" style="display: none;">
+										<li><a href="#" class="active"><i class="material-icons chevy drop-check">done</i>English</a></li>
+										<li><a href="index-esp.html"><i class="material-icons chevy drop-check">done</i>Espa&#241;ol</a></li>
+								</ul>
+						</li>
+						<li class="dropit-border pop"><a href="help.html">Help</a>
+						</li>
+						<li class="dropit-trigger"><a href="javascript:void(0)" class="chevron pop">My Account <i class="material-icons chevy" style="margin-left:4px;">keyboard_arrow_down</i></a>
+								<ul class="slim-menu-drop dropit-submenu" style="display: none;">
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="delegate.html">Delegate</a></li>
+									<li><a href="#">Logout</a></li>
+								</ul>
+						</li>
+					</ul>
+					<a id="btn-mobile-menu" class="right visible-xs" href="javascript:void(0)">
+						<i class="material-icons vertical-align-middle">menu</i>
+					</a>
+				</div>
+			</div>
+		</header>
+		<nav>
+			<div class="container z-2">
+				<a href="index.html" class="home pop">Home</a>
+				<a href="appointment.html" class="appt pop">Appointments</a>
+				<a href="health.html" class="health pop">My Health</a>
+				<a href="ask-my-dr.html" class="dr pop">Ask My Doctor</a>
+				<a href="javascript:void(0)">Referrals</a>
+				<a href="javascript:void(0)">Payments</a>
+			</div>
+			<a id="btn-mobile-menu-close" class="left visible-xs text-white absolute" href="javascript:void(0)" style="left:-60px; top:10px;">
+				<i class="material-icons vertical-align-middle fs-36">close</i>
+			</a>
+		</nav>
+		<main>
+			<header class="page-title container full padding-left-15 padding-right-15 transition-std container-full margin-bottom-20 border-top-under-nav">
+ 				<div class="grid-12 full left inline-block margin-top-30 margin-bottom-40 width-1140">
+	 				<a href="ask-my-dr.html"><button class="btn-tertiary pop"><i class="material-icons left margin-right-10 lh-22" style="vertical-align:middle;">keyboard_arrow_left</i> Ask My Dr</button></a>
+ 				</div>
+ 				<div class="grid-12 full left inline-block width-1140 padding-left-0 padding-right-0">
+        	<span id="medications" class="col-8 left inline-block padding-right-15">
+            <h3 class="left" note-cm="Choose E-Visit Type">Choose E-Visit Type</h3><br style="clear:both;">
+						<p class="left intro" note-cm="Fast? Or faster? With a Regular E-Visit you can send a question to a doctor or provider you've seen before. We will answer you within one business day. Or choose an Express E-Visit with NowClinic, available on weekdays from 7 a.m. to 7 p.m.  A doctor you may or may not have seen before will answer your question within two hours.">Fast? Or faster? With a Regular E-Visit you can send a question to a doctor or provider who you've seen before. We will answer you within one business day.<br><span class="block margin-top-10">Or choose an Express E-Visit with NowClinic, available on weekdays from 7:00 AM to 7:00 PM. A doctor you may or may not have seen before will answer your question within two hours.</span></p>
+          </span>
+          <span class="col-1 left inline-block padding-left-15" style="padding-top:45px;">
+            <!-- <i class="material-icons material-icons-30 right icon-purple">info_outline</i> -->
+            <span class="icon-info_hollow icon-purple right fs-28"></span>
+          </span>
+					<span class="grid-12 col-3 left inline-block padding-left-15" style="padding-top:30px;">
+            <p class="small" note-cm="Do not use E-Visit for emergencies. If you think you may have a medical emergency, immediately call 911 or go to the nearest emergency room.">Do not use E-Visit for emergencies. If you think you may have a medical emergency, immediately call 911 or go to the nearest emergency room.
+						<hr class="margin-0" />
+						<p class="small">If you believe your injury or illness is urgent, we suggest you visit an SMA urgent care facility. You can <a href="UC-1.html" class="pop">check-in for an urgent care visit</a>, now.</p>
+          </span>
+				</div>
+			 	<div class="container full left padding-mobile-0 margin-top-30 width-1140">
+					<section class="table">
+						<div class="table-head padding-bottom-20">
+							<span class="table-data padding-bottom-20 border-0" note-cm="">
+								<span class="inline-block relative">
+									<span class="inline-block text-right big"></span>
+								</span>
+							</span>
+							<span class="table-data padding-bottom-20" note-config="C2-F1-S1" note-cm="Regular E-Visit + <button>">
+								<span class="inline-block relative width-100">
+									<span class="big" note-ux="Starting a Regular E-Visit will go to the Regular E-Visit create page.">Regular E-Visit<br>
+									<a href="reg-evisit-1.html"><button class="btn-primary table-btn margin-left-0 margin-top-20 pop" style="width:300px;" note-wa="analytics" note-cm="Start Regular E-Visit">Start Regular E-Visit</button></a></span>
+								</span>
+							</span>
+							<span class="table-data padding-bottom-20" note-config="C2-F1-S2" note-cm="Express E-Visit + <button>">
+								<span class="inline-block relative width-100">
+									<span class="big" note-ux="Starting an Express E-Visit will go to the Express E-Visit creation page.">Express E-Visit with NowClinic<br>
+									<a href="express-evisit-1.html" note-wa="analytics"><button class="btn-primary table-btn margin-left-0 margin-top-20 pop" style="" note-wa="analytics" note-ux="If Express E-Visit is closed, then a message appears and the 'Start Express E-Visit' buttons is disabled." note-cm="Start Express E-Visit with NowClinic">Start Express E-Visit with NowClinic</button></a></span>
+								</span>
+							</span>
+					</div>
+					<div class="table-row">
+						<span class="table-data big text-right border-0 border-right-1" style="width:14%;" note-cm="Description">Description</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="A regular E-Visit is the best option if you have a question for a physician you've seen before and your question is less urgent.">A regular E-Visit is the best option if you have a question for a physician you've seen before and your question is less urgent.</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="An Express E-Visit is the best option if you want the fastest response, but you don't need an answer from a provider you've seen before. ">An Express E-Visit with NowClinic is the best option if you want the fastest response, but you don't need an answer from a provider you've seen before.</span>
+					</div>
+					<div class="table-row">
+						<span class="table-data big text-right border-0 border-right-1" style="width:14%;" note-cm="Response Time">Response Time</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="Get a response within one business day.">Get a response within one business day.</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="Get a response within two hours. (Express E-Visits submitted after 5:00 PM will receive a response the next weekday morning.)">Get a response within 2 hours. (Express E-Visits with NowClinic submitted after 5:00 PM will receive a response the next weekday morning.)</span>
+					</div>
+					<div class="table-row">
+						<span class="table-data big text-right border-0 border-right-1" style="width:14%;" note-cm="Message Recipient">Message Receipient</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="Select the physician to whom you want your question sent, from a list of physicians you’ve seen previously.">Select the physician to whom you want your question sent, from a list of physicians you've seen previously.</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="Your question will be sent to a physician you may not have seen previously, but who has access to your records.">Your question will be sent to a physician you may not have seen previously, but who has access to your records.</span>
+					</div>
+					<div class="table-row">
+						<span class="table-data big text-right border-0 border-right-1" style="width:14%;" note-cm="Cost">Cost</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="Free">Free</span>
+						<span class="table-data border-right-1 border-bottom-1" style="width:38%;" note-cm="Free">Free</span>
+					</div>
+				</section>
+
+			</div>
+			<div class="container"><div class="page-break inline-block full margin-top-80"><span class="page-break-head">Questions?</span></div></div>
+			<div class="container-full light-gray-gradient">
+			  <div class="grid-12 full left inline-block margin-top-40 width-1140 padding-left-15 padding-right-15 margin-top-mobile-20">
+			    <span class="col-6 left inline-block padding-left-15 padding-right-15 col-12-mobile padding-left-mobile-0 padding-right-mobile-0">
+			      <p class="landing-sub">Common Questions</p>
+			      <p class="margin-top-mobile-0"><a href="javascript:void(0)" class="link-color padding-bottom-5 block">Should I use an E-Visit for medication renewals?</a>
+			      <a href="javascript:void(0)" class="link-color padding-bottom-5 block">How long will it take to receive a response from my doctor when using E-Visits?</a>
+			      <a href="javascript:void(0)" class="link-color padding-bottom-5 block">Why can't I ask billing questions via E-Visit?</a></p>
+			    </span>
+			    <span id="advocate" class="col-6 left inline-block padding-left-15 padding-right-15 border-left col-12-mobile padding-left-mobile-0 padding-right-mobile-0 border-left-mobile-0 border-top-mobile">
+			      <p class="landing-sub">Contact an Appointment Advocate</p>
+			      <p class="margin-top-mobile-0">If you have additional questions and would like to speak with an SMA Appointment Advocate, please call the number below to speak with a member of our support team.</p>
+			      <p><strong>800-SMA-HELP</strong></p>
+			    </span>
+			  </div>
+			</div>
+		</main>
+		<footer class="site-map margin-top-0">
+		  <div class="grid-12 container">
+		      <a href="appointment.html">Appointments</a>
+		      <a href="health.html">My Health</a>
+		      <a href="ask-my-doctor.html">Ask My Doctor</a>
+		      <a href="javascript:void(0">Referrals</a>
+		      <a href="javascript:void(0">Payments</a>
+		  </div>
+		</footer>
+		<footer class="slim">
+		  <div class="container text-left">
+		    <span class="inline-block left margin-right-45">&copy; 2017 OptumCare. All rights reserved.</span>
+		    <a href="privacy_policy.html">Privacy Policy</a>
+		    <a href="terms_conditions.html">Terms &amp; Conditions</a>
+		  </div>
+		</footer>
+
+		<div class="drawer max-full" id="drawer-nowclinic">
+			<span class="drawer-header"><a href="javascript:void(0)" id="drawer-nowclinic-close" class="btn-tertiary drawer-close">Close</a></span>
+			<div class="container grid-12 full left padding-mobile-0 width-1140 padding-top-30 padding-bottom-30">
+				<div class="max-full grid-12 full left padding-right-15 padding-mobile-0 relative">
+					<span class="col-6 left col-md-offset-2 relative" style="left:50%; margin-left:-280px;">
+						<span class="dialog-head">What can I use Nowclinic for?</span>
+						<p class="dialog-body">-Acne -Allergies -Asthma -Athlete's Foot -Bladder Infections/UTI -Bronchitis -Cold Sore -Cough/Cold Diabetes -Diarrhea -Eye Infection/Sty/Pink Eye -Fever and Chills -Gout -Insect or Spider Bites -Laryngitis -Nausea -Poison Ivy/Oak -Ringworm -Runny Nose -Sinus Infection -Skin Inflammation -Skin Rash -Sore Throat -Sunburn -Viral Illness</p>
+						<span class="dialog-head">Do providers have access to my health information?</span>
+						<p class="dialog-body">If you have provided your health history or other health information into the NowClinic system, you can make this information available to the attending provider.<br>
+Having access to health information is important to providers and helps them provide timely, informed care. When you allow your provider to view your health information, he or she can provide more informed medical advice tailored to your specific health needs.</p>
+						<span class="dialog-head">Can a provider prescribe medication as part of a NowClinic online care visit?
+</span>
+						<p class="dialog-body">Yes. If the doctor on NowClinic believes medication is warranted, he or she can write a prescription2 for non-narcotic medications (i.e. no controlled substances), which can be sent directly to your preferred pharmacy. Please note: some state laws require that a provider can only prescribe medication in certain situations and subject to certain limitations. Prescribing of drugs is subject to state regulations and may not be available in your state.
+</p>
+						<span class="dialog-head">Will I have a record of my NowClinic online care visit?
+</span>
+						<p class="dialog-body">Yes, NowClinic maintains a complete record of your online visit, which is available to you for review at your leisure. You can also share your visit record with anyone you wish to, such as your primary care provider.</p>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--<script>
+			$.ajax({
+			  url: 'https://randomuser.me/api/?results=25',
+			  dataType: 'json',
+			  success: function(data){
+			    console.log(data);
+			  }
+			});
+		</script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+     $(function() {
+		  $('a[href*="#"]:not([href="#"])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
+     $(document).on('click','#info-nowclinic',function(){
+            $('#overlay-gray').addClass('on');
+            $('#drawer-nowclinic').removeClass('slide-down');
+            $('#drawer-nowclinic').addClass('slide-up');
+            setTimeout(function () {
+                $('#overlay-gray').removeClass('fade-out');
+                $('#overlay-gray').addClass('fade-in');
+            },50);
+
+         });
+     $(document).on('click','#drawer-nowclinic-close',function(){
+            $('#overlay-gray').removeClass('on');
+            $('#drawer-nowclinic').removeClass('slide-up');
+            $('#drawer-nowclinic').addClass('slide-down');
+            setTimeout(function () {
+                $('#overlay-gray').removeClass('fade-in');
+                $('#overlay-gray').addClass('fade-out');
+            },50);
+
+         });
+     $(document).on('click','#overlay-gray',function(){
+            $('#overlay-gray').removeClass('on');
+            $('#drawer-nowclinic').removeClass('slide-up');
+            $('#drawer-nowclinic').addClass('slide-down');
+            setTimeout(function () {
+                $('#overlay-gray').removeClass('fade-in');
+                $('#overlay-gray').addClass('fade-out');
+            },50);
+
+         });
+
+     </script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn3.userzoom.com/uz.js?cuid=C4D7AAAD43F6DF1188490022196C4538"></script>
+
+	</body>
+</html>

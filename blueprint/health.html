@@ -1,0 +1,850 @@
+<html>
+	<head>
+		<title>SMA - My Health</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <link href="css/bootstrap.min.css" rel="stylesheet" id="style-wire" />
+	    <link href="css/wireframe.css" rel="stylesheet" />
+	    <link href="css/search-styles.css" rel="stylesheet" id="style-search" />
+	    <link href="css/styles.css" rel="stylesheet" id="styles" />
+	    <link href="css/dropit.css" rel="stylesheet" id="styles" />
+	    <link href="css/additions.css" rel="stylesheet" />
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="js/search-scripts.js"></script>
+		<script src="js/dropit.js"></script>
+		<script src="js/pointer.js"></script>
+		<script>
+			$('.slim-menu').dropit();
+		</script>
+		<script>
+		$(function(){
+			$("[data-load]").each(function(){
+					$(this).load($(this).data("load"), function(){
+					});
+			});
+		})
+		</script>
+ 	</head>
+	<body id="Health" data-spy="scroll" data-offset="130">
+		<div id="overlay-clear"></div>
+		<div id="overlay-gray"></div>
+		<div id="material-spinner"></div>
+		<header class="title-bar">
+			<div class="container grid-12 full left width-1140">
+				<!-- <button class="menu right"><i class="material-icons">&#xE5D2;</i>Menu</button> -->
+				<div class="col-5 col-10-mobile relative text-left left" >
+					<a href="index.html" class="inline-block left margin-top-20 margin-top-tablet-6 margin-left-tablet-15"><img id="logo" src="img/SMA-logo.jpg" alt="logo"></a>
+				</div>
+				<div class="col-7 col-2-mobile relative text-right left">
+					<ul class="slim-menu dropit margin-top-20 hidden-xs">
+						<li class="dropit-trigger dropit-border pop">
+								<a href="javascript:void(0)" class="chevron">Language <i class="material-icons chevy" style="margin-left:4px;">keyboard_arrow_down</i></a>
+								<ul class="slim-menu-drop dropit-submenu" style="display: none;">
+										<li><a href="#" class="active"><i class="material-icons chevy drop-check">done</i>English</a></li>
+										<li><a href="index-esp.html"><i class="material-icons chevy drop-check">done</i>Espa&#241;ol</a></li>
+								</ul>
+						</li>
+						<li class="dropit-border pop"><a href="help.html">Help</a></li>
+						<li class="dropit-trigger pop"><a href="javascript:void(0)" class="chevron">My Account <i class="material-icons chevy" style="margin-left:4px;">keyboard_arrow_down</i></a>
+								<ul class="slim-menu-drop dropit-submenu" style="display: none;">
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="delegate.html">Delegate</a></li>
+									<li><a href="#">Logout</a></li>
+								</ul>
+						</li>
+					</ul>
+					<a id="btn-mobile-menu" class="right desktop-hidden" href="javascript:void(0)">
+						<span class="icon-menu vertical-align-sub fs-22 icon-purple bold"></span>
+						<span class="fs-10 text-center bold block text-dark-gray">MENU</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<nav class="main-nav">
+			<div class="container z-2 padding-tablet-0 border-bottom-tablet">
+				<a href="index.html" class="home pop">Home</a>
+				<a href="appointment.html" class="appt pop">Appointments</a>
+				<a href="health.html" class="health active pop">My Health</a>
+				<a href="ask-my-dr.html" class="dr pop">Ask My Doctor</a>
+				<a href="javascript:void(0)">Referrals</a>
+				<a href="javascript:void(0)">Payments</a>
+			</div>
+			<div class="container z-2 padding-tablet-0 mobile-menu desktop-hidden">
+				<ul class="slim-menu dropit">
+					<li class="dropit-trigger pop">
+							<a href="javascript:void(0)" class="chevron">Language <i class="material-icons chevy lh-60" style="margin-left:4px;">keyboard_arrow_down</i></a>
+							<ul class="slim-menu-drop dropit-submenu padding-left-15" style="display: none;">
+									<li><a href="#" class="active"><i class="material-icons chevy drop-check">done</i>English</a></li>
+									<li><a href="index-esp.html"><i class="material-icons chevy drop-check">done</i>Espa&#241;ol</a></li>
+							</ul>
+					</li>
+				</ul>
+				<li class="pop"><a href="help.html">Help</a></li>
+				<li class="pop"><a href="profile.html">Profile</a></li>
+				<li class="pop border-bottom-tablet"><a href="delegate.html">Delegate</a></li>
+				<li><a href="#">Logout</a></li>
+			</div>
+		</nav>
+		<a id="btn-mobile-menu-close" class="left hidden text-white absolute border-0 z-20" href="javascript:void(0)" style="left:125px; top:52px;">
+			<i class="material-icons vertical-align-middle fs-36">close</i>
+		</a>
+		<div class="secondary-nav">
+			<div class="container z-2">
+				<a href="#medications" data-id="current-med" note-cm="" note-wa=""  class="cm-1" >Available Renewals</a>
+                <a href="#orders" data-id="active-orders" note-cm="" note-wa="" class="pop beta cm-1" >Active Orders</a>
+                <a href="#record" data-id="medical-record" note-cm="Medical Record" note-wa="" class="pop cm-1">Medical Record</a>
+			</div>
+		</div>
+		<div id="page-nav" class="secondary-nav fixed-header hidden">
+			<div class="container z-2">
+				<a href="#medications" class=" pop" data-id="current-med">Available Renewals</a>
+                <a href="#orders" class="beta pop " data-id="active-orders">Active Orders</a>
+                <a href="#record" class="pop" data-id="medical-record">Medical Record</a>
+			</div>
+		</div>
+
+  		<main>
+  			<div class="container margin-top-60 margin-top-tablet-30 padding-left-15 padding-right-15" note-config="C2-F3-S1">
+				<header class="page-title container full transition-std container-full margin-bottom-20">
+	 				<div class="grid-12 full left inline-block width-1170" note-ux="If there are no Available Renewals or Active Orders, those sections will not appear on the page. If a section does not appear on the page, it will also be removed from the secondary nav. If only one section exists on the page, the secondary nav will go away.">
+	                    <span id="medications" class="col-8 col-12-tablet col-12-mobile left inline-block padding-right-15">
+	                        <h3 class="left cm-2" note-cm="">Available Renewals</h3><br style="clear:both;">
+	                        <p class="left intro cm-3" note-cm="">Only active medications prescribed by a Southwest Medical provider can be renewed online (some restrictions apply). To refill a prescription, please contact your pharmacy.
+</p>
+	                    </span>
+	                </div>
+	                <div class="grid-12 full left inline-block width-1140 border-top border-bottom border-bottom-mobile-0 padding-top-bottom-20 padding-left-mobile-0 padding-right-mobile-0 margin-top-mobile-20">
+	                   <span class="col-7 col-8-tablet col-12-mobile left inline-block padding-left-tablet-0 padding-left-mobile-0">
+	                        <p class="intro margin-0 fs-mobile-14 cm-3" note-cm="">Some of your medications are available for renewal. Select your preferred medications to begin the renewal process.</p>
+	                    </span>
+	                   <span class="col-5 col-4-tablet col-12-mobile left inline-block padding-left-15 padding-left-mobile-0" style="padding-top:11px;">
+	                        <!--<span class="tablet-hidden mobile-hidden" style="color:#d0d0ce; font-family:'Frutiger Light'; font-size:10px; padding-top:10px; display:inline-block;"> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>-->
+	                   		<a id="btn-renew" class="right block float-mobile-none margin-top-mobile-10" href="javascript:void(0)"><button class="btn-primary disabled pop cm-6" note-cm="" note-wa="" note-ua="Progress to next step.">Renew Medications</button></a>
+	                   </span>
+	                </div>
+				</header>
+				<div class="container full left padding-mobile-0 width-1170">
+					<section class="table margin-bottom-0 mobile-hidden">
+						<div class="table-head">
+								<span class="table-data medication cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Renew</span>
+									</span>
+								</span>
+								<span class="table-data medication cm-4" note-cm="" note-ux="Medications list alphabetically.">
+									<span class="inline-block relative">
+										<span class="inline-block left">Medication</span>
+									</span>
+								</span>
+								<span class="table-data prescribed cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Pharmacy</span>
+									</span>
+								</span>
+								<span class="table-data prescribed tablet-hidden cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Prescribed</span>
+									</span>
+								</span>
+								<span class="table-data supply cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Last Renewed</span>
+									</span>
+								</span>
+	 					</div>
+						<div class="table-row">
+							<span style="width:5%;" class="table-data renew cm-5" note-cm="<checkbox>"><span class="checkbox inline-block renew-checkbox margin-top-0 margin-left-15 pop" type="checkbox" note-wa="Custom JS"><i class="material-icons">check</i></span></span>
+							<span style="width:19%;" class="table-data medication cm-5" note-cm="<medication name><medication strength>"><p><strong>Albuterol</strong></p><p class="margin-bottom-0">18MG Solution</p></span>
+							<span style="width:25%;" class="table-data pharmacy cm-5" note-cm="<pharmacy name/#> <pharmacy phone#>"><p><strong>Target Pharmacy #8026</strong></p><p class="margin-bottom-0">(702) 451-0034</p></span>
+							<span style="width:23.5%;" class="table-data prescribed tablet-hidden cm-5" note-cm="<prescribed date> <prescribing doctor>"><p><strong>January 18, 2016</strong></p><p class="margin-bottom-0">Dr. Samuel Bauzon</p></span>
+							<span style="width:23.5%;" class="table-data supply cm-5" note-cm="<last renewed date>"><p><strong>September 28, 2016</strong></p></span>
+						</div>
+						<div class="table-row bg-light-gray">
+							<span class="table-data renew" style="width:5%;"><span class="checkbox inline-block renew-checkbox margin-top-0 margin-left-15 pop" type="checkbox"  note-wa="Custom JS"><i class="material-icons">check</i></span></span>
+							<span class="table-data medication" style="width:19%;"><p><strong>Chantix</strong></p><p class="margin-bottom-0">2MG Tablets</p></span>
+							<span class="table-data pharmacy" style="width:25%;"><p><strong>Target Pharmacy #8026</strong></p><p class="margin-bottom-0">(702) 451-0034</p></span>
+							<span class="table-data prescribed tablet-hidden" style="width:23.5%;"><p><strong>November 24, 20156</strong></p><p class="margin-bottom-0">Dr. Patricia Maple</p></span>
+							<span class="table-data supply" style="width:23.5%;"><p><strong>August 5, 2016</strong></p></span>
+						</div>
+					</section>
+			</div>
+		</div>
+		<div class="container">
+			<div>
+			    		<div class="container grid-12 full left padding-top-20 padding-bottom-20 padding-left-15 padding-right-15 visible-xs bg-solid-light-gray">
+							<section class="vital-card appt-card left relative">
+								<div class="card-body grid-12">
+									<div class="col-12">
+										<p class="margin-top-5 block mobile-card-head margin-mobile-0">Albuterol<br><span class="mobile-card-head-sub">18MG Tablet</span></p>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Pharmacy</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 col-mobile-6 padding-mobile-0"><strong>Target Pharmacy #8026</strong></span>
+												<span class="text-right col-xs-6 padding-mobile-0">(702) 451-0034</span>
+											</p>
+										</div>
+									</div>
+									<div class="row margin-top-5">
+										<!-- <input class="checkbox inline-block renew-checkbox" type="checkbox" style="width:18px; height:18px; margin:2px 0 0 0;"> -->
+										<span class="checkbox inline-block renew-checkbox margin-top-0 margin-left-0 pop" type="checkbox"><i class="material-icons">check</i></span>
+										<button class="btn-tertiary inline-block lh-48">Renew</button>
+										<a class="card-drop inline-block right margin-top-10" href="javascript:void(0)"><img class="card-drop-arrow" src="img/arrow_down_blk.png"></a>
+									</div>
+
+								</div>
+								<div class="card-accent"></div>
+							</section>
+							<section class="vital-card appt-card left relative margin-bottom-mobile-0">
+								<div class="card-body grid-12">
+									<div class="col-12">
+										<p class="margin-top-5 block mobile-card-head margin-mobile-0">Chantix<br><span class="mobile-card-head-sub">2MG Capsule</span></p>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Pharmacy</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 col-mobile-6 padding-mobile-0"><strong>Target Pharmacy #8026</strong></span>
+												<span class="text-right col-xs-6 padding-mobile-0">(702) 451-0034</span>
+											</p>
+										</div>
+									</div>
+									<div class="row margin-top-5">
+										<span class="checkbox inline-block renew-checkbox margin-top-0 margin-left-0 pop" type="checkbox"><i class="material-icons">check</i></span>
+										<button class="btn-tertiary inline-block lh-48">Renew</button>
+										<a class="card-drop inline-block right margin-top-10" href="javascript:void(0)"><img class="card-drop-arrow" src="img/arrow_down_blk.png"></a>
+									</div>
+									<div class="row">
+										<div class="vitals-detail appt-detail relative" style="display:none;">
+											<div class="row">
+												<div class="col-xs-12 grid-12 padding-0">
+													<div class="table-head col-mobile-12">
+														<span class="table-data mobile-table-data-100">
+															<span class="inline-block relative">
+																<span class="inline-block left">Prescribed</span>
+															</span>
+														</span>
+													</div>
+													<p class="small margin-top-5 margin-bottom-0 width-100">
+														<span class="col-xs-6 col-mobile-6 padding-mobile-0"><strong>December 26, 2016</strong></span>
+														<span class="text-right col-xs-6 padding-mobile-0">Dr. Samuel Bauzon</span>
+													</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 grid-12 padding-0">
+													<div class="table-head col-mobile-12">
+														<span class="table-data mobile-table-data-100">
+															<span class="inline-block relative">
+																<span class="inline-block left">Supply</span>
+															</span>
+														</span>
+													</div>
+													<p class="small margin-top-5 margin-bottom-0 width-100">
+														<span class="col-xs-6 col-mobile-6 padding-mobile-0"><strong>Days Supply: 30</strong></span>
+														<span class="text-right col-xs-6 padding-mobile-0">Total Quantity: 90</span>
+													</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 grid-12 padding-0">
+													<div class="table-head col-mobile-12">
+														<span class="table-data mobile-table-data-100">
+															<span class="inline-block relative">
+																<span class="inline-block left">Refills</span>
+															</span>
+														</span>
+													</div>
+													<p class="small margin-top-5 margin-bottom-0 width-100">
+														<span class="col-xs-6 col-mobile-6 padding-mobile-0"><strong>11</strong></span>
+													</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 grid-12 padding-0">
+													<div class="table-head col-mobile-12">
+														<span class="table-data mobile-table-data-100">
+															<span class="inline-block relative">
+																<span class="inline-block left">Renewal History</span>
+															</span>
+														</span>
+													</div>
+													<p class="small margin-top-5 margin-bottom-0 width-100">
+														<span class="col-xs-6 col-mobile-6 padding-mobile-0">October 12, 2016</span><br>
+														<span class="col-xs-6 col-mobile-6 padding-mobile-0">July 24, 2016</span><br>
+													</p>
+												</div>
+											</div>
+											<div class="row margin-bottom-20">
+												<div class="col-xs-12 grid-12 padding-0">
+													<div class="table-head col-mobile-12">
+														<span class="table-data mobile-table-data-100">
+															<span class="inline-block relative">
+																<span class="inline-block left">Instructions</span>
+															</span>
+														</span>
+													</div>
+													<p class="small margin-top-5 margin-bottom-0 width-100">
+														<span class="col-xs-12 col-mobile-6 padding-mobile-0">Inhale one (1) capsule once daily for emphysema.</span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-accent"></div>
+							</section>
+						</div>
+
+				</div>
+			</div>
+			<hr class="margin-top-60 margin-bottom-60 margin-top-tablet-30 margin-bottom-tablet-30">
+			<div class="container beta padding-left-15 padding-right-15 padding-mobile-0" note-config="C2-F11">
+				<div class="grid-12 full left inline-block width-1140" note-cm="Active Orders">
+					<span id="orders" class="col-8 col-12-tablet left inline-block padding-right-15 padding-left-mobile-15">
+                        <h3 class="left cm-2" note-cm="">Active Orders</h3><br style="clear:both;"><p class="left intro margin-bottom-0 margin-bottom-mobile-20 cm-3" note-cm="">You can visit any Southwest Medical Quest Diagnostics facility to be seen on a Walk-In basis. If you'd prefer to schedule an appointment, call Quest Diagnostics at 1-888-277-8772 or <a href="http://www.questdiagnostics.com" target="_blank" class="inline-block" note-wa>find a Quest location</a> near you. Please Note: all lab orders sent to Quest will expire six months from the ordered date.</p>
+                    </span>
+				</div>
+				<div class="container full left padding-bottom-tablet-30 padding-mobile-0 width-1170" note-ux="Sorted by Date Ordered (Newest to Oldest)">
+					<section class="table margin-bottom-0 mobile-hidden">
+						<div class="table-head">
+								<span class="table-data date-ordered cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Date Ordered</span>
+									</span>
+								</span>
+								<span class="table-data description cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Description</span>
+									</span>
+								</span>
+								<span class="table-data order-number cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Order Number</span>
+									</span>
+								</span>
+	                            <span class="table-data ordered-by tablet-hidden cm-4" note-cm="">
+	                                <span class="inline-block relative">
+	                                    <span class="inline-block left">Ordered By</span>
+	                                </span>
+	                            </span>
+								<span class="table-data location tablet-hidden cm-4" note-cm="">
+									<span class="inline-block relative">
+										<span class="inline-block left">Location</span>
+									</span>
+								</span>
+	                            <span class="table-data status cm-4" note-cm="">
+	                                <span class="inline-block relative">
+	                                    <span class="inline-block left">Status</span>
+	                                </span>
+	                            </span>
+					            <span class="table-data order-head-space" style="display: none;"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+						</div>
+						<div class="table-row margin-bottom-0">
+							<span class="table-data border-bottom-0 order-col-1 date-ordered cm-5" note-cm="<order date>"><p>Jun 3, 2016</p></span>
+							<span class="table-data border-bottom-0 order-col-2 description cm-5" note-cm="<order description>"><p>CT exam with IV &amp; oral contrast</p></span>
+							<span class="table-data border-bottom-0 order-col-3 order-number cm-5" note-cm="<order #>"><p>TW1082881980</p></span>
+							<span class="table-data order-col-4 ordered-by cm-5" note-cm="<ordering doctor's name>"><p>Bauzon, Samuel</p></span>
+							<span class="table-data order-col-5 location cm-5" note-cm="<order location>"><p>North Tenaya Radiology</p></span>
+							<span class="table-data border-bottom-0 order-col-6 status cm-5" note-cm="<order status>"><p>Active</p></span>
+							<span class="table-data border-bottom-0 order-col-7 text-right" style="display:none;"><button class="btn-tertiary med-show pop"><span>Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+						</div>
+					</section>
+<!-- 					<div class="exam-prep-wrap mobile-hidden" style="border-top-color:#f7f7f7;"><div class="exam-prep"><span class="margin-right-10">Please review the following exam preparation document:</span><a id="exam-doc-id" href="javascript:void(0)"><button class="btn-tertiary pop">All CT Exams with IV &amp; Oral Contrast <i class="material-icons lh-16" style="vertical-align:middle;">keyboard_arrow_right</i></button></a></div></div>
+ -->
+					<div class="margin-bottom-20 medication-detail" style="display:none;">
+						<div class="table-head">
+							<span class="table-data">
+								<span class="inline-block relative">
+									<span class="inline-block left">Ordered By</span>
+								</span>
+							</span>
+							<span class="table-data">
+								<span class="inline-block relative">
+									<span class="inline-block left">Location</span>
+								</span>
+							</span>
+				            <span class="table-data"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+				            <span class="table-data"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+				            <span class="table-data"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+						</div>
+						<div class="table-row">
+							<span class="table-data border-bottom-0" style="width:21%;"><p>Bauzon, Samuel</p></span>
+							<span class="table-data border-bottom-0" style="width:40%;"><p>North Tenaya Radiology</p></span>
+						</div>
+					</div>
+					 <section class="table margin-bottom-0 mobile-hidden">
+						<div class="table-row bg-light-gray">
+							<span class="table-data border-top order-col-1 date-ordered"><p>May 24, 2016</p></span>
+							<span class="table-data border-top border-top order-col-2 description"><p>Lipid Panel</p><p class="red"><em>Fasting Required</em></p></span>
+							<span class="table-data border-top order-col-3 order-number"><p>TW1028641210</p></span>
+							<span class="table-data order-col-4 ordered-by"><p>Collins, Roslyn</p></span>
+							<span class="table-data order-col-5 location"><p>Quest Diagnostics</p></span>
+							<span class="table-data border-top border-top order-col-6 status"><p>Active</p></span>
+							<span class="table-data border-top order-col-7 text-right" style="display: none;"><button class="btn-tertiary med-show pop"><span>Show</span> <i class="material-icons chevy vertical-align-middle" style="margin-left:4px;">keyboard_arrow_down</i></button></span>
+						</div>
+					</section>
+					<div class="margin-bottom-20 medication-detail" style="display:none;">
+						<div class="table-head">
+							<span class="table-data">
+								<span class="inline-block relative">
+									<span class="inline-block left">Ordered By</span>
+								</span>
+							</span>
+							<span class="table-data">
+								<span class="inline-block relative">
+									<span class="inline-block left">Location</span>
+								</span>
+							</span>
+				            <span class="table-data"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+				            <span class="table-data"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+				            <span class="table-data"><span class="inline-block relative"><span class="inline-block left">&nbsp;</span></span></span>
+						</div>
+						<div class="table-row">
+							<span class="table-data border-bottom-0" style="width:21%;"><p>Collins, Roslyn</p></span>
+							<span class="table-data border-bottom-0" style="width:40%;"><p>Quest Diagnostics</p></span>
+						</div>
+					</div>
+					<div class="container full right width-1140 inline-block padding-right-0 hidden">
+						<a href="orders.html"><button class="btn-primary right">View All Orders</button></a>
+					</div>
+				</div>
+	    		<div class="container grid-12 full left padding-top-20 padding-bottom-20 padding-left-15 padding-right-15 visible-xs bg-solid-light-gray">
+					<section class="vital-card appt-card left relative padding-bottom-20">
+						<div class="card-body grid-12">
+							<div class="col-12">
+								<p class="margin-top-5 block mobile-card-head margin-mobile-0">CT exam with IV & oral contrast</p>
+							</div>
+							<div class="row">
+								<div class="col-6 left padding-0">
+									<div class="table-head">
+										<span class="table-data mobile-table-data-50">
+											<span class="inline-block relative">
+												<span class="inline-block left">Date Ordered</span>
+											</span>
+										</span>
+									</div>
+									<p class="small margin-top-5 margin margin-bottom-0">November 3, 2016></p>
+								</div>
+								<div class="col-xs-6 inline-block padding-left-9">
+									<div class="table-head">
+										<span class="table-data mobile-table-data-50">
+											<span class="inline-block relative">
+												<span class="inline-block left">Order Number</span>
+											</span>
+										</span>
+									</div>
+									<p class="small margin-top-5 margin margin-bottom-0">TW1082881980</p>
+								</div>
+							</div>
+							<div class="row margin-top-5">
+								<!-- <button class="btn-tertiary inline-block lh-26 margin-top-10">All CT Exams with IV &amp; Oral Contrast</button> -->
+								<a class="card-drop inline-block right margin-top-10" href="javascript:void(0)"><img class="card-drop-arrow" src="img/arrow_down_blk.png"></a>
+							</div>
+							<div class="row">
+								<div class="vitals-detail appt-detail relative" style="display:none;">
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Ordered By</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 padding-mobile-0">Dr. Samuel Bauzon</span>
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Location</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 padding-mobile-0">Quest Diagnostics</span>
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Status</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 col-mobile-6 padding-mobile-0">Active</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-accent"></div>
+					</section>
+					<section class="vital-card appt-card left relative padding-bottom-20 margin-bottom-mobile-0">
+						<div class="card-body grid-12">
+							<div class="col-12">
+								<p class="margin-top-5 block mobile-card-head margin-mobile-0">Lipid Panel<br><span class="mobile-card-head-sub text-red italic">Fasting required</span></p>
+								<span class="card-icon right">
+									<!-- <img src="img/icon-card-info.png"> -->
+									<span class="icon-info_hollow icon-purple right text-right fs-24"></span>
+								</span>
+							</div>
+							<div class="row">
+								<div class="col-6 left padding-0">
+									<div class="table-head">
+										<span class="table-data mobile-table-data-50">
+											<span class="inline-block relative">
+												<span class="inline-block left">Date Ordered</span>
+											</span>
+										</span>
+									</div>
+									<p class="small margin-top-5 margin margin-bottom-0">August 8, 2016</p>
+								</div>
+								<div class="col-6 left inline-block padding-left-9">
+									<div class="table-head">
+										<span class="table-data mobile-table-data-50">
+											<span class="inline-block relative">
+												<span class="inline-block left">Order Number</span>
+											</span>
+										</span>
+									</div>
+									<p class="small margin-top-5 margin margin-bottom-0">TW1082682001</p>
+								</div>
+							</div>
+							<div class="row margin-top-5">
+								<a class="card-drop inline-block right margin-top-10" href="javascript:void(0)"><img class="card-drop-arrow" src="img/arrow_down_blk.png"></a>
+							</div>
+							<div class="row">
+								<div class="vitals-detail appt-detail relative" style="display:none;">
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Ordered By</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 padding-mobile-0">Dr. Samuel Bauzon</span>
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Location</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 padding-mobile-0">Quest Diagnostics</span>
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 grid-12 padding-0">
+											<div class="table-head col-mobile-12">
+												<span class="table-data mobile-table-data-100">
+													<span class="inline-block relative">
+														<span class="inline-block left">Status</span>
+													</span>
+												</span>
+											</div>
+											<p class="small margin-top-5 margin-bottom-0 width-100">
+												<span class="col-xs-6 col-mobile-6 padding-mobile-0">Active</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-accent"></div>
+					</section>
+				</div>
+			</div>
+			<hr class="margin-top-60 margin-bottom-60 margin-top-tablet-30 margin-bottom-tablet-30">
+			<div class="container-full margin-bottom-60 margin-bottom-tablet-0">
+				<div class="grid-12 full left inline-block width-1140 margin-bottom-60 margin-bottom-tablet-30">
+					<span id="record" class="col-8 col-12-tablet left inline-block padding-left-15 padding-right-15">
+                        <h3 class="left cm-2" note-cm="">Medical Records</h3><br style="clear:both;"><p class="left intro margin-bottom-0 cm-3" note-cm="">View your most recent medical activity, health records and documentation by viewing your Health Summary. To see a deeper history of a particular item, select View within an individual record type.</p>
+                    </span>
+				</div>
+                <div class="grid-12 full left inline-block width-1140 border-top border-bottom padding-top-bottom-20 width-tablet-auto margin-left-right-tablet-15" note-config="C2-F1">
+                   <span class="col-7 col-12-mobile left inline-block padding-left-15">
+                        <p class="margin-top-0 fs-18 cm-3" note-cm="">Health Summary</p><p class="intro margin-0">This is an overview of your current health information. View the full history of an individual item by using the cards below. </p>
+                    </span>
+                   <span class="col-5 col-12-mobile left inline-block padding-left-15 padding-mobile-0 margin-top-mobile-10">
+                        <a href="health-summary.html"><button class="btn-secondary right margin-right-15 margin-top-10 margin-right-mobile-0 pop cm-6" note-cm="" note-ua="Progress to next step." note-wa>View Health Summary</button></a>
+                    </span>
+                </div>
+                <div class="grid-12 full left inline-block width-1140 padding-top-20 padding-bottom-0 padding-top-tablet-0 padding-bottom-tablet-30 padding-left-tablet-30 padding-bottom-mobile-30 padding-left-mobile-15 padding-right-mobile-15 margin-top-mobile-30 margin-bottom-mobile-0 bg-solid-light-gray-mobile">
+					<a href="conditions.html" class="card-action pointer">
+					<section class="micro-card left relative" note-ux="Cards: 270px wide x 250px height" note-config="C2-F5">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-conditions.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Active Conditions</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>6 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="<number of records> Records; <if no data on file> No records to display">No records to display</p>
+						</span>
+						<span class="bottom-link border-top" note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+					<a href="allergens.html" class="card-action pointer">
+					<section class="micro-card left relative" note-config="C2-F6">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-allergens.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Allergens</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>8 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top" note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+					<a href="documents.html" class="card-action pointer">
+					<section class="micro-card left relative" note-config="C2-F4">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-documents.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Documents</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>58 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top" note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+ 					<a href="immunizations.html" class="card-action pointer">
+					<section class="micro-card left relative margin-right-0" note-config="C2-F2">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-immunizations.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Immunizations</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>10 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top"  note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+					<a href="labs.html" class="card-action pointer">
+					<section class="micro-card left relative" note-config="C2-F8">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-lab.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Lab Results</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>24 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top" note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+					<a href="medications.html" class="card-action pointer">
+ 					<section class="micro-card left relative" note-config="C2-F3">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-medications.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Medications</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>16 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top"  note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+ 					<a href="orders.html" class="card-action pointer">
+ 					<section class="micro-card left relative beta" note-config="C2-F11">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-orders.png">
+							</span>
+							<h4 class="cm-7" note-cm="">Orders</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>8 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top" note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+	                <a href="vitals.html" class="card-action pointer">
+					<section class="micro-card left relative margin-right-0 beta" note-config="C2-F7">
+						<div class="card-body padding-top-50">
+							<span class="card-icon right">
+								<img src="img/icon-card-vitals.png">
+							</span>
+								<h4 class="cm-7" note-cm="">Vitals</h4>
+						</div>
+						<span class="details">
+							<p class="small margin-bottom-0 hidden"><strong>130 Total</strong></p>
+							<p class="small margin-top-0 cm-8" note-cm="Updated: <date last updated>">Updated 3/15/2017</p>
+						</span>
+						<span class="bottom-link border-top" note-ua="Progress to next step." note-wa>
+							<p class="pointer pop" style="margin:12px 0;">View</p>
+						</span>
+					</section>
+					</a>
+                </div>
+			</div>
+			<div class="container-full light-gray-gradient hidden-sm hidden-xs">
+				<div class="grid-12 full left inline-block width-1140 margin-top-60 margin-top-tablet-15">
+                    <span class="col-6 col-12-mobile padding-left-tablet-15 left inline-block padding-right-30 padding-left-30">
+                        <p class="landing-sub margin-top-0 margin-bottom-0">Common Questions</p>
+                        <p class="block margin-top-20 margin-bottom-20"><a href="javascript:void(0)" class="link-color padding-bottom-10 block">What if I'm having trouble printing my results?</a>
+                        <a href="javascript:void(0)" class="link-color padding-bottom-10 block">Where are my recent test results?</a>
+                        <a href="javascript:void(0)" class="link-color padding-bottom-0 block">How can I request a copy of my medical records?</a></p>
+
+                    </span>
+                   <span class="col-6 col-12-mobile left inline-block padding-left-30 padding-right-30 padding-left-mobile-15 padding-right-mobile-15 border-left border-top-mobile border-left-mobile-0 padding-top-mobile-15">
+                        <p class="landing-sub margin-top-0 margin-bottom-0">Need to release a Medical Record?</p>
+                        <p class="margin-top-20 margin-bottom-20">For information or assistance regarding your request for your Southwest Medical Associates medical records, please call 702.877.8636. Our staff are happy to assist you with any questions you may have regarding our release of information services, where we are located and what the turnaround time is to process your request.</p>
+                    </span>
+                </div>
+			</div>
+		</main>
+		<footer class="site-map margin-top-0">
+		  <div class="grid-12 container padding-left-mobile-15 padding-right-mobile-15">
+		      <a href="appointment.html">Appointments</a>
+		      <a href="health.html">My Health</a>
+		      <a href="ask-my-doctor.html">Ask My Doctor</a>
+		      <a href="javascript:void(0">Referrals</a>
+		      <a href="javascript:void(0">Payments</a>
+		  </div>
+		</footer>
+		<footer class="slim padding-left-mobile-15 padding-right-mobile-15">
+		  <div class="container text-left grid-12">
+		    <span class="inline-block left margin-right-45 col-12-mobile">&copy; 2017 OptumCare. All rights reserved.</span>
+		    <a href="privacy_policy.html">Privacy Policy</a>
+		    <a href="terms_conditions.html">Terms &amp; Conditions</a>
+		  </div>
+		</footer>
+
+		<div class="drawer max-full" id="drawer-exam-doc">
+			<span class="drawer-header"><a href="javascript:void(0)" id="drawer-exam-doc-close" class="btn-tertiary drawer-close pop">Close</a></span>
+			<div class="container grid-12 full left padding-mobile-0 width-1140 padding-top-30 padding-bottom-30">
+				<div class="max-full grid-12 full left padding-right-15 padding-mobile-0 relative">
+					<span class="col-6 left col-md-offset-3 relative">
+						<span class="dialog-head">All CT Exams with IV &amp; Oral Contrast</span>
+						<p class="dialog-body">Nothing to eat 4hrs. Prior to exam time<br>Nothing to drink 2hrs. Prior to exam time</p>
+						<p class="dialog-body"><strong>***TAKE ALL MEDICATION AS PRESCRIBED***</strong></p>
+						<p class="dialog-body"><strong>CT Abdomen:</strong><br>
+						Drink/finish 1 bottle of oral prep (cheetah/redi-cat) one 1hr. prior to the exam time.</p>
+						<p class="dialog-body"><strong>CT abdomen/pelvis:<br></strong>
+						Drink/finish 1 bottle of oral prep (cheetah/redi-cat) 3hrs. prior to the exam time.<br>
+						Drink/finish the 2nd bottle of oral prep (cheetah/redi-cat) 1hr. prior to the exam time</p>
+						<p class="dialog-body"><strong>Labs required if:<br></strong>
+						1. You are 60 years of age or older	<br>
+						2. You have known or potential renaldisease.<br>
+						3. You are a diabetic. <br>
+						Patient to complete lab work ordered by requesting provider/pcp<br>
+						Renal function (blood test) must be done 1 week prior to exam date</p>
+						<p class="dialog-body"><strong>Films: <br></strong>
+						Patients to bring non sma cat scan films related to the exam on scheduled date<br>
+						Failure to complete lab work may result in your appointment being rescheduled.</p>
+						<p class="dialog-body">Do not bring children with you to your appointment. We do not have the facilities or the personnel to provide for their care while your exam is being done. This could cause your appointment to be rescheduled.</p>
+						<p class="dialog-body">Imaging recommends not wearing jewelry to your scheduled appointment.</p>
+					</span>
+				</div>
+			</div>
+		</div>
+    <script type="text/javascript">
+     $(function() {
+		  $('a[href*="#"]:not([href="#"])').click(function() {
+		  	$('.page-fixed-nav div a').removeClass('active');
+			var tempId = $(this).attr('data-id');
+			$('.page-fixed-nav div a[data-id='+tempId+']').addClass('active');
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+	    	$('.page-fixed-nav div a').removeClass('active');
+	    	var tempId = $(this).attr('data-id');
+	    	$('.page-fixed-nav div a[data-id='+tempId+']').addClass('active');
+			//$(this).addClass('active')
+		  });
+		});
+    </script>
+    <script>
+    	$.ajax({
+			  url: 'json/test.json',
+			  dataType: 'json',
+			  success: function(data){
+			    console.log(data);
+                /*var i;
+                for (i = 0; i < data.results.length; i++) {
+                    $('.colleagues .card-body').append('<a href="provider_profile.html" class="card-item grid-12 full"><span class="col-12 left"><img class="profile-pic left margin-right-15" src="'+data.results[i].picture.thumbnail+'"><p2 class="link-blue capital-case">'+data.results[i].name.first+' '+data.results[i].name.last+'</p2><br><p2 class="text-gray">Southwest Medical Associates</p2></span></a>');
+                }*/
+			  },
+              error: function(){
+                    console.log('JSON error');
+              }
+			});
+    </script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn3.userzoom.com/uz.js?cuid=C4D7AAAD43F6DF1188490022196C4538"></script>
+	</body>
+</html>
